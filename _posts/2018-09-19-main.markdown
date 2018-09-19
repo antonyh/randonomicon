@@ -1,0 +1,33 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+\maketitle
+\frontmatter
+\tableofcontents
+\newpage
+Notes
+=====
+
+This notebook of development notes is very rough, and is not ready to be
+published in any shape or form.
+
+This 'book' is ©2015 Antony Hutchison, and should not be distributed.
+
+Disclaimers
+-----------
+
+Should you be one of the unlucky folk who has somehow obtained a copy,
+don't expect anything in here to work, make sense, or even be readable.
+By 'rough' I mean exactly that, it's really more of a place for me to
+brain-dump. Stop reading now, for your own sake.
+
+If you do have a copy of this text, then with any luck I'll have removed
+the chapters that will harm you. No promises though, you're on your own
+(in a very legal sense) if you take action on anything written here. You
+have been warned. Officially, you have no licence for the content of
+this book (in a very legal sense).
+
+\mainmatter

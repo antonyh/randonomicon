@@ -1,0 +1,211 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Scala
+=====
+
+Beyond Hello World
+------------------
+
+A quick primer on lists and iterators, try to keep up, this is basic
+stuff, and fairly trivial.
+
+    object HelloWorld {
+       def main(args: Array[String]) {
+           val numbers = List(1, 2, 3, 4, 5)
+           numbers foreach printme
+       }
+       
+       def printme(item: Int){
+           println(f"This is the number $item")
+       }
+    }
+
+'object' is more-or-less the same as 'class' in Java
+
+'def' is a method.
+
+An object has to have a main method to be executable, just like in Java.
+
+'val' declares a variable, unlike Java the type appears later instead of
+as a first keyword in the declaration. The type is also optional, and if
+shown appears after a colon symbol.
+
+'numbers foreach printme' iterates over the numbers, and for each it
+calls 'printme' with the element of the List (in this case, an integer).
+
+The println call is a bit different to Java. the letter before the
+string tells the compiler to work some magic. 'f' turns it into a
+'printf' style string, which although isn't quite the same it should be
+obvious that it's crafting the string at runtime using available values.
+
+There is an 's' variant of strings too, which is the same as 'f'. The
+difference is that 'f' allows printf declarations to follow the variable
+names to force formatting, such as decimal places with numbers.
+
+The other options are 'raw' which removes the need to escape slashes,
+and it's also possible to extend the string interpolation
+transformations with custom types.
+
+More information can be found here:
+<http://docs.scala-lang.org/overviews/core/string-interpolation.html>
+
+Iterators in Scala are decendents of TraversableOnce, which as the name
+suggests ultimately means that you can only use them once. You can get
+around this by duplicating the iterator before using it. This does not
+mean that you can only use a list once! The following is utterly valid
+and works perfectly:
+
+           val numbers = List(1, 2, 3, 4, 5)
+           numbers foreach printme
+           numbers foreach printme
+           numbers foreach printme
+
+As expected, this will print the list three times.
+
+The Basics
+----------
+
+### The Scala types
+
+The ten basic types in Scala are:
+
+-   Byte
+
+-   Short
+
+-   Int
+
+-   Long
+
+-   Float
+
+-   Double
+
+-   Boolean
+
+-   Char
+
+-   String
+
+-   Object
+
+These are declared with `var` and `val` and they aren't quite primitives
+in the same sense as in Java. I think for the most part these are too
+dull to discuss, they map more-or-less directly to their Java
+equivalents. String and Char are UTF-8 just like Java, and the numeric
+values are standard issue. Unlike Java you don't have a primitive 'int'
+and an object 'Integer' - they are the same in Scala and you can forget
+about converting or parsing or boxing/unboxing these values. They just
+work.
+
+Declaring a variable as Var causes it to be mutable and possible to
+change or reassign the variable, whereas using val makes it immutable.
+Use 'val' wherever possible is considered by many to be good general
+advice, in the same way that 'final' is tacked onto the start of
+variable declarations in Java but without the insane verbosity this
+brings.
+
+Of course, Object is a special.
+
+Unit also requires some discussion.
+
+### Predef
+
+How to explain predef: it's an implicit static import of certain
+libraries. How to better explain this: you don't need to type java.lang
+in front of things, or fully name scala.Int to use it, and the same is
+true for some other package names because they have already been pulled
+in by scala.Predef for you.
+
+Apparently, there's a lot of good learning to be had by reading the code
+for this object, and maybe one day I'll get round to it. Life is too
+short.
+
+### Functions
+
+We can change the simple example to include a function. Scala is a
+functional language if you didn't know that already. It's also has
+imperative language features but that's not why you are exploring Scala
+instead of just learning the functional aspects of Java 8 such as
+lambdas.
+
+To include a function we declare it with 'def' and use it by name.
+
+       def printme(item: Int){
+           println(message(item))
+       }
+       
+       def message(item: Int) = {
+           s"Hey $item"
+       }
+
+What is the difference between these two declarations? An equals sign
+between the function signature and body, and a String that's returned
+without a return statement. The println now calls the function. Our
+first function, and it works as expected. A massive over-simplification,
+but it's good enough for now.
+
+To put it another way: the first 'def' is more like a method, and the
+second is a parameterised function. Our method doesn't return anything,
+but a function must resolve to a value - in this case a string with the
+integer value inserted.
+
+It's even possible to remove the curly braces from the message function,
+because Scala doesn't need unnecessary punctuation, although it's
+considered bad form to omit them when the function has side effects. Our
+function does not, so a cleaner version might be
+
+       def somefunction(item: Int){
+           println(message(item))
+       }
+       
+       def message(item: Int) = s"Hutch likes the number $item"
+
+### Another simple function
+
+This one takes two Int values and returns the higher value.
+
+    def max (a:Int, b:Int) = if (a>b) a else b 
+
+Again, note the lack of an explicit return statement, and no curled
+braces. Also note that despite type inference in Scala we still have to
+add them to function parameters otherwise it doesn't compile. I'm told
+this is due to the inference being based on declaration-local
+information rather than a more advanced algorithm such as Hindley-Milner
+but I'm sure this has benefits, and in some ways it's comforting to have
+to add this information as part of developing a solution.
+
+fizzbuzz
+--------
+
+The classic fizzbuzz is far too easy for functional languages, and in
+Scala yields a solution that is remarkably similar to other languages
+like Haskell. This is a testament to the power of Scala and how well it
+has been designed.
+
+    def fizzbuzz(i: Int) = {
+
+        def fizz(i: Int) = (i % 3 == 0)
+        def buzz(i: Int) = (i % 5 == 0)
+
+        if(fizz(i) && buzz(i)) "fizzbuzz"
+        else if(fizz(i)) "fizz"
+        else if(buzz(i)) "buzz"
+        else i
+    }
+
+    for (i <- 1 to 50) fizzbuzz(i)
+
+I'm not sure this takes much explaining, and if I did choose to do so
+I'd be doing little more than walking though the syntax of Scala and the
+requirements of FizzBuzz, so I'll leave this as an exercise for the
+reader.
+
+One question that might matter is why use if-else over other
+constructions. The answer lies in the bytecode generated, which tends to
+be simpler and more concise with if-else. If you need concrete proof,
+try disassembling various versions with 'javap'.

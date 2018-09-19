@@ -1,0 +1,38 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Apache HTTPD
+============
+
+config goes in httpd.conf
+
+know which version you are using
+
+generally, it's better if you set KeepAlive on
+
+socket backlog can help with timeouts and heavy connections
+
+ListenBacklog 8192
+
+Listen sets the port number
+
+it's common for all files in conf.d to be imported
+
+proxy proxy balancer
+
+location directory
+
+header
+
+allow/deny
+
+ssl
+
+rewrites redirects modules
+
+mime magic
+
+mpm worker prefork tuning formula

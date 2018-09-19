@@ -1,0 +1,101 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Sightly
+=======
+
+Introduction
+------------
+
+Sightly
+-------
+
+##### data-sly-use
+
+    <div data-sly-use.barry="com.example.Component">
+      <h1>${barry.someValue}</h1>
+    </div>
+
+##### data-sly-use.clientLib
+
+##### data-sly-call
+
+##### data-sly-unwrap
+
+stops Sightly from wrapping the element with a surrounding element in
+the output that is generated.
+
+    data-sly-unwrap
+
+Unwrap only in edit mode: This suppresses the containing element only
+when editting the page:
+
+    data-sly-unwrap="${wcmmode.edit}"
+
+##### data-sly-test
+
+makes it possible to conditionally include a section of the template
+with a boolean check.
+
+This example will do a check, assign the result to the 'author'
+variable, and allow us to reuse the result later in the template when we
+need to do the check again,
+
+    <div data-sly-test.author="${wcmmode.edit || wcmmode.design}">
+    Show this when in edit or design mode
+    </div>
+    <div data-sly-test="${!author}">
+    This is shown when not in edit/design mode.
+    </div>
+
+##### data-sly-list
+
+Sometimes it's necessary to display a list of unknown size, and Sightly
+provides a list type to repeat the contents of iterators and collections
+and use the same markup with each data item. This is the data-sly-list
+attribute, which repeats the inner markup once for each list item with
+the values for each element.
+
+    <!--/* display the title of each child page in a unordered list */-->
+    <ul data-sly-list.child="${currentPage.listChildren}">
+      <li>${child.title}</li>
+    </ul>
+
+##### data-sly-resource
+
+To add a component into a Sightly template, you use data-sly-resource.
+For example, to include a parsys component using data-sly-resource, you
+might use the following template code to add it with the name 'par':
+
+    <div data-sly-resource="${ @path='par', resourceType='foundation/components/parsys'}"></div>
+
+Another example would including a footer component, with no edit options
+(wcmmode disabled):
+
+    <footer data-sly-resource="${ @ path='footer', resourceType='example/footer', wcmmode='disabled'}"></footer>
+
+Note the resource type, and the additional parameter. In this case, the
+content for the component is stored in a 'footer' node.
+
+##### data-sly-include
+
+If you need or want to include another script, JSP or Sightly, it's
+possible using data-sly-include:
+
+    <div data-sly-include="/libs/wcm/core/components/init/init.jsp"></div>
+    <div data-sly-include="myfile.html"></div>
+
+##### data-sly-call
+
+What does data-sly-call do?
+
+    <head data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}">
+        <css data-sly-call="${clientLib.css @ categories=['category1', 'category2']}" data-sly-unwrap/>
+    </head>
+    <body>
+        <!-- content -->
+        <js data-sly-call="${clientLib.js @ categories=['category1', 'category2']}" data-sly-unwrap/>
+    </body>

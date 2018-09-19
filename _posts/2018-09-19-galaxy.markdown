@@ -1,0 +1,19 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Ansible Galaxy
+==============
+
+Ansible Galaxy is a collection of shared 'content' for Ansible. It
+contains roles that you can use. As the quality of the roles in Ansible
+Galaxy is highly likely to vary, it's mentioned here for completeness
+and won't be mentioned again.
+
+With that in mind, I would encourage exploring Galaxy for modules that
+cover common applications, and to submit and share work that might help
+others.
+
+You can find it here: <https://galaxy.ansible.com/>

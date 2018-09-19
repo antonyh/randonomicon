@@ -1,0 +1,48 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Playbook
+========
+
+What is a playbook, and what does a playbook look like? In terms of
+format, it's just YAML with a few settings and the roles required for
+the target hosts.
+
+In short, the playbook is what to do, the inventory is where to do it.
+As a practical example, this playbook to install a WordPress server
+(from
+<https://github.com/ansible/ansible-examples/blob/master/wordpress-nginx/site.yml>)
+illustrates how a set of roles is applied to a set of hosts.
+
+    ---
+    - name: Install WordPress, MySQL, Nginx, and PHP-FPM
+      hosts: wordpress-server
+      remote_user: root
+      # remote_user: user
+      # sudo: yes
+      
+      roles:
+        - common
+        - mysql
+        - nginx
+        - php-fpm
+        - wordpress
+
+As we can see, it defines a display name for the playbook, the hosts it
+will be applied to, the remote user to use, and a toggle to control use
+of sudo.
+
+It could run as root if you permit SSH connections as root (hint: you
+should never allow this), or as a regular user account with sudo rights.
+
+Finally, the playbook defines roles for the server. These are the roles
+that this set of hosts needs. In this example, the common role is
+applied, along with mysql for the database, nginx for a web server,
+php-fpm for scripting, and the wordpress application.
+
+Each role is distinct and atomic - it should be possible if the roles
+are designed properly to install the mysql database elsewhere on it's
+own server for example.

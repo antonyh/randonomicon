@@ -1,0 +1,62 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Elvisism
+========
+
+#### Wham! Bang! Thank You Ma'am!
+
+There is a class of coder who believes it is their solemn duty to
+complete tickets as quickly as possible, to get things done regardless
+of the consequences, to 'finish' things as rapidly as they can, and get
+their code merged despite objections during code review. There are two
+sides to this, and it's definitely a world-view that's worth discussing
+here.
+
+#### Driven by deadlines
+
+In their defence, there are always pressures to complete work on time,
+and there should always be the opportunity to improve code as it
+evolves.
+
+However, this is a very myopic standpoint that frustrates and irritates
+those who feel that the big picture should always be considered.
+
+Because of the drive to deliver, as many corners are cut as possible.
+Unit tests are often missing or incomplete. Anything that's missing from
+the specification is ignored, and certainly no additional documentation
+is created. Performance and security concerns are secondary. In some
+cases, even functional requirements are skipped if they don't make sense
+instead of seeking clarification.
+
+Elvi have a tendency to claim done far too early, and tend to force
+things through code review rather than accept constructive critique.
+
+#### Lack of refactoring
+
+This approach also fails to take into account that late in the project
+refactoring is so expensive and thus rarely happens. It's also dependent
+on good unit tests, which Elvises (Elvi?) seem to have trouble
+producing.
+
+#### Rapid delivery
+
+This does tend to lead to a quick turnaround of tasks, or so it would
+seem. Features get 'finished' quickly, at least in the progress reports.
+If it wasn't for the limited testing, this might even sound like a good
+approach.
+
+With the right support, and on projects with a 'move fast, break things'
+policy, Elvi can thrive. They also do well where changes are transient
+and can be undone or reworked with a low or zero footprint.
+
+#### Hacky
+
+Elvi are seen as hacky. The leave a mess, which makes them highly
+suitable to throwaway work like proof-of-concept development, or
+pre-sales. Unfortunately this kind of quick-and-dirty, cowboy coding is
+harmful when the product must be maintained, particularly when Elvis has
+left the building.

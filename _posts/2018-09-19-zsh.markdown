@@ -1,0 +1,23 @@
+---
+layout: post
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+zsh
+===
+
+alternate shell
+
+oh-my-zsh antigen
+
+Tab completion on everything. Globbing case insensitive matching
+spelling correction global aliases improves on command history
+navigation http://fendrich.se/blog/2012/09/28/no/
+
+installing zsh
+
+installing oh-my-zsh
+
+installing antigen
+
+https://github.com/zsh-users/zsh-syntax-highlighting

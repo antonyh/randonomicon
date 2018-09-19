@@ -1,0 +1,20 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+GitLab and Jenkins
+==================
+
+https://github.com/elvanja/jenkins-gitlab-hook-plugin.git
+
+1.597 Jenkins - 1.597 Git Client 1.16.1 (also tried with 1.15.0) Git
+Plugin - 2.3.4 Ruby - 0.12
+
+https://github.com/elvanja/jenkins-gitlab-hook-plugin
+
+elvanja/jenkins-gitlab-hook-plugin
+
+Enables Gitlab web hooks to be used to trigger SMC polling on Gitlab
+projects

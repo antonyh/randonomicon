@@ -1,0 +1,53 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Modules
+=======
+
+Modules are essentially Python programs that can be used in the Ansible
+roles. They extend Ansible by providing additional actions that can be
+used in the YAML to do things that aren't bundled with Ansible or
+provided by default.
+
+There's also the option to use binary programs as modules as an
+alternative to using Python, but in my view that's a last resort and the
+modules should be written in Python wherever possible.
+
+The module is expected to return JSON data so that Ansible can use the
+information as part of the playbook.
+
+For example, you might need to create a module to send a message using a
+message queue to trigger an action when criteria are fulfilled. Perhaps
+you need to write a record to a database, or spin up something as a
+one-off. I don't know your use-case, but if you need to integrate a
+specific platform or product into your Ansible workflow you'll need a
+module to handle the interactions and make it work cleanly.
+
+I'm sure there is plenty of odd edge cases out there beyond the core of
+Ansible. The weird things you want to do are all yours and yours alone.
+Modules are how you make the magic happen. Certainly a module offers
+better integration with Ansible than using shells scripts, which is
+perhaps the strongest reason to use modules.
+
+Core modules
+------------
+
+Ansible comes with a collection of core modules. You can depend on these
+being present, as Ansible would be utterly useless without them. Some
+examples of the modules provided are:
+
+-   copy
+
+-   synchronize
+
+-   template
+
+-   get\_url
+
+-   package
+
+You can find the source for the core modules on GitHub:
+<https://github.com/ansible/ansible-modules-core>

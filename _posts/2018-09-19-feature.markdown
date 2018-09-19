@@ -1,0 +1,70 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Features and feature files
+==========================
+
+A feature file is a definition, a specification of sorts, that states
+clearly a number of scenarios that must be tested. It's written in a
+lingo known as humourously as 'Gherkin'.
+
+The basic format of a Gherkin feature file
+
+    Feature: this is a feature
+
+      Scenario: this is a scenario
+        Given X
+        And Y
+        When A
+        And B
+        Then Z
+
+
+      Scenario Outline: This is another scenario
+        Given X
+        And Y
+        When something is <word>
+        Then check for <number>
+        
+        Examples:
+        | word | number |
+        | ant  | 1      |
+        | bug  | 3      |
+        | car  | 5      |
+        
+        
+
+A lot has been writted about Gherkin and Cucumber tests, and there's
+little reason to recite it all here. What doesn't seem to be covered is
+a few golden rules that make the features make more sense and keep them
+sane.
+
+-   only Capitalise Given / When / Then - it makes it more readable
+
+-   give useful names to the scenarios, as this appears in a lot of
+    places
+
+-   use proper names that fit the business requirements in the feature
+    definitions as it makes it must easier to review the features
+
+-   avoid words like click, open, touch, enter, and so on. these things
+    below hidden away in the step definitions that exercise the feture
+
+Given
+-----
+
+Given sets up the known state for the start of the test
+
+When
+----
+
+When describes the action or actions you must take for the start to get
+to the point you need to be to make an assertion
+
+Then
+----
+
+Then is a test, a check, an assertion.

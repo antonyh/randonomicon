@@ -1,0 +1,16 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Adobe AEM 6
+===========
+
+What is AEM6
+------------
+
+Adobe Experience Manager, version 6, is a Web CMS platform with page
+management, (digital) asset management, heaps of marketing tools and
+campaign management, and unsurprisingly many integrations with other
+parts of the Adobe Cloud.

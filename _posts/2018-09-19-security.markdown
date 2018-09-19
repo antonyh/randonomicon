@@ -1,0 +1,34 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Deprecated; Docker Tricks and Tips
+==================================
+
+REWRITE THIS
+------------
+
+Docker security
+---------------
+
+####  mount your docker.sock 
+
+You can just mount your docker.sock as a file using the volume options
+to provide a container access to the docker API. You can then run docker
+commands from within that container. This way a container can even kill
+itself. There's no need to run the docker daemon within a container.
+
+#### Docker is Root
+
+Guard your Docker, as the Docker API access gives full root access so
+you can access volumes and use the host's network with --net host. Don't
+expose docker API to public.
+
+#### USER in Dockerfiles 
+
+By default docker runs everything as root but you can use USER in
+Dockerfiles. There's no user namespacing in docker so the container sees
+the users on the host but only uids hence you need the add the users in
+the container.

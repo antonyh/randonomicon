@@ -1,0 +1,15 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+rkt
+===
+
+CoreOS Appc - Application Container
+
+try out with Vagrant
+
+git clone https://github.com/coreos/rkt cd rkt git checkout v1.8.0
+vagrant up

@@ -1,0 +1,32 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Eclipse IDE
+===========
+
+Making Eclispe work properly
+----------------------------
+
+stop it hiding the dot files
+
+make it show whitespace but not spaces except trailing spaces
+
+add a code coverage tool
+
+link to task managers like jira or bugzilla
+
+make it run related tests automatically
+
+integrate with maven
+
+integrate with junit
+
+integrate with app servers
+
+how to make it format code automatically on save
+
+stop it from opening .csv files in Excel - general \> editors \> file
+associations, add .csv, then set an editor

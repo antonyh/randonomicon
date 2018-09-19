@@ -1,0 +1,83 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Git log
+=======
+
+It's important to get information on the state of the repository and the
+commits that it's made up from in a simple, clean, and clear way. There
+are quite a few options that can help with this.
+
+Useful logging
+--------------
+
+The default log can be had with the most basic invocation of git log:
+
+    git log
+
+Personally I find this both too verbose and yet lacking in actionable
+information. The defaults have a tendency to be somewhat noisy, and if
+you know what options to add you can get much better, more focused
+listings from the log. A cleaner log with one entry per line tends to be
+more interesting for quick inspection, especially on projects with
+multiple small commits.
+
+    git log --oneline
+
+    # Alternatively
+    git log -1
+
+If I want to know the files that have changed in each commit, this is
+possible too:
+
+    # for just the file names that have changed
+    git log --name-only
+
+    # for slightly more detail
+    git log --name-status
+
+Either of these commands should give you a useful list of changed files.
+
+git rev-list
+------------
+
+The git-rev-list lists commits that are reachable from a commit and
+provides the ability to walk the commit graph. It's the basis of many
+other Git commands, such as log, reflog, bisect, and so on.
+
+What does this mean in practical terms? Not much, as in most cases
+you'll use the commands that internally use rev-list. It's good to be
+aware that it's possible to access this raw data if needed, and the
+options that rev-list uses are also applicable to git-log.
+
+See also: <http://git-scm.com/docs/git-rev-list>
+
+git diff
+--------
+
+'git diff' will show you the changes between the current working copy
+and the last commit. It can also be used to show you the difference
+between a whole bunch of other things, most usefully between two
+specific commits.
+
+By default, it generates output in a patch format just like the 'diff'
+command. Just like the Gnu & BSD diff commands there are a lot of
+options, even more as it has to deal with Git as well as analysing and
+reporting changes.
+
+See also: <http://git-scm.com/docs/git-diff>
+
+git whatchanged
+---------------
+
+As tempting as it might be to use this as it gives a good amount of
+information, it's really just a shortcut for old hacks who used Git in
+it's infancy. Most should use 'git log' instead.
+
+See also: <http://git-scm.com/docs/git-whatchanged>
+
+That said, I use this occasionally because it gives the names of the
+changed files in each commit.

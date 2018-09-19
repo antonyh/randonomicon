@@ -1,0 +1,88 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Shell Commands
+==============
+
+These generally apply to all Linux / Unix / BSD variants, although the
+options will vary depending on versions.
+
+'man' is your friend. 'man' will tell you what the options are. 'man'
+may even give you useful examples. 'man' will help you but only if you
+ask.
+
+    Listing files
+
+    ls
+    ls -al
+    ls -la
+    dir
+
+    Moving files
+    mv
+    ren
+
+    Deleting files
+    rm
+    del
+
+    Getting information on files
+    file
+    head
+    tail
+    strings
+
+    File permissions
+    chmod
+    chown
+    chgrp
+    mask
+
+    Outputting files
+    cat
+    less
+    more
+    tee
+
+    Creating and editing files
+    touch
+    echo
+    vi
+    emacs
+    nano
+
+
+    Finding files
+    find . -name '.DS_*' 
+    find . -name '.DS_*' -delete
+
+    grep
+
+    locate
+    slocate
+
+
+    Batch operations 
+    xargs
+    sort
+    uniq
+
+    Scheduled jobs
+    cron
+    crontab
+
+
+    processes
+    vmstat
+    iostat
+    top
+    htop
+    atop
+    ps
+    ps -ef
+    ps -efaww
+    kill
+    killall

@@ -1,0 +1,158 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+ANTLR
+=====
+
+ANTLR is literally 'ANother Tool for Language Recognition', and is in
+effect a compiler-compiler along the same lines as yacc or bison. Right
+or wrong, I pronounce it 'antler' as an allusion to it's fore-bearers.
+It enables DSLs to be created and formatted files to be processed by
+using grammar file created in BNF format to lex and parse files. It
+provides a powerful listener-driven approach that feels somewhat similar
+to the SAX parsers used to process XML.
+
+The main reference material I've used with ANTLR has been the Parr book
+[@parr2012]. It has some excellent examples and covers the topic well.
+
+Online resources
+----------------
+
+There are quite a few online resources to help you use ANTLR. Here's a
+small selection to help you get started.
+
+#### The ANTLR 4 website
+
+this is an excellent if somewhat obvious place to start. Make sure you
+are looking at ANTLR 4 and not ANTLR 3 as they are quite different.
+<http://www.antlr.org>
+
+#### Parsing Java Properties with ANTLR
+
+this question posted in 2011 offers a good insight into the challenges
+of crafting the grammar for a parser, even for something as seemingly
+simple as Java property files, which on the surface seem to be just
+key/value pairs.
+<http://stackoverflow.com/questions/6132529/antlr-parsing-java-properties>
+
+#### Martin Fowler on ANTLR
+
+This is a useful article on ANTLR. Although dated 2007, this has his
+usual easy-to-read style and is a great introduction to
+compiler-compilers. <http://martinfowler.com/bliki/HelloAntlr.html>
+
+Getting started
+---------------
+
+Using mvn archetype:generate currently will only give you an option to
+use org.antlr:antlr3-maven-archetype (ANTLR 3 Maven Archetype). Unless
+you need a ANTLR V3 project then it isn't recommended to use the older
+version.
+
+The most direct way is to use the default archetype
+(org.apache.maven.archetypes :maven-archetype-quickstart). Although it
+archetype generator does give a long list with numbers, don't rely on
+these numbers when creating the project as they change frequently. It
+will offer you the quickstart archetype by default. Alternatively, do
+whatever you would normally do to create a new Maven project.
+
+In this example, we want to create a Maven plugin that executes a mojo,
+so we'll use org.apache.maven.archetypes:maven-archetype-mojo (An
+archetype which contains a sample a sample Maven plugin.)
+
+Set up the project with these properties:
+
+        <properties>
+            <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+            <antlr.version>4.3</antlr.version>
+            <target.jvm>1.8</target.jvm>
+        </properties>
+
+This ensures UTF-8 file, using Java 8 and ANTLR 4.3. Next add the ANTLR
+dependency.
+
+    <dependency>
+        <groupId>org.antlr</groupId>
+        <artifactId>antlr4-runtime</artifactId>
+        <version>${antlr.version}</version>
+    </dependency>
+
+The next step is to ensure that we're compiling with the right Java,
+which needs to be set in the build plugins. Make sure you add a
+'maven-compiler-plugin' to the build plugins.
+
+Everything else to do with the Maven plugin should be straightforward.
+Naturally, if you have a more complete Maven configuration using parent
+poms and such, then all of this will be both familiar and redundant to
+you, but it's still useful as a reference. From now onwards we will
+focus on the ANTLR part of the code.
+
+Composing a grammar for ANTLR
+-----------------------------
+
+The quick and lazy way to get started is to crib a grammar file from
+<https://github.com/antlr/grammars-v4> as the chances are that one
+already exists. It comes complete with example files and there's a Maven
+plugin here too that validates the grammar against the sample data to
+test that it complies. Many of the grammars are long and complex which
+is not surprising as they cover entire languages such as Java and
+Erlang. For a basic introduction, I recommend you look at CSV - it's a
+familiar format and the rules are relatively simple.
+
+How ANTLR works
+---------------
+
+It would be a good idea at this point to make some notes on how ANTLR
+operates so that you can appreciate why certain things are done in
+certain ways. In brief, ANTLR generates source code from a .g4 file that
+defines the grammar. It compiles [^1] the grammar into a parser. What
+this means in practice is that you define the rules of the 'grammar' in
+the .g4 file using what is known as BNF (Backus Normal Form or
+Backus--Naur Form) which is a way to describe the elements and how they
+relate including keywords and syntax.
+
+What the online documentation and guides fail to mention is that ANTLR
+expects comments in the grammar to add methods into the generated code.
+Without these comments, not much happens. For example, you need the
+'text' comment after TEXT to generate the methods enterText() and
+exitText() that are called during parsing.
+
+    field
+        :   TEXT    # text
+        |   STRING  # string
+        |       # empty
+        ;
+
+The same goes for the 'string' and 'empty' comment declarations. In
+particular, 'empty' as it has no other identifier - it's a blank, a
+missing value, so it's not otherwise named.
+
+ANTLR requires that you write code that extends the generated parser so
+that you can do things when the parsing takes place. It uses the
+comments to generate calls to the events that occur as matches happen,
+and it's up to the developer to take appropriate action whether that is
+changing state or storing the value in an array or collection depending
+on the application. For parsing a file like CSV data it would be
+appropriate to collect all the columns within the row, then do something
+at the end for each row. In the case of parsing a DSL, it might be
+better to do something on each instruction whether that is firing a web
+request or incrementing a counter.
+
+ANTLR summary
+-------------
+
+Unfortunately, this is all I can really say about ANTLR, and maybe
+that's enough to be useful in the broad majority of cases. For some
+developers this might be enough to become productive, but ANTLR v4
+suffers from a lack of good clear instructions online, but I know that
+if I had just these few short pages it would have saved me an awful lot
+of time and effort to get a working solution using this technology. It's
+amazing for what it can do, and I'm grateful to Terence Parr for
+producing it, but to the newcomer it can be somewhat cryptic. I hope
+this brief introduction helps.
+
+[^1]: It doesn't really compile but transpiles, as it emits Java classes
+    and not bytecode

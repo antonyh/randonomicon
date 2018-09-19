@@ -1,0 +1,186 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+About
+=====
+
+What is this book?
+------------------
+
+This book is primarily a great big bundle of my rough notes and research
+into various tools and platforms, tied together in a nice wrapper using
+[LaTeX]{acronym-label="LaTeX" acronym-form="singular+short"} as a
+typesetting tool. I started writing this up late in 2014, and realised
+that formatting as a printed book is straightforward with the tools at
+hand will help me focus and write things that might make sense later,
+and maybe useful to others.
+
+This book is also a general indicator as to the development tools and
+languages I think are interesting to me; all of this is real and used by
+me right now. Nothing is research just for the sake of this book. It's
+all stuff I've been working on and using, and not a wish-list of things
+to do. The other general indicator of my interests is the huge pile of
+unread books sat next to me, some of which may get mentioned.
+
+There's a web page for this book. You can find it here together with any
+updates, and the latest PDF should be there too for you to download:
+
+<http://antonyh.co.uk/book/>
+
+You can 'flattr' this work with a micropayment - all donations help
+produce more content. For more information on donating, visit this page:
+
+<https://flattr.com/submit/auto?fid=pog77q&url=http%3A%2F%2Fantonyh.co.uk%2Fbook%2F>
+
+### The Creative Commons License
+
+Hutch's Big Book of DevNotes by Antony Hutchison is licensed under a
+Creative Commons Attribution-ShareAlike 4.0 International License. This
+means you are free to:
+
+-   Share; copy and redistribute the material in any medium or format
+
+-   Adapt; remix, transform, and build upon the material
+
+-   for any purpose, even commercially.
+
+-   The licensor cannot revoke these freedoms as long as you follow the
+    license terms.
+
+You can find more information on your rights under this license here:
+<http://creativecommons.org/licenses/by-sa/4.0/>. If you don't agree to
+the terms of the license, or have an intended use that this license
+doesn't permit, talk to me. I've chosen this license as it's a
+'free-culture' license, as I believe that by sharing this knowledge
+others may be helped.
+
+### Who is this book for?
+
+This book isn't intended for the novice. If you are a novice, hello. Do
+try to read and understand, and do ask questions. Ask me. Ask your
+peers. Ask on-line. This text isn't likely to give you all the answers,
+as it makes bold, broad, sweeping assumptions that you've coded. And I
+mean CODED, not just \"hello world\" or \"fizz buzz\" in basic, or typed
+\"make && make install\" into a shell. I'm not going to explain how to
+install Haskell and compile a program. That said, you are the best judge
+of your ability, if you want to dive in then I honestly hope this book
+helps you.
+
+This book sometimes covers basics but only when it helps ground my
+thoughts as I write or if I think it makes sense. There are a bazillion
+books that introduce technologies, and instead of reproducing them I
+might just add enough to get things rolling. Or I might just link to
+them so you can go buy them. If it's a new technology or paradigm I'll
+explore simpler things, but probably not if it's something like Java.
+Either way, there are better uses of our time than yet another Hello
+World tutorial so that's definitely something that's not likely to
+appear here. When we are skimming over topics, code fragments will be
+used instead of full listings. I'll assume that you know what to do with
+them.
+
+### About the book itself
+
+This book has been created in LaTeX. The primary edit tool for this book
+is <https://www.sharelatex.com>, an online collaborative editing tool.
+It has been typeset as a book, single-sided for easier screen reading.
+
+This book has an evil twin known as 'RoughNotes' that will never, ever,
+ever see the light of day. When a chapter in there grows enough and is
+cleaned up, it is moved into this book.
+
+The other sources of information in this book are my Instapaper
+collection, my Evernote clippings, and my browser bookmarks. It's a
+goldmine waiting to be turning into something legible. There's also a
+lot of notes in a product called 'Circus Ponies Notebook' that is sadly
+Mac-only, and I need to liberate them into this book.
+
+The glossary is in part inspired by Ambrose Bierce's Devils Dictionary,
+published in 1906. This book of 'DevNotes' lacks both the depth of
+cynicism and the wit of the Devils Dictionary, but is considerably more
+advantageous to those seeking to program computers. To find out more,
+see
+
+<http://www.thedevilsdictionary.com/>
+
+This book may contain Amazon affiliate links that support the
+development of new chapters. Click a link, buy a book, it's like voting
+for new words.
+
+Quick disclaimer: Whatever you do with your computer is your own fault.
+If you type 'vagrant destroy' and it rubs out your only copy of your
+working mission critical code project just before you commit it to SCM
+then that's your doing and your really need to think hard about your
+general working practises. If you are trying something out and it
+doesn't work and you miss your deadline, this is also purely down to
+you. On the other hand, this book is useful. Yaw.
+
+The table of contents for this book is deliberately zero-indexed.
+
+How complete is this book?
+--------------------------
+
+This book is likely to be in a permanent state of flux. It'll probably
+never be truly finished, for many reasons:
+
+-   technology changes quickly - there will always be something to add,
+    amend, or improve
+
+-   there is no real peer review of this material aside from the
+    feedback from readers, so there's always going to be corrections
+    needed. Feedback is welcome from the readers and helps refine the
+    text
+
+-   as a general rule I'm just adding when and where I feel like, based
+    on things I'm actively using. This greatly depends on what I'm
+    working on and how much time I have.
+
+-   there's a lot of material that is not yet ready to include because
+    it's either wrong or inaccurate, outdated, contains mistakes, or has
+    not yet been formatted. At the moment, about 10% of the writing I've
+    produced has been included
+
+-   some areas dive deeper into the technology than others and it takes
+    time to level this off so the book as a whole makes sense and is
+    useful. The focus is on adding needed depth rather than taking away
+    but without duplicating other resources
+
+The chapter on Docker is mostly complete although rapidly becoming
+outdated as Docker is constantly changing. Docker 1.5 was covered, it's
+now up to 1.8.2. Mostly, it still appears to be useful information.
+
+The chapter on LaTeX is poor; it doesn't even cover the markup in this
+book! It needs a lot of work but it's still worth including.
+
+Finally, the chapter on Magnolia CMS is fine in what it covers, but
+there is a lot missing. I don't intend to expand this beyond the
+programming tasks of Freemarker and Spring Blossom. Parts of this
+chapter feel unconvincing to me, as I finished writing some of it long
+after I finished the project.
+
+### Day CQ / Adobe AEM
+
+Some will be surprised by the lack of information on Day Communiqué / CQ
+/ Adobe AEM given the years I've invested into this platform. Don't
+fret, I have a lot of notes to organise, hundreds of bookmarks to
+collate, and it will take time to produce something that's worthwhile
+and not just a long blog post. There's also a lot of information that's
+not really very useful with the modern versions released by Adobe, and
+it needs to be filtered to be relevant. It will happen, there will be a
+chapter on CQ/AEM.
+
+### The other chapters
+
+There's quite a lot of material that has yet to be included in this
+book. Some of it is in good shape but needs proof reading, some of it is
+nowhere near good enough. It's hard to produce new content and finish
+the existing chapters especially when some technology like Docker is
+moving so quickly.
+
+The other chapters are much worse and are barely worth mentioning. The
+Git chapter is starting to take shape, although it is a little short.
+The chapter on Java has some information, is somewhat scruffy at
+present, and in some areas lacks depth. I've worked on the Maven
+contents most recently.

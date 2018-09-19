@@ -1,0 +1,167 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Integration tests with Prosper
+==============================
+
+What is 'Prosper'?
+------------------
+
+Prosper is an integration testing framework based on Spock, a framework
+to create high quality tests. It uses Groovy test scripts and a
+selection of Mocks to emulate the functionality of Sling & AEM to test
+code during the test phase of a Maven build. It doesn't require a full
+AEM or a running datastore as all the content and OSGi services are
+provided as part of the test run.
+
+Prosper differs from unit tests such as jUnit by emulating a large chunk
+of the platform, so allowing the code to be exercised in a way that is
+comparable to how it would run in a real AEM instance. Obviously this
+isn't completely accurate, but it's more advanced than simply unit
+testing each method of a class individually as we get to see how it
+interacts with the data tree and with other classes.
+
+A test specification
+--------------------
+
+A few things are needed to make a test with Prosper. Most importantly
+(after reading the setup guide and adding all the gumpf to the pom.xml
+file to make it run using Maven) is to have a good test specification.
+
+Prosper specs have the file extension '.spec'.
+
+### Test class preamble
+
+##### Imports
+
+As with all things Java, you need to import some packages to get this
+work, and as with all things Groovy, there's no semicolons.
+
+You'll need to import the ProsperSpec class, and any classes you want to
+test, and their dependencies, as well as any that you need to create
+test data. You'll also need to add these with test scope to the Maven
+pom file.
+
+    import com.day.cq.commons.jcr.JcrConstants
+    import com.citytechinc.aem.prosper.specs.ProsperSpec
+    import static java.util.Calendar.DAY_OF_MONTH
+    import com.antonyh.aem.example.ExampleService
+    import com.antonyh.aem.example.impl.ExampleImpl
+    import org.apache.sling.jcr.api.SlingRepository
+
+##### Class declaration
+
+Yep, the class we have created needs to extend a class to gain the
+Prosper features, so we have extended with 'ProsperSpec' to make it into
+a Prosper specification.
+
+    class ExampleSpec extends ProsperSpec {
+
+##### Test setup method
+
+This is a sample setup for a specification.
+
+      def setupSpec() {
+        def omega_modified = Calendar.getInstance()
+        omega_modified.add DAY_OF_MONTH,-6 
+
+        slingContext.registerService(ExampleService.class, new ExampleImpl());
+
+        pageBuilder.content {
+          alpha("alpha") {
+        "jcr:content" ("sling:resourceType": "foundation/components/page",
+                "cq:tags": ["Homepage", "A"],
+                "cq:lastModified": Calendar.instance)
+          }
+          omega("Old page") {
+        "jcr:content" ("sling:resourceType": "foundation/components/page",
+                   "cq:tags": ["A","Old"],
+                   "cq:lastModified": omega_modified)
+          }
+          
+        }
+      }
+
+We have created a date 6 days in the past, which we will use as a value
+for a property of one of the pages. We register an instance of our
+service-under-test with the slingContext provided by Prosper, and we
+declare some test date to represent page content. The page builder
+provided by Prosper is rich, powerful, concise, and easy to set up good
+test data, so it's worth taking time to add the properties you need and
+create a good test state.
+
+### Prosper tests
+
+Here are some sample tests, which show some basic function tests. The
+first test takes no actions, and asserts that in the jcr:content node
+for the /content/alpha page, there is a cq:tags property that contains
+'Homepage'.
+
+      def "alpha has homepage tag"() {
+        expect:
+        "Homepage" in session.getNode("/content/alpha").getNode(JcrConstants.JCR_CONTENT).get("cq:tags")
+      }
+
+This second test shows how to get an OSGi service, and simply checks
+that it's not null.
+
+      def "check service"() {
+        setup:
+        def example = slingContext.getService(ExampleService)
+
+        expect:
+        example != null
+      }
+
+The third test gets a service, and calls it with an empty array. It
+returns one result, so we can assert that the result set is not null,
+contains the /content/alpha page, and does not contain the
+/content/omega page. Note the negation syntax - if you omit the
+brackets, it negates the string before it does the 'in' check, and does
+not work.
+
+      def "get all pages using service"() {
+        setup:
+        def example = slingContext.getService(ExampleService)
+        def tags = []
+        def result = example.query tags
+
+        expect:
+        result != null
+        "/content/alpha" in result
+        !("/content/omega" in result)
+      }
+      
+
+Finally, we check that asking our service for something that should
+never be returned does in fact return an empty set. We don't bother
+checking for null here, as it's already tested elsewhere (we couldn't,
+but why repeat ourselves).
+
+      def "get 'Old' tag should return nothing"() {
+        setup:
+        def example = slingContext.getService(ExampleService)
+        def tags = ["Old"]
+        def result = example.query tags
+
+        expect:
+        result == []
+      }
+
+    }
+
+This is a very brief introduction in to Spock/Prosper testing with AEM.
+
+The downsides and challenges with Prosper appear mostly that it is far
+too easy to build out something that looks like it will work but doesn't
+when it's applied to AEM. Chiefly amongst this appears that it's vital
+that the right version of Prosper is chosen to match the target AEM,
+otherwise services will install and not start. This seems to be a
+side-effect of Maven - once a class is used in the test phase, that same
+version must be used in all the phases, so the SCR metadata contains
+imports for matching versions. This makes it impossible to use newer
+Prosper versions for older version or AEM - as a consequence it would be
+hard to recommend this unless the latest version of AEM is being used.

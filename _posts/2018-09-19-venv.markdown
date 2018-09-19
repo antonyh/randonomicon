@@ -1,0 +1,61 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Ansible in a venv
+=================
+
+'venv' is the Python system for setting up virtual environments. The
+tool you need to use to manage this is 'virtualenv'.
+
+    # install virtualenv
+    pip install virtualenv
+
+    # create a virtualenv named venv
+    virtualenv venv
+
+    # create venv using Python 2.7
+    virtualenv -p /usr/bin/python2.7 venv
+
+    # activate the venv
+    source venv/bin/activate
+
+    # install things
+    pip install ansible
+    pip install -r requirements.txt
+
+    # switch off the virtual environment
+    deactivate
+
+virtualenvwrapper
+-----------------
+
+An extension to virtualenv is virtualenvwrapper, which adds some helpful
+commands and management functions to deal with multiple venvs stored in
+a central location (by default they are located in  /.virtualenvs).
+
+    # install...
+    pip install virtualenvwrapper
+
+    # ...and make the commands available
+    source /usr/local/bin/virtualenvwrapper.sh
+
+    # set up a new environment
+    mkvirtualenv venv
+
+    # switch to 'venv'
+    workon venv
+
+    # make a whole project in $PROJECT_HOME
+    mkproject myproject
+
+    # shut down the current venv
+    deactivate
+
+    # delete 'venv'
+    rmvirtualenv venv
+
+'virtualenvwrapper' is worth using just for the central storage outside
+of project files, and for the ability to quickly switch environments.

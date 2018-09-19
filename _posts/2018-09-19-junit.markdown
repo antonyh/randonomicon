@@ -1,0 +1,166 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+JUnit
+=====
+
+What is JUnit?
+--------------
+
+JUnit is a testing framework for running unit tests. Unit tests are
+highly focussed test cases designed to check that given a known state,
+when a single action is performed, then the state is change to another
+known state.
+
+The preferred spelling for JUnit appears to be 'JUnit' with a capital J
+and U according to the official website <http://junit.org/>. It doesn't
+appear to matter greatly unless you are particularly pedantic, and it's
+so frequently written 'junit' mostly because that's the name of the
+package and Maven dependency.
+
+What is unit testing?
+---------------------
+
+In case you didn't know, and in case JUnit is your first exposure to
+writing tests, unit tests are a way to create code that runs to check
+your work. They take the form of code that sets up a known state, takes
+an action or in some cases a series of actions, and then does some
+checks or assertions against the post-action state or the return value.
+
+Unit tests must be deterministic for them to be useful. because of this,
+they must be isolated and completely self contained. This is commonly
+achieved using mocks to replace anything outside the scope of the test -
+other libraries, external services, and anything transient. With careful
+planning even time can be mocked to test how things work when developing
+solutions that depend on long delays or operate on a schedule.
+
+Unit tests should only test fragments of code, usually single classes or
+individual methods, to ensure that the logic within it is sound and
+reacts correctly to the input parameters and preconditions. They should
+not need to spider out to other classes or outside of the project into
+third-party libraries, which is why we use mocks to have complete
+control and make sure our tests are quick and reproducible.
+
+Unit tests are infinitely more useful if they run really quickly. Faster
+feedback yields faster bug fixes. Modern IDEs even allow tests to run in
+the background if you desire, giving almost instant feedback whenever
+changes are mode.
+
+The life cycle of a unit test
+-----------------------------
+
+A unit test is first set up in a before stage, which create the
+necessary scaffolding around the code to be tested. This can be static
+values, constructing the class, and any mocks.
+
+The second stage is to run the code from the known state set up in the
+'before' phase'. This will execute using the provided values, and should
+end at the state we wish to test.
+
+The third phase is to 'assert' something is true, not equal, null, not
+null, less than, greater than, and so on. This might be to check a
+return value from a method or function, or to check that it's processed
+the input values correctly. There can be multiple assertions in a test
+suite, but they should be in separate test cases for clarity. An
+assertion should not change the state of the object under test.
+
+Finally, the 'after' stage is used to release memory, discard objects,
+and clean up after the test.
+
+What do unit tests do?
+----------------------
+
+There are many ways that unit tests help developers. We run unit tests
+as part of our build process and reject builds that fail to help improve
+product quality. In doing so we get nearly instant feedback, reducing
+the detection time and subsequently the time to fix faults.
+
+During development, we can configure our IDEs to run tests related to
+the code we are changing to get rapid feedback on the changes. This can
+even happen as we type code.
+
+We can generate reports basked on the tests, and everyone loves pretty
+reports with graphs and colours and lines and percentages. These
+statistics can be used to identify common faults, regressions in the
+codebase, and give useful metrics to help manage growing projects.
+
+Unit test are particularly helpful when refactoring code, as we know how
+badly we've broken it before we silently commit it to source control for
+the next coder to work on.
+
+Most of all, they give us confidence that our changes aren't just random
+and that we can actively prove they have logic in that works as
+expected.
+
+JUnit assertions
+----------------
+
+Assertions are how you assert that the logic works. The two assertions
+you should use most often are assertEquals and assertThat as they give
+the most feedback in my experience. This is particularly true with using
+assertTrue to check that a collection contains a value - it tells you
+neither what you were looking for (the expected value), nor the contents
+of the collection.
+
+#### Assertion: assertEquals
+
+This is a simple assertion to check if two objects are equal.
+
+    public static void assertEquals(java.lang.Object expected,
+                                    java.lang.Object actual)
+
+Asserts that two objects are equal. If they are not, an AssertionError
+without a message is thrown. If expected and actual are null, they are
+considered equal.
+
+        Parameters:
+            expected - expected value
+            actual - the value to check against expected
+
+Don't be tempted to put logic or calculations into here. It's far better
+to make 'actual' a simple value or a known object. Another thing to
+watch for is using this with mock objects, which may not equal actual
+objects in the test.
+
+#### Assertion: assertThat
+
+'assertThat' uses Hamcrest matching to assert that the actual value is
+valid according to a pattern.
+
+    public static <T> void assertThat(T actual,
+                                      org.hamcrest.Matcher<T> matcher)
+
+Asserts that actual satisfies the condition specified by matcher. If
+not, an AssertionError is thrown with information about the matcher and
+failing value. Example:
+
+           assertThat(0, is(1)); // fails:
+             // failure message:
+             // expected: is <1> 
+             // got value: <0>
+           assertThat(0, is(not(1))) // passes
+
+        Type Parameters:
+            T - the static type accepted by the matcher (this can flag obvious compile-time problems such as assertThat(1, is("a"))
+        Parameters:
+            actual - the computed value being compared
+            matcher - an expression, built of Matchers, specifying allowed values
+        See Also:
+            CoreMatchers, JUnitMatchers
+
+It's probably best not to use assertThat as an alternative to
+assertEquals. It should also be noted that the order of parameters is
+reversed; assertEquals expects to receive expected, actual whereas
+assertThat puts the actual value first.
+
+As with all technologies (especially those considered optional, and
+doubly so with those that are viewed as mandatory), there are abuses
+that will be taken by the careless, the inexperienced, and the renegades
+who just want to 'get things done' at any cost. Sure, it looks like the
+tests are valid, complete, and pass but by implementing some of the
+possible anti-patterns it can be very deceptive. This leads to a false
+sense of security and makes it likely that breaking changes to the code
+are not reflected with a failing test.

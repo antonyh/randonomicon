@@ -1,0 +1,140 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+How to: Lists
+=============
+
+Lists are an incredibly useful construct, and let you present
+information in a way that shows they are connected.
+
+Wikibooks has a very useful reference on lists:
+<http://en.wikibooks.org/wiki/LaTeX/List_Structures>
+
+A simple bullet list is very easy to do.
+
+#### Lists
+
+Bullet lists are done with itemize
+
+    \begin{itemize}
+    \item one
+    \item two
+    \item three
+    \end{itemize}
+
+If you use this, you will see output like this list here. In this book,
+the hierarchy goes:
+
+-   chapter
+
+-   section
+
+-   subsection
+
+-   paragraph
+
+-   subparagraph
+
+How to: Formatted sections
+==========================
+
+The ability to show formatted text is vital to show code sample, shell
+scripts, or anything else that needs to be displayed exactly as it's
+typed. There are two ways to do this for blocks of text, and a couple of
+special ways for URLs and short phrases.
+
+#### verbatim
+
+Code that has control characters is in verbatim blocks.
+
+    This is how a 'verbatim' block looks.
+
+When in a verbatim block, the only LaTeX command that is interpretted is
+the `\end{verbatim}` statement - everything else is output as-is.
+
+``` {.latex language="TeX"}
+\begin{verbatim}
+This is the code for a verbatim block.
+\end{verbatim}
+```
+
+#### lstlisting
+
+Code that really is code goes in lstlisting blocks. This is the one I've
+used most, as it has several advantages over verbatim. Firstly, it wraps
+lines in a good way. Verbatim doesn't wrap lines for you. Secondly, it
+is straightforward to add styles to lstlisting blocks, and what you see
+here is the result of setting the defaults in the preamble of the book.
+Finally, it has built-in syntax highlighting, so the source code might
+actually look like source code.
+
+    This is how a 'lstlisting' block looks.
+
+When in a lstlisting block, LaTeX commands are interpretted.
+
+    \begin{lstlisting}
+    This is the code for a verbatim block.
+    \end\{lstlisting}
+
+Another tool you can use to output formatted text is `\verb` which can
+output small phrases inline, such as above where the text used
+`\verb;\end{verbatim};` to output the command used. It's a powerful
+function that's really useful in technical texts, particularly when
+writing about how to use LaTeXwhile also using it to create the text.
+
+#### URLs and Links
+
+there is a url directive for links, it makes them clickable in the
+output pdf document file as well as changing the typeface. it also
+eliminates the need to escape ampersands and other characters that
+control LaTeX. For example, go to `\url{http://antonyh.co.uk/book/}` for
+my website.
+
+#### Including other .tex files
+
+The input directive is used to stitch together the files to compose a
+complete document. For example:
+
+    \input{foo/bar.tex}
+
+This will include the bar.tex file directly into your current file. I
+find this quite handy to keep everything organised, and to make it
+easier to restructure the document later.
+
+How to: Glossaries
+==================
+
+The quick and easy way to get a glossary. To add a glossary to your
+document you need to add a couple of packages into the preamble:
+
+    \usepackage[colorlinks]{hyperref}
+    \usepackage[xindy,toc,nonumberlist]{glossaries}
+
+This will use the 'glossaries' package, and the 'hyperref' package to
+make them into links - it is far to useful to the reader not to do this,
+unless you are targetting printed media only.
+
+Now that you have enabled glossary functionality you will need to
+instruct LaTeXto make them. Insert this line before start of the main
+document.
+
+    \makeglossaries
+
+All that remains is to output the glossary. At the end of the document
+is a good location to add this snippet of code:
+
+    \glsaddall
+    \printglossary
+
+You can change a few options, and for a good measure make text in the
+body of the document link to the entries:
+
+-   remove 'nonumberlist' option
+
+-   remove glsaddall maybe if you don't want the unreferenced entries
+
+-   then add gls definitions to the text with a shotgun. Seriously, put
+    them everywhere that you want a link in the glossary to appear.

@@ -1,0 +1,764 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Links
+=====
+
+admin
+-----
+
+personalisation
+---------------
+
+<http://www.adobe.com/uk/products/social.html> - Adobe Social \| Digital
+Marketing Suite
+
+<http://dev.day.com/docs/en/cq/5-3/developing/clickstream_cloud.html> -
+Clickstream Cloud
+
+<http://dev.day.com/docs/en/cq/current/administering/social_collaboration.html>
+- Social Communities in WCM
+
+<http://dev.day.com/docs/en/cq/current/administering/social_collaboration/social_connect.html>
+- Social Login and Personalization
+
+<http://docs.adobe.com/docs/en/aem/6-0/administer/social-communities/social-connect.html>
+- Social Login and Personalization - docs.day.com
+
+<https://dev.day.com/docs/en/cq/5-6/administering/social_communities/social_plugins.html#Twitter%20Search>
+- Social Plugins - docs.day.com
+
+sitecatalyst
+------------
+
+<https://dev.day.com/docs/en/cq/current/administering/integrating_with_adobe_marketing_cloud/sitecatalyst.html#Creating%20a%20Sitecatalyst%20Configuration>
+- Integrating with Adobe SiteCatalyst - docs.day.com
+<http://docs.adobe.com/docs/en/cq/current/administering/integrating_with_adobe_marketing_cloud/sitecatalyst.html>
+- Integrating with Adobe SiteCatalyst - docs.day.com
+<https://dev.day.com/docs/en/cq/current/administering/integrating_with_adobe_marketing_cloud/sitecatalyst.html#Creating%20a%20Sitecatalyst%20Configuration>
+- Integrating with Adobe SiteCatalyst - docs.day.com
+<http://helpx.adobe.com/analytics/using/digitalpulse-debugger.html> -
+Using the DigitalPulse Debugger
+
+msm
+---
+
+<http://dev.day.com/docs/en/cq/current/administering/multi_site_manager.html>
+- Multi Site Manager - docs.day.com
+
+launches
+--------
+
+<http://docs.adobe.com/docs/en/aem/6-0/author/site-page-features/launches.html>
+- Authoring Launch Pages - docs.adobe.com
+
+<http://dev.day.com/content/ddc/en/gems/launches-concurrentpreparationofmultipleversionsofawebsiteaem56/_jcr_content/par/download/file.res/2013-06-12-Launches-CQGems.pdf>
+- Launches-CQGems.pdf
+
+<http://www.terrabeata.com/2014/09/programmatically-promoting-launches-in-aem/>
+- Programmatically Promoting Launches in AEM \| Terra Beata
+
+deployment
+----------
+
+clustering
+----------
+
+<http://docs.adobe.com/docs/en/cq/current/core/administering/cluster.html>
+- CRX Clustering - docs.day.com
+<http://www.wemblog.com/2012/01/how-to-fix-out-of-sync-cluster-issue-cq.html>
+- Adobe CQ/Adobe AEM: How to fix Out Of sync cluster issue CQ / CRX /
+WEM / ADEP
+<http://labs.sixdimensions.com/blog/2012-12-24/fixing-out-sync-cq-cluster/>
+- Fixing an out of sync CQ Cluster \| 6D Labs
+<http://helpx.adobe.com/experience-manager/kb/slavenotworkingoutofsyncsituation.html>
+- Clustering \| Slave instance stops working
+<http://docs.adobe.com/docs/en/crx/current/administering/cluster.html> -
+CRX Clustering - docs.day.com
+<http://docs.adobe.com/docs/en/cq/current/core/administering/cluster.html>
+- CRX Clustering - docs.day.com
+<http://dev.day.com/docs/en/crx/current/administering/cluster.html> -
+CRX Clustering - docs.day.com
+<http://labs.sixdimensions.com/blog/2012-12-24/fixing-out-sync-cq-cluster/>
+- Fixing an out of sync CQ Cluster \| 6D Labs
+<http://crxcluster.wemblog.com/out-of-synch-cluster-node> - Out-Of-Sync
+Cluster Nodes - CRX Cluster
+
+diagnostics
+-----------
+
+<http://cq-ops.tumblr.com/post/58841321992/how-to-determine-the-cause-of-a-cq-memory-leak>
+- CQ-OPS - How to Determine the Cause of a CQ Memory Leak
+<http://www.wemblog.com/2012/11/how-to-fix-no-such-item-repository.html>
+- Adobe CQ/Adobe AEM: How to Fix No Such Item repository corruption in
+CQ5.5
+<http://cq-ops.tumblr.com/post/58841321992/how-to-determine-the-cause-of-a-cq-memory-leak>
+- CQ-OPS - How to Determine the Cause of a CQ Memory Leak
+<http://cq-ops.tumblr.com/post/23543240500/how-to-use-cqs-query-debugger-tool>
+- CQ-OPS - How to Use CQ's Query Debugger Tool
+<http://helpx.adobe.com/experience-manager/kb/AnalyzeUnclosedSessions.html>
+- Analyze Unclosed Sessions
+<http://cqdump.wordpress.com/2013/07/29/jvm-tuning-or-premature-optimization/>
+- JVM tuning or premature optimization? \| Things on a content
+management system
+
+dispatcher
+----------
+
+<http://docs.adobe.com/docs/en/cq/current/deploying/replication.html#Replicating%20from%20Publish%20to%20Author>
+- Replication - docs.day.com
+<http://dev.day.com/content/kb/home/cq5/CQ5SystemAdministration/HowToFlushMappedContent.html>
+- Knowledge Base - How to flush URL mapped resources from dispatcher
+<http://dev.day.com/content/docs/en/cq/5-3/deploying/dispatcher.html> -
+Dispatcher - docs.day.com
+<http://blogs.adobe.com/contentmanagement/2013/05/17/firewall-rules-for-typical-cq-author-publish-dispatcher-setup/>
+- Firewall rules for typical CQ Author-Publish-Dispatcher setup \|
+Content Management
+<http://helpx.adobe.com/experience-manager/kb/HowToMapDomains.html> -
+How to map multiple domains to one CQ5 instance
+<https://forums.adobe.com/message/4539249> - Dispatcher permission error
+\| Adobe Community
+<http://blogs.adobe.com/contentmanagement/2013/05/17/firewall-rules-for-typical-cq-author-publish-dispatcher-setup/>
+- Firewall rules for typical CQ Author-Publish-Dispatcher setup \|
+Content Management
+<http://helpx.adobe.com/experience-manager/kb/HowToMapDomains.html> -
+How to map multiple domains to one CQ5 instance
+<http://docs.adobe.com/docs/en/dispatcher/disp-domains.html> - Using
+Dispatcher with Multiple Domains - docs.day.com
+<http://docs.adobe.com/docs/en/dispatcher/disp-domains.html#par_title_1>
+- Using Dispatcher with Multiple Domains - docs.day.com
+<http://docs.adobe.com/docs/en/dispatcher/disp-domains.html> - Using
+Dispatcher with Multiple Domains - docs.day.com
+<http://docs.adobe.com/docs/en/dispatcher/disp-domains.html#par_title_1>
+- Using Dispatcher with Multiple Domains - docs.day.com
+<http://dev.day.com/content/docs/en/cq/5-3/deploying/dispatcher.html> -
+Dispatcher - docs.day.com
+<http://dev.day.com/content/kb/home/cq5/CQ5SystemAdministration/HowToFlushMappedContent.html>
+- Knowledge Base - How to flush URL mapped resources from dispatcher
+<http://aem.matelli.org/url-mapping-and-deep-linking/> - URL Mapping and
+Deep Linking \| AEM Tips
+
+installation
+------------
+
+<http://edivad.wordpress.com/2013/01/07/installing-big-packages-in-cq5crx/>
+- Installing big packages in CQ5/CRX \| /home/edivad
+<http://www.wemblog.com/2011/11/how-to-write-cq-wem-init-script-for.html>
+- Adobe CQ/Adobe AEM: How to write CQ / WEM init script for Linux
+<http://helpx.adobe.com/cq/kb/RunModeSetUp.html> - How to set up run
+mode
+<http://dev.day.com/content/docs/en/cq/5-3/deploying/installingandconfiguringadditionaltoolsmodules.html>
+- Installing and Configuring Additional Tools/Modules - docs.day.com
+<http://cqdump.wordpress.com/2013/07/29/jvm-tuning-or-premature-optimization/>
+- JVM tuning or premature optimization? \| Things on a content
+management system <http://helpx.adobe.com/cq/kb/RunModeSetUp.html> - How
+to set up run mode
+<http://edivad.wordpress.com/2013/01/07/installing-big-packages-in-cq5crx/>
+- Installing big packages in CQ5/CRX \| /home/edivad
+<http://docs.day.com/en/home/crx/crx141/setup/crx_setup_guide0.html> -
+CRX Quickstart Installation Guide
+<http://dev.day.com/content/docs/en/cq/5-3/deploying/installingandconfiguringadditionaltoolsmodules.html>
+- Installing and Configuring Additional Tools/Modules - docs.day.com
+<http://dev.day.com/content/docs/en/crx/2-1/deploying/upgrading.html> -
+Upgrading to CRX 2.1 - docs.day.com
+
+maintenance
+-----------
+
+<http://helpx.adobe.com/experience-manager/kb/curl-command-version-purge.html>
+- Schedule a version purge
+<http://helpx.adobe.com/experience-manager/kb/cq561-available-hotfixes.html>
+- CQ 5.6.1 hot fixes
+<http://www.wemblog.com/2012/07/how-to-clear-replication-queue-in-cq.html>
+- Adobe CQ/Adobe AEM: How to clear replication queue in CQ / WEM
+<http://helpx.adobe.com/experience-manager/kb/cq561-available-hotfixes.html>
+- CQ 5.6.1 hot fixes
+<http://crxdelight.com/2012/01/25/disabling-the-link-checker/> -
+Disabling the LinkChecker \| CRXDelight
+<http://helpx.adobe.com/experience-manager/kb/howtopurgewf.html> - Purge
+workflow and audit nodes
+<http://dev.day.com/docs/en/cq/5-5/administering/bulk_editor.html> - The
+Bulk Editor - docs.day.com
+
+monitoring and jmx
+------------------
+
+<http://docs.adobe.com/docs/en/cq/current/core/administering/jmx-console.html>
+- Monitoring Server Resources Using the JMX Console - docs.day.com
+<http://docs.adobe.com/docs/en/cq/current/developing/jmx-integration.html>
+- Integrating Services with the JMX Console - docs.day.com
+<http://docs.adobe.com/docs/en/cq/current/developing/jmx-integration.html>
+- Integrating Services with the JMX Console - docs.day.com
+<http://dev.day.com/docs/en/cq/current/developing/jmx-integration.html#The%20JMX%20Framework%20in%20Felix%20and%20CQ5>
+- Integrating Services with the JMX Console - docs.day.com
+<http://dev.day.com/docs/en/crx/current/administering/jmx-console.html>
+- Monitoring Server Resources Using the JMX Console - docs.day.com
+<http://dev.day.com/docs/en/crx/current/administering/jmx-console.html#Using%20the%20JMX%20Console>
+- Monitoring Server Resources Using the JMX Console - docs.day.com
+<http://docs.adobe.com/docs/en/cq/current/core/administering/jmx-console.html>
+- Monitoring Server Resources Using the JMX Console - docs.day.com
+<http://alpha.onepearson.com/system/console/jmx/com.adobe.granite%3Atype%3DRepository>
+- Adobe CQ Web Console - JMX
+
+<http://dev.day.com/docs/en/crx/current/administering/persistence_managers.html>
+- Persistence Managers - docs.day.com
+<https://wiki.jenkins-ci.org/display/JENKINS/CRX+Content+Package+Deployer+Plugin>
+- CRX Content Package Deployer Plugin - Jenkins - Jenkins Wiki
+
+development
+-----------
+
+components
+----------
+
+widgets
+-------
+
+<http://dev.day.com/docs/en/cq/current/developing/widgets/xtypes.html> -
+Using xtypes - docs.day.com
+<http://labs.sixdimensions.com/blog/2014-01-08/the-great-and-powerful-cq-editconfig/>
+- The Great and Powerful cq:EditConfig \| 6D Labs
+<http://dev.day.com/docs/en/cq/current/widgets-api/index.html> - CQ5
+Widgets - API Documentation
+<http://dev.day.com/docs/en/cq/current/administering/configuring_rich_text_editor.html>
+- Configuring the Rich Text Editor - docs.day.com
+<https://chanchal.wordpress.com/2013/01/28/client-side-templating-in-cq5-components-using-ejs/>
+- Client Side Templating in CQ5 Components (Using ejs) \| Digital
+Projections
+<http://dev.day.com/docs/en/cq/current/developing/widgets.html> -
+Widgets - docs.day.com
+<http://dev.day.com/docs/en/cq/5-6/widgets-api/index.html> - CQ5 \|
+Widgets API <https://www.graffletopia.com/stencils/1085> - Adobe
+Experience Manager (AEM) Dialogs and Widgets \| Graffletopia
+<http://dev.day.com/docs/en/cq/5-6/widgets-api/index.html> - CQ5 \|
+Widgets API
+<http://dev.day.com/docs/en/cq/current/developing/widgets/xtypes.html> -
+Using xtypes - docs.day.com
+<http://dev.day.com/docs/en/cq/current/administering/configuring_rich_text_editor.html>
+- Configuring the Rich Text Editor - docs.day.com
+<http://dev.day.com/docs/en/cq/current/widgets-api/index.html> - CQ5
+Widgets - API Documentation
+<http://dev.day.com/docs/en/cq/current/developing/widgets.html> -
+Widgets - docs.day.com
+
+<http://dev.day.com/docs/en/cq/current/developing/components.html> -
+Components - docs.day.com
+<https://www.linkedin.com/groups/Example-Java-Functions-Methods-in-4667895.S.199388722>
+- Example of Java Functions/Methods in a CQ5 JSP \| LinkedIn
+<https://www.linkedin.com/groups/Example-Java-Functions-Methods-in-4667895.S.199388722>
+- Example of Java Functions/Methods in a CQ5 JSP \| LinkedIn
+
+<http://experiencedelivers.adobe.com/cemblog/en/experiencedelivers/2012/06/default-components-in-your-parsys.html>
+- How to get default components in your parsys - Experience Delivers
+
+<http://stackoverflow.com/questions/14632827/whats-a-good-way-to-generate-xml-from-vanilla-adobe-cq5>
+- java - What's a good way to generate XML from vanilla Adobe CQ5? -
+Stack Overflow
+<http://docs.adobe.com/docs/en/cq/5-6/howto/taglib.html#%3Ccq:setContentBundle%3E>
+- JSP Tag Libraries - docs.day.com
+<http://labs.sixdimensions.com/blog/michael-kelleher/2013-08-20/my-cq-jstlel-best-practises>
+- My CQ JSTL/EL Best Practises \| 6D Labs
+<http://forums.adobe.com/thread/1084401> - Adobe Community: How to
+return .xml file with requested and formatted data as Replication
+process result?
+<http://labs.sixdimensions.com/blog/2014-01-08/the-great-and-powerful-cq-editconfig/>
+- The Great and Powerful cq:EditConfig \| 6D Labs
+<https://docs.adobe.com/docs/en/cq/5-6-1/developing/components.html#Configuring%20the%20Edit%20Behaviour%20of%20a%20Component>
+- Components - docs.adobe.com
+
+CRX, JCR, Jackrabbit
+--------------------
+
+<http://people.apache.org/~mreutegg/jcr-query-translator/> - Index of
+/ mreutegg/jcr-query-translator
+<http://jackrabbit.apache.org/frequently-asked-questions.html> -
+Frequently Asked Questions
+<http://wiki.apache.org/jackrabbit/Jackrabbit%203> - Jackrabbit 3 -
+Jackrabbit Wiki <http://jackrabbit.apache.org/oak/> - Jackrabbit Oak
+
+events
+------
+
+<http://experiencedelivers.adobe.com/cemblog/en/experiencedelivers/2012/04/event_handling_incq.html>
+- Event Handling in CQ - Experience Delivers
+
+<http://experiencedelivers.adobe.com/cemblog/en/experiencedelivers/2012/04/event_handling_incq.html>
+- Event Handling in CQ - Experience Delivers
+
+javadoc
+-------
+
+<http://dev.day.com/docs/en/cq/current/javadoc/index.html> - Overview
+(Day Communique 5.3 Java Documentation 5.3.4 API)
+<http://dev.day.com/docs/en/cq/current/javadoc/index.html?com/day/cq/replication/ReplicationContentFactory.html>
+- ContentBuilder (Adobe CQ 5.6.1 Java Documentation 5.6.1 API)
+<http://dev.day.com/docs/en/cq/current/javadoc/com/day/cq/replication/ReplicationContent.html#acquire(java.lang.String)>
+- ReplicationContent (Adobe CQ 5.6.1 Java Documentation 5.6.1 API)
+<https://dev.day.com/docs/en/cq/current/javadoc/com/day/cq/wcm/api/Page.html#hasChild(java.lang.String)>
+- Page (Adobe CQ 5.6.1 Java Documentation 5.6.1 API)
+<https://dev.day.com/docs/en/cq/current/javadoc/com/day/cq/wcm/api/PageManager.html>
+- PageManager (Adobe CQ 5.6.1 Java Documentation 5.6.1 API)
+<http://dev.day.com/docs/en/cq/current/javadoc/org/apache/sling/api/servlets/SlingSafeMethodsServlet.html>
+- SlingSafeMethodsServlet (Adobe CQ 5.6.1 Java Documentation 5.6.1 API)
+<https://dev.day.com/content/docs/en/cq/current/javadoc/com/day/cq/commons/inherit/InheritanceValueMap.html>
+- InheritanceValueMap (Adobe CQ 5.6.1 Java Documentation 5.6.1 API)
+<https://github.com/Cognifide/CQ-Transport-Handler/tree/master/src/main/java/com/cognifide/cq/cogtransport>
+- CQ-Transport-Handler/src/main/java/com/cognifide/cq/cogtransport at
+master · Cognifide/CQ-Transport-Handler
+
+<https://github.com/cqsupport/webinar-dispatchercache/blob/master/src/refetching-flush-agent/jcr_root/apps/replication/src/com.day.cq.replication.dispatcher/src/main/java/com/day/cq/replication/dispatcher/DispatcherFlushContentBuilder.java>
+-webinar-dispatchercache/src/refetching-flush-agent/jcr\_root/apps/replication/src/com.day.cq.replication.dispatcher/src/main/java/com/day/cq/replication/dispatcher/DispatcherFlushContentBuilder.java
+at master · cqsupport/webinar-dispatchercache
+
+<http://docs.adobe.com/docs/en/cq/current/developing/components.html#cq:dropTargets>
+- Components - docs.day.com
+
+<http://dev.day.com/docs/en/cq/current/developing/components.html> -
+Components - docs.day.com
+<http://dev.day.com/docs/en/cq/current/javadoc/index.html?com/day/cq/replication/ReplicationContentFactory.html>
+- ContentBuilder (Adobe CQ 5.6.1 Java Documentation 5.6.1 API)
+<https://dev.day.com/content/docs/en/cq/current/javadoc/com/day/cq/commons/inherit/InheritanceValueMap.html>
+- InheritanceValueMap (Adobe CQ 5.6.1 Java Documentation 5.6.1 API)
+<https://dev.day.com/docs/en/cq/current/javadoc/com/day/cq/wcm/api/Page.html>
+- Page (Adobe CQ 5.6.1 Java Documentation 5.6.1 API)
+<https://dev.day.com/docs/en/cq/current/javadoc/com/day/cq/wcm/api/PageManager.html>
+- PageManager (Adobe CQ 5.6.1 Java Documentation 5.6.1 API)
+<http://dev.day.com/docs/en/cq/current/javadoc/com/day/cq/replication/ReplicationContent.html#acquire(java.lang.String)>
+- ReplicationContent (Adobe CQ 5.6.1 Java Documentation 5.6.1 API)
+<http://dev.day.com/docs/en/cq/5-6/javadoc/com/day/cq/wcm/webservicesupport/Service.html>
+- Service
+<http://dev.day.com/docs/en/cq/current/javadoc/com/day/cq/workflow/WorkflowSession.html>
+- WorkflowSession (Adobe CQ 5.6.1 Java Documentation 5.6.1 API)
+<http://docs.adobe.com/docs/en/cq/current/javadoc/index.html?com/adobe/granite/xss/XSSAPI.html>
+- XSSAPI (Adobe CQ 5.6.1 Java Documentation 5.6.1 API)
+<http://www.day.com/maven/javax.jcr/javadocs/jcr-2.0/index.html> - Node
+(Content Repository for Java Technology API Version 2.0)
+<http://dev.day.com/docs/en/cq/current/javadoc/index.html> - Overview
+(Day Communique 5.3 Java Documentation 5.3.4 API)
+<http://www.day.com/maven/jsr170/javadocs/jcr-1.0/javax/jcr/Session.html#move(java.lang.String,%20java.lang.String)>
+- Session (Content Repository for Java Technology API 1.0)
+<http://dev.day.com/docs/en/cq/5-6/javadoc/com/day/cq/wcm/webservicesupport/Service.html>
+- Service
+
+Maven
+-----
+
+<http://felix.apache.org/documentation/subprojects/apache-felix-maven-bundle-plugin-bnd.html>
+- Apache Felix - Apache Felix Maven Bundle Plugin (BND)
+<http://mvnrepository.com/artifact/org.apache.sling/org.apache.sling.api>
+- Maven Repository: org.apache.sling » org.apache.sling.api
+<http://www.cognifide.com/blogs/cq/maven-plugin-automating-deployments-of-crx-cq-applications/>
+- Maven: CRX Plugin automating deployments of CRX/CQ based applications
+\| Cognifide Blog
+<http://dev.cqblueprints.com/nexus/content/repositories/releases/com/cqblueprints/cqdependencies/5.6.0/cqdependencies-5.6.0.pom>
+-
+dev.cqblueprints.com/nexus/content/repositories/releases/com/cqblueprints/cqdependencies/5.6.0/cqdependencies-5.6.0.pom
+<http://dev.cqblueprints.com/nexus/content/repositories/releases/com/cqblueprints/cqdependencies/5.6.0/cqdependencies-5.6.0.pom>
+-
+dev.cqblueprints.com/nexus/content/repositories/releases/com/cqblueprints/cqdependencies/5.6.0/cqdependencies-5.6.0.pom
+<http://mvnrepository.com/artifact/org.apache.sling/org.apache.sling.jcr.api>
+- Maven Repository: org.apache.sling » org.apache.sling.jcr.api
+<http://www.cognifide.com/blogs/cq/maven-plugin-automating-deployments-of-crx-cq-applications/>
+- Maven: CRX Plugin automating deployments of CRX/CQ based applications
+\| Cognifide Blog
+<http://chanchal.wordpress.com/2013/06/25/the-dreaded-didutils-not-available-in-adobe-repository-error/>
+- The dreaded didutils not available in Adobe repository error \|
+Digital Projections <https://github.com/Cognifide/Maven-CRX-Plugin> -
+Cognifide/Maven-CRX-Plugin · GitHub
+
+OSGi
+----
+
+<http://www-01.ibm.com/support/knowledgecenter/SSRTLW_9.0.0/com.ibm.osgi.common.doc/topics/cbundlefragment.html?cp=SSRTLW_9.0.0%2F9-2-0-4>
+- IBM Knowledge Center - OSGi fragments
+<http://www.aemstuff.com/osgi/aem561.html> - OSGi config details of AEM
+5.6.1
+<http://dev.day.com/docs/en/cq/current/deploying/osgi_configuration_settings.html#Day%20CQ%20Root%20Mapping>
+- OSGi Configuration Settings - docs.day.com
+<http://www.vogella.com/tutorials/OSGiServices/article.html> - OSGi
+Services - Tutorial <http://sling.apache.org/apidocs/sling7/index.html>
+- InjectAnnotationProcessorFactory (Apache Sling 7 API)
+<http://www.aemstuff.com/osgi/aem561.html> - OSGi config details of AEM
+5.6.1
+<http://dev.day.com/docs/en/cq/current/deploying/osgi_configuration_settings.html#Day%20CQ%20Root%20Mapping>
+- OSGi Configuration Settings - docs.day.com
+<http://felix.apache.org/documentation/subprojects/apache-felix-maven-scr-plugin/scr-annotations.html>
+- Apache Felix - SCR Annotations
+<http://enroute.osgi.org/tutorial_base/450-debug.html> - Debugging
+
+search
+------
+
+<http://dev.day.com/discussion-groups/content/lists/cq-google/2010-03/2010-03-24__day_communique_CQ5_3_how_to_create_queries_with_JQOM_Thomas_Amsler.html>
+- JQOM Thomas Amsler
+
+<http://helpx.adobe.com/experience-manager/kb/SearchIndexingConfig.html>
+- How to modify the search index configurations in CQ5
+
+<http://www.day.com/specs/jcr/2.0/6_Query.html> - JCR 2.0: 6 Query
+(Content Repository for Java Technology API v2.0)
+
+<http://localhost:4502/libs/cq/search/content/querydebug.html> -
+QueryBuilder Debugger
+<http://saxon.sourceforge.net/saxon6.5.3/expressions.html> - XPath
+Expression Syntax
+<http://cq-ops.tumblr.com/post/23543240500/how-to-use-cqs-query-debugger-tool>
+- CQ-OPS - How to Use CQ's Query Debugger Tool
+<https://github.com/search?utf8=%E2%9C%93&amp;q=cq5> - Search · cq5
+
+<http://helpx.adobe.com/experience-manager/kb/SearchIndexingConfig.html>
+- How to modify the search index configurations in CQ5
+
+<http://dev.day.com/discussion-groups/content/lists/cq-google/2010-03/2010-03-24__day_communique_CQ5_3_how_to_create_queries_with_JQOM_Thomas_Amsler.html>
+- JQOM -Thomas -Amsler
+
+<http://localhost:4502/libs/cq/search/content/querydebug.html> -
+QueryBuilder Debugger
+
+security
+--------
+
+<http://www.wemblog.com/2012/04/how-to-use-ldap-with-cq55.html> - Adobe
+CQ/Adobe AEM: How to Use LDAP with CQ / AEM
+<http://www.google.co.uk/search?sourceid=chrome&amp;ie=UTF-8&amp;q=custom+jaas>
+- custom jaas - Google Search
+<http://crxdelight.com/2012/06/30/default-cq5-users-passwords/> -
+Default CQ5 users and passwords \| CRXDelight
+<http://dev.day.com/docs/en/crx/2-1/administering/ldap_authentication.html>
+- LDAP Authentication
+<http://stuffthathappens.com/blog/2008/05/16/writing-a-custom-jaas-loginmodule/>
+- Writing a Custom JAAS LoginModule
+<http://docs.adobe.com/docs/en/cq/current/javadoc/index.html?com/adobe/granite/xss/XSSAPI.html>
+- XSSAPI (Adobe CQ 5.6.1 Java Documentation 5.6.1 API)
+
+sightly
+-------
+
+sightly intro
+-------------
+
+<http://blogs.adobe.com/experiencedelivers/experience-management/sightly-intro-part-1/>
+- Sightly intro part 1 - Experience Delivers
+<http://blogs.adobe.com/experiencedelivers/experience-management/sightly-intro-part-2/>
+- Sightly intro part 2 - Experience Delivers
+<http://blogs.adobe.com/experiencedelivers/experience-management/sightly-intro-part-3-2/>
+- Sightly intro part 3 - Experience Delivers
+<http://blogs.adobe.com/experiencedelivers/experience-management/sightly-intro-part-4/>
+- Sightly intro part 4 - Experience Delivers
+<http://blogs.adobe.com/experiencedelivers/experience-management/sightly-intro-part-5-faq/>
+- Sightly intro part 5: FAQ - Experience Delivers
+
+<http://docs.adobe.com/content/docs/en/aem/6-0/develop/sightly.html> -
+Sightly - docs.adobe.com
+<https://github.com/Adobe-Marketing-Cloud/sightly-spec> -
+Adobe-Marketing-Cloud/sightly-spec · GitHub
+<http://blogs.adobe.com/experiencedelivers/experience-management/sightly-clientlibs/>
+- Sightly and clientlibs - Experience Delivers
+<http://docs.adobe.com/docs/en/dev-tools/sightly-brackets.html> - AEM
+Sightly Brackets Extension - docs.adobe.com
+
+sling
+-----
+
+<https://www.google.co.uk/search?q=sling+tests&amp;oq=sling+tests&amp;aqs=chrome..69i57j69i65.4271j0j7&amp;sourceid=chrome&amp;es_sm=119&amp;ie=UTF-8>
+- sling tests - Google Search
+<http://labs.sixdimensions.com/blog/michael-kelleher/2013-01-31/servlets-sling-case-disappearing-servlet-path>
+- Servlets in Sling - the case of the disappearing Servlet path \| 6D
+Labs
+<https://sling.apache.org/apidocs/sling5/org/apache/sling/api/SlingHttpServletRequest.html>
+- SlingHttpServletRequest (Apache Sling Aggregate 5-incubator API)
+<http://dev.day.com/docs/en/cq/current/javadoc/org/apache/sling/api/servlets/SlingSafeMethodsServlet.html>
+- SlingSafeMethodsServlet (Adobe CQ 5.6.1 Java Documentation 5.6.1 API)
+<https://sling.apache.org/apidocs/sling6/org/apache/sling/api/resource/ResourceResolver.html>
+- ResourceResolver (Apache Sling (Builder) 6 API)
+<https://forums.adobe.com/thread/1063317?tstart=0> - How to get
+SlingScriptHelper in servlet? \| Adobe Community
+<http://blogs.adobe.com/aaa/2012/09/cq-tips-and-tricks-1-how-to-define-a-slingservlet-cq5-5-5-6.html>
+- CQ Tips and Tricks \#1 -- How to define a SlingServlet \[CQ5.5-5.6\]
+
+<http://sling.apache.org/documentation/the-sling-engine/dispatching-requests.html>
+- Apache Sling - Dispatching Requests
+<http://sling.apache.org/site/form-based-authenticationhandler.html> -
+Apache Sling - Form Based AuthenticationHandler
+<http://sling.apache.org/documentation/the-sling-engine/mappings-for-resource-resolution.html>
+- Apache Sling - Mappings for Resource Resolution
+<http://sling.apache.org/site/output-rewriting-pipelines-orgapacheslingrewriter.html>
+- Apache Sling - Output Rewriting Pipelines (org.apache.sling.rewriter)
+<http://sling.apache.org/documentation/bundles/models.html> - Apache
+Sling - Sling Models
+<http://sling.apache.org/documentation/the-sling-engine/url-decomposition.html>
+- Apache Sling - URL decomposition
+<http://blogs.adobe.com/contentmanagement/tag/apache-sling/> - Apache
+Sling \| Content Management
+<http://rw-live-pub01:4503/system/console/threads> - Apache Sling Thread
+Dumper - Threads <https://gist.github.com/ryanlunka/5336471> - A Sling
+Rewriter Transformer that replaces all \".html\" extensions in links
+within an HREF attribute of a requested page with \"/\".
+<http://labs.sixdimensions.com/blog/2013-06-05/creating-integration-tests-apache-sling/>
+- Creating Integration Tests in Apache Sling \| 6D Labs
+<http://helpx.adobe.com/experience-manager/using/using-sling-apis.html>
+- Adobe CQ Help \| Using Sling APIs to retrieve content from the Adobe
+Experience Manager Repository
+<http://docs.adobe.com/docs/de/aem/6-0/develop/platform/overlays.html> -
+Using Overlays (and the Sling Resource Merger) - docs.adobe.com
+<https://sling.apache.org/documentation/development/sling-testing-tools.html>
+- Apache Sling - Sling Testing Tools
+<http://helpx.adobe.com/experience-manager/using/using-sling-apis.html>
+- Adobe CQ Help \| Using Sling APIs to retrieve content from the Adobe
+Experience Manager Repository
+<http://blogs.adobe.com/aaa/2012/09/cq-tips-and-tricks-1-how-to-define-a-slingservlet-cq5-5-5-6.html>
+- CQ Tips and Tricks \#1 -- How to define a SlingServlet \[CQ5.5-5.6\]
+
+testing
+-------
+
+<http://www.gastongonzalez.com/tech-blog/2013/11/17/aem-adobe-cq-load-testing>
+- Poor Man's Guide to Load Testing AEM / Adobe CQ --- Gaston Gonzalez
+<http://www.citytechinc.com/us/en/blog/2010/02/making_a_mockeryof.html>
+- Making a mockery of CQ5 with JMockit \| CITYTECH, Inc
+<https://github.com/Citytechinc/prosper> - Citytechinc/prosper · GitHub
+<http://code.citytechinc.com/circuit-prosper/#/> - Integration Testing
+with Spock and Groovy for Prosperous AEM Development
+<http://mvnrepository.com/artifact/com.citytechinc.aem.prosper> - Maven
+Repository: com.citytechinc.aem.prosper
+
+tools
+-----
+
+<http://dev.day.com/docs/en/cq/5-5/administering/bulk_editor.html> - The
+Bulk Editor - docs.day.com <http://brackets.io/> - Brackets - A modern,
+open source code editor that understands web design.
+
+Slice
+-----
+
+<https://cognifide.atlassian.net/wiki/display/SLICE/Basics+-+4.2> -
+Basics - 4.2 - Slice - Confluence
+<http://www.cognifide.com/blogs/cq/make-your-cq-life-easier-with-slice/>
+- Make your CQ life easier with Slice
+
+workflow
+--------
+
+<http://dev.day.com/docs/en/cq/current/javadoc/com/day/cq/workflow/WorkflowSession.html>
+- WorkflowSession (Adobe CQ 5.6.1 Java Documentation 5.6.1 API)
+<https://docs.adobe.com/docs/en/aem/6-0/develop/extending/workflows/wf-extending.html>
+- Extending Workflow Functionality - docs.adobe.com
+<http://dev.day.com/content/ddc/en/gems/introduction-of-job-handling-and-offloading-in-aem-5-6-1-.html>
+- Introduction of Job Handling and Offloading in AEM 5.6.1.
+
+GitHub
+------
+
+<https://github.com/Adobe-Marketing-Cloud> - Adobe Marketing Cloud ·
+GitHub <https://github.com/Adobe-Consulting-Services> -
+Adobe-Consulting-Services · GitHub
+<https://github.com/Adobe-Marketing-Cloud/aem-project-archetype> -
+Adobe-Marketing-Cloud/aem-project-archetype · GitHub
+<https://github.com/Adobe-Marketing-Cloud/homebrew-brews> -
+Adobe-Marketing-Cloud/homebrew-brews · GitHub
+<https://github.com/Velir/AEM-Toolbox/blob/master/README.md> -
+AEM-Toolbox/README.md at master · Velir/AEM-Toolbox · GitHub
+<https://github.com/Citytechinc/cq-groovy-console> -
+Citytechinc/cq-groovy-console <https://github.com/Cognifide> - Cognifide
+· GitHub
+<https://github.com/Cognifide/CQ-Transport-Handler/tree/master/src/main/java/com/cognifide/cq/cogtransport>
+- CQ-Transport-Handler/src/main/java/com/cognifide/cq/cogtransport at
+master · Cognifide/CQ-Transport-Handler
+<https://github.com/Cognifide/Maven-CRX-Plugin/wiki> - Home ·
+Cognifide/Maven-CRX-Plugin Wiki · GitHub
+<https://github.com/search?utf8=%E2%9C%93&amp;q=cq5> - Search · cq5
+<https://github.com/tacitknowledge/aem-cookbook> -
+tacitknowledge/aem-cookbook · GitHub
+<https://github.com/Adobe-Marketing-Cloud/tools/tree/master/repo> -
+tools/repo at master · Adobe-Marketing-Cloud/tools · GitHub
+<https://github.com/Velir/AEM-Toolbox> - Velir/AEM-Toolbox · GitHub
+<https://github.com/cqsupport/webinar-dispatchercache/blob/master/src/refetching-flush-agent/jcr_root/apps/replication/src/com.day.cq.replication.dispatcher/src/main/java/com/day/cq/replication/dispatcher/DispatcherFlushContentBuilder.java>
+-
+webinar-dispatchercache/src/refetching-flush-agent/jcr\_root/apps/replication/src/com.day.cq.replication.dispatcher/src/main/java/com/day/cq/replication/dispatcher/DispatcherFlushContentBuilder.java
+at master · cqsupport/webinar-dispatchercache
+
+<http://labs.6dglobal.com/blog/2015-05-08/requirejs-kiss/> - Requirejs
+and AEM 6. Kiss. \| 6D Labs
+
+guides and blogs
+----------------
+
+best practices
+--------------
+
+<http://adobeaemtherightway.wordpress.com/category/best-practices/> -
+Best Practices \| Adobe® AEM The Right Way
+<http://docs.adobe.com/docs/en/cq/current/developing/developing_guidelines_bestpractices.html>
+- CQ Development - Guidelines and Best Practices - docs.day.com
+<http://labs.sixdimensions.com/blog/michael-kelleher/2013-08-20/my-cq-jstlel-best-practises>
+- My CQ JSTL/EL Best Practises \| 6D Labs
+<http://dev.day.com/docs/en/cq/current/touch-ui/coral-ui/index.html> -
+CoralUI Style Guide
+
+blogs
+-----
+
+<http://adobeaemclub.com/> - Adobe AEM / CQ Club
+<http://adobe-day-cq.blogspot.co.uk/> - Adobe CQ, CQ5 (former Day
+Communiqué 5) <http://www.wemblog.com/> - Adobe CQ/Adobe AEM
+<http://aemtips.blogspot.co.uk/2013/05/my-huge-list-of-aem-bookmarks.html>
+- Adobe Experience Manager Blog: My HUGE list of AEM bookmarks
+<http://www.citytechinc.com/us/en/blog.html> - Blog
+<http://labs.sixdimensions.com/blog/> - Blog \| 6D Labs
+<http://www.citytechinc.com/us/en/blog.mdaugherty.html> - blog
+mdaugherty AEM
+<http://labs.sixdimensions.com/blog/michael-kelleher/2012-12-19/note-self-mike-bad-idea#!>
+- Blog Posts \| 6D Labs
+<http://dev.day.com/content/ddc/blog/2011/08.html> - contentGoesHere
+<http://cq-cafe.tumblr.com/> - CQ-Cafe <http://day-cq.blogspot.co.uk/> -
+Day CQ <http://www.jcrdev.com/jcrdev.html> - JCR Developer Community
+Home Page <http://jenikya.com/> - Jenn Siegrist Web Designer Developer
+in London and Basingstoke <http://www.planetcq.org/> - Planet CQ
+<http://wcm.io/> - wcm.io
+
+events
+------
+
+<http://lanyrd.com/2011/adapttoberlin/> - .adaptTo(Berlin), 15th-16th
+September 2011 \| Lanyrd
+<https://docs.google.com/presentation/pub?id=1Au_l3bQ2XEhM4nZ9fftOz8MuBcnhDguW3so_QcrxlMw&amp;start=false&amp;loop=false&amp;delayms=3000#slide=id.g1e3290a5_0_167>
+- adaptTo2012: Oak - the new repository (published) - Google Drive
+
+groups
+------
+
+<https://groups.google.com/forum/?pli=1#!forum/day-communique> - (1000+)
+Day Communique - Google Groups
+<http://forums.adobe.com/community/digital_marketing_suite/cq5?view=discussions>
+- Adobe Community: Forum: CQ5
+
+integrations
+------------
+
+<http://www.adobe.com/uk/products/scene7.html> - Video and photo media
+hosting, dynamic imaging \| Adobe Scene7
+
+support
+-------
+
+<http://dev.day.com/content/ddc.html> - dev.day.com
+<http://www.day.com/daycare.html> - Daycare
+
+tutorials
+---------
+
+<http://www.wemblog.com/2012/07/how-to-clear-replication-queue-in-cq.html>
+- Adobe CQ/Adobe AEM: How to clear replication queue in CQ / WEM
+<http://www.wemblog.com/2012/11/how-to-fix-no-such-item-repository.html>
+- Adobe CQ/Adobe AEM: How to Fix No Such Item repository corruption in
+CQ5.5
+<http://www.wemblog.com/2012/01/how-to-fix-out-of-sync-cluster-issue-cq.html>
+- Adobe CQ/Adobe AEM: How to fix Out Of sync cluster issue CQ / CRX /
+WEM / ADEP
+<http://www.wemblog.com/2012/04/how-to-use-ldap-with-cq55.html> - Adobe
+CQ/Adobe AEM: How to Use LDAP with CQ / AEM
+<http://www.wemblog.com/2011/11/how-to-write-cq-wem-init-script-for.html>
+- Adobe CQ/Adobe AEM: How to write CQ / WEM init script for Linux
+<http://adobecq5interviewquestions.wordpress.com/2014/09/13/cq5-for-architects/comment-page-1/#comment-30>
+- Adobe CQ5 Tutorial
+<http://cqblog.inside-solutions.ch/2013/09/04/consuming-webservices-using-apache-cxf-in-cq5-6-1/#comments>
+- Consuming WebServices using Apache CXF in CQ5.6.1 \| CQ5 Blog
+<http://www.cqdemy.com/blog/tag/cq5/> - CQ5 \| Adobe AEM/CQ - Technical
+How To's <http://cq5.tumblr.com/> - Decoding Adobe CQ / CQ5: Tutorials,
+Videos and Stats
+<http://shsteimer.com/blog/2012/03/integrating-a-soap-web-service-toolkit-with-day-cq/>
+- How To Integrate a SOAP Web-Service Toolkit with Adobe CQ » Sean
+Steimer
+<http://stackoverflow.com/questions/14632827/whats-a-good-way-to-generate-xml-from-vanilla-adobe-cq5>
+- java - What's a good way to generate XML from vanilla Adobe CQ5? -
+Stack Overflow <http://wcm.io/wcm/parsys/usage.html> - Parsys usage \|
+WCM Parsys
+<https://www.linkedin.com/groups/Tutorial-Setting-up-CQ-Developer-4667895.S.272984539?gid=4667895&amp;view=&amp;item=272984539&amp;type=member>
+- Tutorial for Setting up CQ Developer Environment \| LinkedIn
+<http://arnoldit.com/wordpress/2012/11/27/integrate-opencalais-with-adobe-cq5/>
+- Integrate OpenCalais with Adobe CQ5 : Stephen E. Arnold @ Beyond
+Search
+
+Misc
+----
+
+<http://192.168.250.150:4502/system/console/depfinder> - Adobe
+Experience Manager Web Console - Packages
+<http://localhost:4502/system/console/depfinder> - Adobe Experience
+Manager Web Console - Packages
+
+<https://docs.adobe.com/docs/en/aem/6-1/administer/operations/workflows.html>
+- Administering Workflows - docs.adobe.com
+
+<https://docs.adobe.com/docs/en/cq/5-3/administering/working_with_workflows.html>
+- Working with Workflows - docs.adobe.com
+
+<https://docs.adobe.com/docs/en/cq/5-6-1/workflows/wf-overview.html> -
+Workflow Overview - docs.adobe.com
+
+<http://crxdelight.com/2012/06/30/default-cq5-users-passwords/> -
+Default CQ5 users and passwords \| CRXDelight
+
+<http://docs.adobe.com/content/docs/en/aem/6-0/develop/sightly.html> -
+Sightly - docs.adobe.com
+
+Sling and Testing
+-----------------
+
+<https://sling.apache.org/documentation/tutorials-how-tos/testing-sling-based-applications.html>
+- Apache Sling - Testing Sling-based applications
+<https://sling.apache.org/documentation/development/sling-mock.html> -
+Apache Sling - Sling Mocks <https://code.google.com/p/spock/> - spock -
+the enterprise ready specification framework - Google Project Hosting
+<https://github.com/Citytechinc/prosper> - Citytechinc/prosper
+<http://blogs.adobe.com/cqpost/2012/03/19/unit-testing-in-adobedaycq5/>
+- Unit Testing in Adobe/Day/CQ5 « CQ Community
+<http://wcm.io/testing/aem-mock/usage.html> - Usage \| AEM Mocks
+<https://github.com/insideaem/aem-jasmine-example1> -
+aem-jasmine-example1/CreatePageViewTest.js at master ·
+insideaem/aem-jasmine-example1 · GitHub
+
+<http://www.terrabeata.com/2014/09/programmatically-promoting-launches-in-aem/>
+- Programmatically Promoting Launches in AEM \| Terra Beata
+<https://www.adobeaemcloud.com/content/companies/public/adobe/dispatcher/dispatcher.html>
+- Dispatcher 4.1.10
+<https://docs.adobe.com/docs/en/aem/6-0/administer/security/security-checklist.html>
+- Security Checklist - docs.adobe.com
+<https://docs.adobe.com/docs/en/dispatcher/disp-config.html> -
+Configuring Dispatcher - docs.adobe.com
+<https://docs.adobe.com/docs/en/cq/5-6-1/deploying/osgi_configuration_settings.html>
+- OSGi Configuration Settings - docs.adobe.com
+<http://sling.apache.org/site/managing-permissions-jackrabbitaccessmanager.html>
+- Apache Sling - Managing permissions (jackrabbit.accessmanager)
+<https://docs.adobe.com/docs/en/aem/6-0/deploy/recommended-deploys.html>
+- Recommended Deployments - docs.adobe.com
+<http://hashimkhan.in/aem-adobecq5-code-templates/groovy-script/> -
+Groovy Script --
+<http://adobecms.blogspot.co.uk/2013/08/reporting-using-groovy-scripts.html>
+- Adobe AEM/CQ5 Articles: Reporting using Groovy scripts
+<https://github.com/Citytechinc/cq-groovy-console> -
+Citytechinc/cq-groovy-console - Groovy
+<https://www.youtube.com/watch?v=AvG-0bFFSwU> - Evolution of
+cq-groovy-console (Gource Visualization) - YouTube <http://gource.io/> -
+Gource - a software version control visualization tool
+<https://docs.adobe.com/docs/en/cq/5-6-1/javadoc/com/day/cq/collab/commons/CollabUtil.html>
+- CollabUtil (Adobe CQ 5.6.1 Java Documentation 5.6.1 API)
+<https://github.com/Netcentric/aem-sightly-style-guide> -
+Netcentric/aem-sightly-style-guide
+<https://sling.apache.org/apidocs/sling5/org/apache/sling/api/wrappers/SlingHttpServletRequestWrapper.html>
+- SlingHttpServletRequestWrapper (Apache Sling Aggregate 5-incubator
+API)
+<http://aemcorner.blogspot.co.uk/2014/11/introduction-to-sling-servlets-in-aem.html>
+- Learn Together Grow Together: Introduction to Sling Servlets in AEM
+<https://sling.apache.org/documentation/development/sling-mock.html> -
+Apache Sling - Sling Mocks
+<https://sling.apache.org/documentation/tutorials-how-tos/testing-sling-based-applications.html>
+- Apache Sling - Testing Sling-based applications
+<http://wcm.io/testing/aem-mock/> - About AEM Mocks \| AEM Mocks
+<http://wcm.io/testing/> - wcm.io Testing \| Testing
+<https://sling.apache.org/documentation/the-sling-engine/servlets.html>
+- Apache Sling - Servlets and Scripts

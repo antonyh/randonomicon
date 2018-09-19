@@ -1,0 +1,116 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+DNS and domains
+===============
+
+Intro
+-----
+
+DNS record types
+----------------
+
+##### A
+
+Address record, used to associate a name with an IPv4 Address
+
+##### AAAA
+
+Similar to an A record, except for IPv6
+
+##### CNAME
+
+Canonical name, used to create domain aliases
+
+##### MX
+
+Mail Exchange, this is used by MTAs to find out where to deliver the
+emails for this domain. There's often multiple entries for MX, with
+priorities to allow mail to be delivered to the primary server under
+normal operation, but with secondaries ready in case there's a problem
+
+##### NS
+
+Name Server, this is the name servers for the domain
+
+##### TXT
+
+Plain text records, the meaning depends on the name of the record
+
+##### SPF
+
+Sender Policy Framework - SPF records are really just TXT records with a
+specific format, and are used to help reduce spam by containing
+information and rules on designated senders for the domain. Usually,
+you'll set this according to the instructions given by your mail
+provider.
+
+##### WKS
+
+no idea.
+
+##### SRV
+
+Service record, used for SIP and other protocols
+
+##### LOC
+
+no idea.
+
+##### PTR
+
+a Reverse lookup record, to do address-to-hostname resolution, and is
+only created by the owner of the IP address. You might never need to
+create one of these.
+
+##### SOA
+
+Start of Authority record,
+
+Zonefile
+--------
+
+A sample DNS zone file.
+
+    @ 300 IN A 184.168.47.225
+    www 10800 IN CNAME antonyh.co.uk.
+    @ 3600 IN TXT "google-site-verification=the-code-that-google-gave-you"
+
+Line one, is the root site IP address, denoted by @. It is an internet A
+record, with a value of that IP address.
+
+##### Name
+
+the first value is the name of the record, such as @ or www.
+
+##### TTL
+
+the second value is the cache time in seconds for this record. 300 is
+the minimum, and is often used during transitions. Other common values
+appear to be 3600 (3 hours) and 86400 (1 day).
+
+##### Record class
+
+Almost all the records you'll come across are declared as 'IN' meaning
+they are internet DNS records. There are other namespaces that are used,
+including CHAOS. Mostly though these are of academic uses, and in all
+likelihood you'll never see them.
+
+##### Record type
+
+one of a set of value to denote the type of this DNS record
+
+##### Value
+
+this is the actual value of the record, and is subject to escaping,
+quote marks, and other rules.
+
+##### Comments
+
+anything following a ; on a line is ignored
+
+summary
+-------

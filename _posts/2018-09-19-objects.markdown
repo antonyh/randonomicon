@@ -1,0 +1,119 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Objects in Varnish
+==================
+
+Objects are things referenced by URL. pages, images, and so on -
+requests, cached items, clients, servers - these are all objects. Please
+note that a URL isn't a unique identifier, as it's possible to cache
+variants of a URL, such as by language, encoding, or the value of the
+'vary' header set by the backend. Certainly, in many cases the cookies
+in the request can make it unique, as can the cookies in the response.
+
+Objects in Varnish are not objects as in object-oriented - there's no
+inheritance or behaviour assigned to them. They are data structures that
+can be accessed and modified by the sub-routines, which is where all the
+cache logic is implemented. It's not possible to extend objects in
+Varnish, but you can set important built-in values, and you can
+arbitrarily set HTTP headers so it is possible to store state for use
+later in the same execution or to influence how Varnish behaves when a
+cached object is retrieved.
+
+Some important definitions relating to objects in varnish include TTL,
+Grace, and Stale objects:
+
+#### Time-to-live
+
+The TTL is how long an object will be cached. Varnish won't ask the
+backend for an update during this period.
+
+#### Grace
+
+is how long a stale object will be served for while varnish tries to get
+an updated version. When this time expires then the object will no
+longer be served from cache and a fresh copy must be used.
+
+#### Stale objects
+
+The definition of a stale object is 'objects that are past their TTL'.
+They are still in the cache and may be served while a fresh request is
+being made to the backend.
+
+req
+---
+
+This is the request received from the client. This is basically a HTTP
+method, a URL, request body if present, and and headers. Varnish treats
+cookies as headers, without any special treatment.
+
+resp
+----
+
+This is the response about to be delivered back to the client. This is
+headers and response body.
+
+bereq
+-----
+
+This is the request to the backend. This is not necessarily the same as
+the client request, as it's possible to modify it in vcl\_recv and other
+sub-routines before the backend request is issued.
+
+beresp
+------
+
+This is the data returned from the backend. We don't have to return this
+verbatim to the client; it can have headers changed in vcl\_deliver.
+
+obj
+---
+
+This is the object from the cache, and is read-only.
+
+backend
+-------
+
+This is an 'origin' server, the thing that is servicing the requests. We
+will have at least one of these, unless we have some insane setup where
+all the responses from Varnish are synthetic (unlikely, but
+theoretically possible).
+
+req\_top
+--------
+
+'req\_top' is the top level request when dealing with ESI included page
+fragments that are being assembled by Varnish into a single output.
+
+Other object variables
+----------------------
+
+Most of these are of limited use beyond special logic or diagnostic
+purposes but it's good to be aware that they exist and can be used by
+the forces of good.
+
+#### local
+
+This is the local IP.
+
+#### now
+
+This the time since the epoch in seconds. This is in seconds, not in
+milliseconds as is the norm for most languages.
+
+#### client
+
+The client object has the IP address for the requesting client, and an
+identity record used for load balancing.
+
+#### server
+
+Some basic information on the Varnish server, including hostname and IP
+address.
+
+#### storage
+
+Information about used and free space for storage.

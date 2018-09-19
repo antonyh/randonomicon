@@ -1,0 +1,33 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Static Site Generators
+======================
+
+roots
+-----
+
+<http://roots.cx>
+
+What is Roots?
+
+Roots is a static site compiler, that generates static html, css, and
+javascript files. It's very good at helping to build static front-ends.
+It is sponsored heavily by Carrot Creative, and makes frequent, highly
+variable builds quicker and easier for freelancers and agencies. It's a
+truly excellent framework for quickly and easily building small to
+medium sized front-ends of any kind.
+
+<http://andyshora.com/building-static-site-with-roots.html>
+
+Jekyll
+------
+
+<http://jekyllrb.com/>
+
+### Templates
+
+<http://jekyllrb.com/docs/templates/>

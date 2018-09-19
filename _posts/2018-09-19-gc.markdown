@@ -1,0 +1,29 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+JVM GC settings
+===============
+
+Avoid.
+
+If you must\...
+
+Class unloading 
+----------------
+
+[http://stackoverflow.com/questions/3334911/what-does-jvm-flag-cmsclassunloadingenabled-actually-do ](http://stackoverflow.com/questions/3334911/what-does-jvm-flag-cmsclassunloadingenabled-actually-do )
+
+    -XX:+CMSClassUnloadingEnabled 
+    -XX:+UseConcMarkSweepGC 
+
+    java -XX:+UnlockDiagnosticVMOptions -XX:+PrintFlagsFinal -version 
+
+Remember that JVM options change from time-to-time, so you'll find that
+newer JVMs have additional facilities, may remove some options or
+slightly change their behaviour, or in some cases make them meaningless.
+One example that springs to mind is the MaxPermGen option and how it
+doesn't relate to Java 8 which just gives an informational message that
+it's not needed.

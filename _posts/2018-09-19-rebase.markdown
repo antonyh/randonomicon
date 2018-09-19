@@ -1,0 +1,89 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Rebase
+======
+
+What's the difference between rebasing and merging? Well, let me tell
+you. Rebasing is changing the baseline for your changes, moving the
+point at which the branch started. This is an over-simplified view, but
+it's far easier to mentally reconcile this than the official description
+of 'forward porting', and in my mind better describes how it's likely to
+be used.
+
+Moving the branch point with rebase allows you to integrate changes on
+other branches with yours while avoiding a merge and extraneous commits
+in the history. In a way, it fast-forwards your branch to silently
+incorporate movement on other branches.
+
+If it's that good, why wouldn't you want do this all the time, and why
+is there a need for a merge command that does create history? It's
+simple - sometimes you want a record of activity. Sometimes you want a
+workflow that prefers merges. And sometimes you don't want to change
+history, which is basically what rebase is doing; if you've pushed your
+branch, rebase might be undesirable.
+
+The documentation for rebase is located here:
+<http://git-scm.com/docs/git-rebase> although it is rather dry as you
+might expect from a manual page.
+
+Using rebase
+------------
+
+git rebase
+
+Aborting a failed rebase
+------------------------
+
+If you have started a rebase and there are conflicts, you can either
+resolve them or abandon the rebase.
+
+git rebase --abort
+
+Completing a rebase after conflict resolution
+---------------------------------------------
+
+When you need to finish off a rebase after making the alterations needed
+to satify a conflict, you'll need to ask rebase to resume:
+
+git rebase --continue
+
+Interactive rebases
+-------------------
+
+Interactively rebasing lets you choose what to do with each commit
+during the rebase if you know what you're doing. Most commonly this is
+used to squash multiple commits into a single unit, and to write a
+useful message that covers the changes.
+
+Squashing commits
+-----------------
+
+Some tools like to have a changeset as a single commit. In particular
+this includes code review tools like Gerrit that have a strong
+preference towards this and actively encourage large changes in a single
+commit to facilitate reviews. The downside of squashing commits is the
+risk of losing messages and descriptions of the changes.
+
+Conflict resolution
+-------------------
+
+Sometimes (often?) when you rebase you'll have conflicts. There are four
+ways to deal with this
+
+-   Abandon the rebase with git rebase --abort
+
+-   Manually resolve the conflict by editting the file and adding it
+    with git add then resuming the rebase with git rebase --continue
+
+-   Chose your file with git checkout --ours \[filename\]
+
+-   Chose their file with git checkout --theirs \[filename\]
+
+It should be noted that the meaning of 'theirs' and 'ours' depends on
+context; when rebasing, 'ours' often means the master branch, whereas
+'theirs' means the branch with the changes, the one that is being
+rebased.

@@ -1,0 +1,16 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+digraph graphname
+
+node
+\[shape=\"box\",style=\"rounded,filled\",fillcolor=\"palegreen\",fontsize=\"16\"\];
+
+jenkins \[fillcolor=\"yellow\"\]; nexus \[fillcolor=\"lightblue\"\];
+
+git -\> jenkins; jenkins -\> nexus -\>jenkins; git -\> fig; fig -\>
+docker; github -\> dockerhub; dockerhub -\> fig; docker -\> containers;
+nexus -\> docker; \#dockerrepo -\> docker;

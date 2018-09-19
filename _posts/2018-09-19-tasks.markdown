@@ -1,0 +1,93 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Tasks
+=====
+
+The tasks folder contains a 'main.yml' file, and possibly other YAML
+files, to define the tasks needed to realise the role. A task is an
+action that needs to be taken to change the state. This takes the form
+of a module and parameters.
+
+Tasks to execute, in the shape of a YAML file. This contains a main.yml
+file, which in turn may include other files if it makes sense to split
+into multiple sections.
+
+It's good manners to start the tasks/main.yml file with a prolog. A
+simple description can help maintain focus for the task declarations.
+
+    ---
+    # This role deploys P and configures Q.
+
+You can then add the steps to achieve this.
+
+Installing packages
+-------------------
+
+Using package managers via Ansible is trivial. Declare a task to install
+the software you require.
+
+    - name: Install yum packages wingnut and shamalangadingdong
+      yum: name={{ item }} state=present
+      with_items:
+      - wingnut
+      - shamalangadingdong
+
+What this does is use the 'yum' module with each of the listed items, to
+change their state to 'present'. If they are already there, no action is
+needed.
+
+If the yum module is unable to change the state to present then the task
+fails.
+
+Interestingly, this results in a build that only works on yum-based
+distributions. Similarly, using 'apt' also produces a non-portable role.
+It's advised to use 'package' instead, which is then farmed out to apt,
+yum, or other package managers depending on the target system.
+
+Removing software is just as easy - create a task to manage packages
+with the state set to 'absent' to ensure that the items are not present
+on the target system.
+
+    - name: Remove packages sendmail and postfix
+      package: name={{ item }} state=absent
+      with_items:
+      - sendmail
+      - postfix
+
+When we declare 'state=absent' it tells the module to take action to
+remove the package. Ansible is happy so long as the package isn't
+installed, or even if it doesn't exist at all.
+
+You'll need to add 'absent' state entries to clean up later when
+software is no longer needed - you can't just remove the install entry
+because old systems would have the package installed, and new systems
+would not. Be consistent, be explicit.
+
+Creating a file using a template
+--------------------------------
+
+This will be covered in more detail later, but a general pattern for
+this is to use the 'template' module with a source and destination.
+
+    - name: Configure the etc hosts file
+      template: src=etc.hosts.j2 dest=/etc/hosts
+
+Ansible will find the template in the 'templates' folder, and use
+variables to generate the content to render the output file.
+
+Service management
+------------------
+
+We can look after system services, start them, and set them to start at
+boot using the 'service' module.
+
+    - name: Start the Wingnut service
+      service: name=wingnut state=started enabled=yes
+
+This will start the service immediately, and configure the system to
+start this service if the machine is rebooted. Naturally we can set
+state to stop the service, or disable it at boot time.

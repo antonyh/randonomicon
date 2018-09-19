@@ -1,0 +1,36 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Purism
+======
+
+#### Thou shalt not mix
+
+Sometimes a platform vendor has a set pattern, selection of tools, an
+IDE, or a prescribed workflow that has been shown to have a good success
+rate and is documented. Developers can sometimes take a moral stance and
+declare that they will not use anything that is outside of the provided
+package, with the intent that if it hasn't been included then it's not
+needed, will make it harder for others to join the project, is not
+supported by the vendor, or will cause complications later if upgrades
+are needed. There are many reasons why this stance may be taken.
+
+Many of these are valid claims, and it really does depend on many
+factors. On small teams it can help to limit the number of technologies
+in use. On small projects it can help to reduce the complexity of the
+project for the same reason. It does seem to suggest that by preventing
+the inclusion of additional tools, frameworks, or libraries then we gain
+by reducing the amount of interactions, testing, integration tasks, and
+possible defects that can be caused by incompatibilities between these
+things. Resolving these problems can and often is non-trivial.
+
+Some of the possible downsides include missing out on opportunities to
+use newer more refined techniques or technologies. There is a risk of
+upsetting staff when they are banned from using things that they feel
+offer great benefits. You may miss out on leveraging skills and
+knowledge within the team and this can hamper progress. Quite bluntly,
+the out-of-the-box method might not be the most productive, effective,
+reliable, or suitable depending on your metric for success.

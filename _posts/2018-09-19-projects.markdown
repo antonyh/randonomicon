@@ -1,0 +1,25 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Projects
+========
+
+#### Wetty
+
+<https://registry.hub.docker.com/u/nathanleclaire/wetty/>
+
+#### GitLab Docker
+
+GitLab - <https://gitlab.com/gitlab-org/gitlab-ce/tree/master/docker>
+
+#### 12 factor
+
+Store config in the environment - <http://12factor.net/config>
+
+#### Cross Browser Testing
+
+Saas testing tool; <http://crossbrowsertesting.com>
+<http://webpagetest.org>

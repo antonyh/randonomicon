@@ -1,0 +1,77 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+The Failsafe plugin
+===================
+
+\epigraph{
+The Failsafe Plugin is designed to run integration tests while the Surefire Plugin is designed to run unit tests. The name (failsafe) was chosen both because it is a synonym of surefire and because it implies that when it fails, it does so in a safe way.
+}{Apache \href{https://maven.apache.org/surefire/maven-failsafe-plugin/}{Failsafe plugin}}
+#### What is the Failsafe plugin?
+
+As the quote from the Apache project website suggests, this is a plugin
+designed to run integration tests safely. It extends Maven to add a
+number of phases to the project model to handle setting up the tests,
+running them, then cleaning up afterwards.
+
+#### Maven plugin
+
+Adding a configuration to the pom.xml will enable the Failsafe plugin
+for the build in Maven.
+
+``` {.xml language="XML"}
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-failsafe-plugin</artifactId>
+    <version>2.18.1</version>
+</plugin>
+```
+
+Version 2.18.1 was the latest when this section was produced, however
+there may be newer versions that add or change functionality or correct
+deviant behaviour. You should use an appropriate version depending on
+your test environment.
+
+#### Invoking integration tests
+
+Integration tests should be run using the Maven verify phase
+
+    mvn verify
+
+There's a warning on the project site that you shouldn't directly invoke
+'integration-test' goal as it won't run the post test actions, which
+really does defeat the purpose of this plugin, although theoretically
+this might be desirable if you plan to completely discard the system
+under test afterwards by rolling back a disk image or if you are using
+an in-memory data store that is completely refreshed on every test
+cycle.
+
+The Surefire plugin
+===================
+
+\epigraph{
+The Surefire Plugin is used during the test phase of the build lifecycle to execute the unit tests of an application. It generates reports in two different file formats
+}{Apache \href{https://maven.apache.org/surefire/maven-surefire-plugin/index.html}{Surefire plugin}}
+#### What is the Surefire plugin?
+
+Surefire will run your unit tests, and is commonly bound to the 'test'
+phase for this purpose. It has only one goal surefire:test which runs
+the application tests.
+
+#### Maven plugin
+
+Adding a configuration to the pom.xml will enable the Surefire plugin
+for the build in Maven.
+
+``` {.xml language="XML"}
+<plugin>                       
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>2.16</version> 
+</plugin>
+```
+
+Obviously, there may be a newer version by the time you read this.

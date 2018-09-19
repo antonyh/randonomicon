@@ -1,0 +1,23 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+JRuby and Jenkins
+=================
+
+This was how to build a Jenkins plugin using JRuby, as featured here:
+
+<https://github.com/jenkinsci/jenkins.rb/wiki/Getting-Started-With-Ruby-Plugins>
+
+    brew install jruby
+    brew install ruby193
+    jruby -S gem install bundler
+    jruby -S bundle install
+    jruby -S rake
+    jruby -S rake rspec
+    jruby -S gem install jpi
+    jruby -S jpi build
+
+#### 

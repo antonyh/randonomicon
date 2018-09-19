@@ -1,0 +1,293 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Common tasks in Varnish
+=======================
+
+This section aims to help you kickstart your understanding of Varnish
+and make rapid progress at the beginning. It's probably best if you
+already understand the general gist of Varnish, and know the concepts,
+as the format for this section is mostly discussion over some 'how-to
+guides', and although they are very short they will give an indication
+of what should work and what won't, and send you in the right direction
+when creating your cache code.
+
+Some quick pointers
+-------------------
+
+These are some important nuggets of information that can help you create
+great solutions using Varnish, so here's a little list of notes that
+cast some light on a few of the features that don't seem to be overly
+clear in the online documentation.
+
+-   the requested URL is held in `req.url`. You can mutate it in
+    vcl\_recv if you need to, but it excludes the server / domain name,
+    so it's basically just a path to the resource requested
+
+-   the value of `req.http.Cookie` contains the cookies of the request.
+    This is the raw header, with no interpretation. You'll need to
+    string-hack through this with regex to do anything with cookies
+
+-   function `regsub` does a regex replace on first match
+
+-   function `regsuball` is similar to regsub, but replaces all matches
+
+-   if you add `import std;` to your VCL file it gives you the features
+    from vmod\_std. This includes logging and several other handy
+    library functions
+
+-   you can use `std.syslog(N, "message text");` to write a message to
+    syslog with severity N. 0 is panic/emergency, and 7 is debug. Choose
+    wisely. Level 0 logs directly to the server terminal consoles of
+    everyone logged in, so please avoid this except in emergencies. The
+    lowest levels may be filtered out, which might be what you want
+
+-   you can write a message to the Varnish log with
+    `std.log("message");` but given how cryptic and verbose this log can
+    be, this might not help you much. Using Syslog is usually a better
+    option
+
+-   `std.ip` turns a string into an IP that you can use with ACL
+    defintions
+
+Changing HTTP headers
+---------------------
+
+It's possible to alter HTTP headers, and they can be set as follows:
+
+    # set a header
+    set req.http.X-Custom-Header = "hutch's";
+    set resp.http.X-Custom-Header = "big book";
+    set bereq.http.X-Custom-Header = "of";
+    set beresp.http.X-Custom-Header = "devnotes";
+
+    # ...and cleared by unset
+    unset resp.http.X-Custom-Header;
+
+This applies to all the places where headers can exist, such as req,
+resp, bereq, beresp. It's not applicable to 'obj' as cached objects are
+immutable.
+
+Why set 'req' headers? You'll want to do this if you want to add headers
+to the bereq from vcl\_recv, or if you want to add response headers
+later based on something you've calculated before vcl\_deliver.
+
+How to: remove a cookie
+-----------------------
+
+To remove a single cookie, you'll need to craft a regex and use regsub
+or regsuball to strip the text out the header. The main reason you might
+want to do this is to drop cookies you don't care about such as
+analytics that are only useful to the client and not the application
+server. This will increase the possibility that something can be cached.
+
+If you want to drop all cookies, just unset the header.
+
+    unset req.http.Cookie;
+
+This will remove all cookies without any discrimination from the request
+before it goes to the backend.
+
+Note that this won't remove a cookie from the client - it will be
+present on subsequent requests. If you want to destroy a cookie, you
+need to issue a Set-Cookie header with an expiry in the past.
+
+How to: add cookies
+-------------------
+
+The recommended way to add a cookie is to add the necessary header to
+set a cookie when the client receives the response.
+
+    set resp.http.Set-Cookie = "cookie=value; ";
+
+The value of the header follows the normal order of things for cookies.
+
+As a rule, I advise against tampering with inbound cookies unless you
+need to, but if you did have a reason to add a cookie you could just
+append it to the header if it isn't already set.
+
+If you need to set HTTP-only or expiry, just add the settings to the
+text making sure you conform to the RFC for cookies. See
+<https://tools.ietf.org/html/rfc6265> for the text of RFC 6265, \"HTTP
+State Management Mechanism\". It's pretty dry, but very accurate and not
+difficult to comprehend.
+
+How to: change cookies
+----------------------
+
+Just like removing a cookie, you can modify the inbound header to change
+the value of a cookie before it reaches the application server. To do
+this, you'll need a precise regex that matches the cookie and value that
+you want to change, and use regsub to update the value without
+corrupting other cookies. This is best avoided, in favour of using
+Set-Cookie headers on the response instead to ask the client to change
+values.
+
+How to: rewrite the url
+-----------------------
+
+If you need to change the URL of the request before it goes off to the
+backend, or before it is hashed to lookup the cache, just set it to a
+new value.
+
+    set req.url = "/prefix" + req.url;
+
+This will change /index.html into /prefix/index.html - this is very
+handy if you are running multiple web apps in a container like Tomcat.
+
+You can also use regsub to replace inner parts of the URL, or remove
+text from the start, middle, or end.
+
+How to: set TTL by content type
+-------------------------------
+
+If you have an application that dynamically generates HTML but also has
+static files that rarely change, you can use different TTLs based on
+file extension:
+
+    if (req.url ~ ".html\$") {
+        set req.ttl = 10m;
+    }
+    if (req.url ~ ".pdf\$") {
+        set req.ttl = 24h;
+    }
+
+This is handy if there is background processing such as importing feeds
+into your application in cases where you don't mind if there is a delay
+updating the cache.
+
+How to: two backends
+--------------------
+
+If you want to use two backends, and there is some clear-cut criteria to
+determine which to use (such as URL path) then a simple if-test is all
+you need to select which one to use.
+
+    if (x) {
+        set req.backend_hint = s_one;
+    }else{
+        set req.backend_hint = s_two;
+    }
+
+This will use s\_one when x is true, otherwise the request goes to
+s\_two. If the request is already cached, this has no effect, as it'll
+return the cached object instead and make no backend server requests.
+
+How to: custom error pages
+--------------------------
+
+Custom error pages are a powerful feature. You can generate synthetic
+results using the synth() function, which passes control to vcl\_synth
+to generate the output.
+
+    synth(900,"message");
+
+    sub vcl_synth {
+        if(900){
+            // ...
+        }
+    }
+
+The best source of information and examples of vcl\_synth is in the
+source and tests for Varnish. I recommend you start simple and build up
+your solution from this starting point.
+
+    sub vcl_recv {
+            return (synth(999));
+    }
+
+    sub vcl_synth {
+            synthetic("Custom vcl_synth output");
+            return (deliver);
+    }
+
+Note that the highest code you can use with synth is 999; any higher and
+it gets changed to a 503 at runtime without any compiler warnings.
+
+How to: write to Syslog
+-----------------------
+
+Use the std library syslog functionality as described in the
+documentation:
+
+<https://www.varnish-cache.org/docs/trunk/reference/vmod_std.generated.html#func-syslog>
+
+As I noted previously, `std.syslog(N, "message");` writes a message to
+syslog with severity N using a scale of 0 (panic) to 7 (debug). Level 0
+alerts everyone who is logged into a terminal, so please avoid this
+except in emergencies. The lowest levels may be filtered out, which
+might be what you want for development debug or trace messages that
+aren't useful in production.
+
+How to: log to a file
+---------------------
+
+No idea. I reckon you'll need to use a custom VMOD, inline C, or make do
+with the Varnish log or Syslog features that are already available.
+
+You need to ask yourself why do you want a cache to write to a custom
+file, how this might impact performance (this should be the primary
+concern), how many things could go wrong with file access (and can you
+test them all), and is it acceptable to write to one of the provided
+facilities and filter later to find only your messages.
+
+How to: load-balance
+--------------------
+
+Use a director. Probes are also part of the load balancing solution to
+perform health checks. Aside from these vague pointers, I have no
+specific advice at this time on how to implement load balancing in
+Varnish, although I suspect there are good examples in the test suite.
+
+How to: selectively prevent caching
+-----------------------------------
+
+Some content should never be cached. This might be because it's
+dynamically generated and known to be different on every request, or
+maybe because it contains sensitive information. One way to make
+something uncacheable is to simply 'return(pass);'. This is the way to
+prevent caching based on the request, such as headers, URL, client IP,
+or other properties of the call.
+
+        # Do not cache
+        if (req.url ~ "^/admin/\$") {
+            return (pass);
+        }
+
+If it's more appropriate to your scenario, you can also do this when
+returning data from the backend:
+
+        # Do not cache
+        set beresp.uncacheable = true;
+        set beresp.ttl = 0s;
+
+If your architecture permits it, the best practice approach is to make
+the backend set headers that control caching, and implement checks in
+Varnish to obey those headers. This splits the logic between two
+codebases, so this might not apply in all cases - it may be more
+reliable to allow Varnish to self-govern without interference from the
+backend servers, and ignore cache control headers.
+
+How to: invoke shell commands during tests
+------------------------------------------
+
+It's possible to run shell commands during testing. This example is
+taken from one of the standard tests for Varnish itself, and shows how
+to create a file on the filesystem and remove it. Of course, they did
+some other work with this file, but this illustrates how to use the
+shell command.
+
+    shell "true > ${tmpdir}/_varnishtest_empty_file"
+    shell "rm -f ${tmpdir}/_varnishtest_empty_file"
+
+I'm not sure there are many uses for this feature unless you are
+modifying Varnish itself. I doubt you'll need to interact with anything
+outside of the test suite when you are constructing or running your
+tests, but I've included this information for completeness. It also
+opens up the possibility to abuse these tests to manipulate the OS,
+which isn't what they are intended for. You could also make them send
+notifications when they run, which is also problematic - they would only
+be able to notify on test start or success, and not on failure.

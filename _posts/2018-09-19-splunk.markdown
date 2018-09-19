@@ -1,0 +1,35 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Splunk
+======
+
+Splunk is an awesome product that has a terrible, terrible name. It's a
+log indexer on steroids, which is such a dreadful cliché. It's great
+power comes from ingesting (another terrible word) all the log data you
+can feed it, and a powerful, flexible, bot somehow easy and logical
+query language that makes it straightforward to find nuggets of useful,
+actionable information.
+
+Basic query format
+
+search filter \| command \| more commands
+
+You get one filter / search section, then a series of commands to sort,
+filter, aggregate, or otherwise process the output. These are chained
+left-to-right.
+
+Searching is keyword field=keyword (it's really more of a contains than
+exact equals) field not keyword (again, more like 'does not contain'
+field in (A,B,C)
+
+and a few variations. It's quite simple.
+
+Commands This is where it gets interesting.
+
+sort stats dc(field) top X field top X field, field top field by field
+
+uniq(field)

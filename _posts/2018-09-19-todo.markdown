@@ -1,0 +1,38 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+\appendix
+Appendix: todo
+==============
+
+\printindex
+regex: turn a 3 col csv into 2 col \^(.\*),(.\*)\[,\](.\*) to /,
+
+Appendix:New Notes
+==================
+
+\Chapter{Appendix: Docker to-do notes}
+### Docker Machine
+
+<http://blog.docker.com/2015/02/announcing-docker-machine-beta/>
+
+    docker-machine create -d virtualbox dev
+    docker-machine env dev
+    docker run busybox echo hello world
+
+Consul for service discovery
+
+### Escape \\ in LaTeX
+
+Use \\textbackslash{} to print a \\ in your text.
+
+Thanks to
+<http://www.cespedes.org/blog/85/how-to-escape-latex-special-characters>
+for this information.
+
+The other special characters are
+
+\# \$ % & \\ \^ \_ { } \~

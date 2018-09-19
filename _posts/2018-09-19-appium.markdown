@@ -1,0 +1,13 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Appium
+======
+
+<http://appium.io>
+<http://shashikantjagtap.net/ios-automated-testing-in-the-bdd-with-appium-cucumber-on-mac-osx/>
+<http://sauceio.com/index.php/2013/10/setting-up-ios-automation-on-saucelabs-with-cucumber-and-appium/>
+<http://xebee.xebia.in/index.php/2014/09/11/mobile-test-automation-framework-using-cucumber-appium-and-page-objects/>

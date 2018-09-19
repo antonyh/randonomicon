@@ -1,0 +1,15 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Haskell
+=======
+
+Haskell is a function programming language.
+
+a quick primer
+--------------
+
+fizzbuzz.

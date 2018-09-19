@@ -1,0 +1,174 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+cq5 ldap
+========
+
+working ldap sample; for Apache DS
+----------------------------------
+
+    com.day.crx {
+       com.day.crx.core.CRXLoginModule sufficient;
+       com.day.crx.security.ldap.LDAPLoginModule required
+                  principal_provider.class="com.day.crx.security.ldap.principals.LDAPPrincipalProvider"
+                  host="localhost"
+                  port="10389"
+                  secure="false"
+                  authDn="uid=admin,ou=system"
+                         authPw="secret"
+                      userRoot="o=users,dc=example,dc=com"
+                      userRdnAttribute="cn"
+                          userIdAttribute="cn"
+                  groupRoot="o=groups,dc=example,dc=com"
+                  groupMembershipAttribute="uniqueMember"
+                  autocreate="create"
+                  autocreate.user.mail="profile/email"
+                  autocreate.user.cn="profile/givenName"
+                  autocreate.user.sn="profile/familyName"
+                  autocreate.user.membership="contributor"
+                  autocreate.group.description="profile/aboutMe"
+                  autocreate.group.mail="profile/email"
+                  autocreate.group.cn="profile/givenName"
+                  autocreate.path="direct"
+                  cache.expiration="600"
+                  cache.maxsize="100";
+    };
+    /**
+     * Sample configuration for this login-module:
+     *
+     * Module-Settings:
+     * ----------------
+     * principal_provider.class="com.day.crx.security.ldap.principals.LDAPPrincipalProvider"
+     *                           // fully qualified class name of the provider to
+     *                           // to be used by this Module
+     *
+     * syncCallbackClass="<fully qualified class name>"
+     *                           // fully qualified name of a class that implements
+     *                           // com.day.crx.security.ldap.sync.Callback
+     *                           // the methods of the implementing class are called
+     *                           // whenever a user or a group is synchronized with
+     *                           // CRX.
+     *
+     * Connection-Settings:
+     * --------------------
+     * host="ldap.sample.net"    // hostname or IP of the LDAP-Host to connect
+     *
+     * port="389"                // optional port the LDAP-host listens to
+     *                           // defaults to 389
+     * secure="false"            // whether ldaps should be used. Defaults to false.
+     *
+     * authDn="cn=Directory Manager"    // optional DN auf the user, this LoginModule
+     *                                  // should bind as. If omitted -> anynoumus
+     *
+     * authPw="secret"           // passwort to authenticate the bind-user
+     *
+     * searchTimeout             // Timeout in milliseconds. If the time limit is
+     *                           // exceeded, an exception is thrown.
+     *                           // defaults to 60000
+     *
+     * Authentication-Settings:
+     * ------------------------
+     * For Authentication the module tries to bind the user with the credentials
+     * provided. If this is successfull, the users entry and its group-membership
+     * is resolved according the following settings:
+     *
+     * userRoot="O=Company"      // DN all users are searched below
+     *                           // defaults to "" but this may not be sup-
+     *                           // ported by all servers
+     *
+     * userFilter="(objectclass=person)"   // LDAP serach-filter to match the entries
+     *                                     // below userRoot: defaults to (objectclass=person)
+     *
+     * userIdAttribute="uid"     // name of the ldap-attribute, that contains
+     *                           // the User-ID aka its login-name.
+     *                           // defaults to "uid"
+     *
+     * groupRoot="OU=Groups,O=Company"  // DN all groups are searched below
+     *                                  // defaults to "" but this may not be sup-
+     *                                  // ported by all servers
+     *
+     * groupFilter="(objectclass=groupOfUniqueNames)"
+     *                           // LDAP serach-filter to match the entries
+     *                           // below groupRoot:
+     *                           // defaults to (objectclass=groupOfUniqueNames)
+     *
+     * groupMembershipAttribute="uniquemember"
+     *                          // LDAP attribute, which is searched, to build
+     *                          // the group-membership relation
+     *
+     * groupNameAttribute="cn"  // Nameing attribute of the group. Used for
+     *                          // display in GUI, defaults to "cn"
+     *
+     * Auto-Creation:
+     * --------------
+     * The configuration given above would be sufficient to authenticate and
+     * authorize a user stored inside a LDAP server.
+     * In some cases, it may be desired to have access to user and group-data from
+     * within your repository. E.g as your application wants to notify users via
+     * e-mail.
+     * In this case, you can configure this LoginModule to create the user within the
+     * repository and if needed to keep its data up-to date.
+     *
+     * autocreate= "create"    // [create|createUser]
+     *                         // setting one of this options starts import
+     *                         // and synchronization of User and optional Groups.
+     *                         // if option createUser is set, only Users are
+     *                         // imported
+     *
+     * autocreate.syncdelay="0"
+     *                         // time in seconds the LoginModule checks again
+     *                         // if the related LDAP-Entry has changed.
+     *                         // this configuration entry is not supported
+     *                         // anymore. Use cache.expiration instead.
+     *
+     * autocreate.path="direct"
+     *                        // Rule how, the dn should be converted into a
+     *                        // Path, when creating a new node
+     *                        // there are two options "direct" and "splitdn"
+     *                        // direct: a node with the name of the LDAPEntry's
+     *                        // naming attribute is created
+     *                        // splitdn: each dn-part is translated into a
+     *                        // path-element.
+     *                        // defaults to "direct"
+     *
+     * autocreate.user.membership="<groupIds>"
+     *                        // automatically assigns a user to a number of CRX
+     *                        // groups when the user is first created or whenever
+     *                        // it is synchronized. <groupIds> is a comma separated
+     *                        // list of groupIds.
+     *
+     * autocreate.user.<attributename>="<propertyname>"
+     *                        // creates and sets the LDAP-Entries attribute
+     *                        // named <attributename> as value of the property
+     *                        // named <propertyname>
+     *                        // NOTE: fails if the user-nodetype doesn't allow
+     *                        // to set a property of the given name
+     *
+     * autocreate.group.<attributename>="<propertyname>"
+     *                        // same as for users but applied to groups
+     *
+     * Caching
+     * --------
+     * The LDAPLoginModule caches information at several stages. First a cache
+     * is maintained with credentials that were used with successful logins.
+     * On subsequent logins the LDAPLoginModule will consult this cache and
+     * compare the provided credentials with the ones in the cache. If it finds
+     * the provided credentials in the cache it will authenticate the user
+     * without acutally connecting to the LDAP server. The number of credentials
+     * held in this cache can be configured with "cache.maxsize". Credentials
+     * in the cache will expire after a configurable time, which can be set
+     * with the parameter "cache.expiration".
+     * If the LDAPLoginModule is configured to synchronize users and groups into
+     * CRX, then the synchronized user and group information is also goverened
+     * by the "cache.expiration" setting. That is, the login module will only
+     * synchronize at an interval as defined by that setting.
+     *
+     * cache.maxsize="1000"   // size of the credentials cache
+     *                        // defaults to 1000
+     *
+     * cache.expiration="600" // amount of time in sec. a Principal is cached
+     *                        // defaults to 600
+     */

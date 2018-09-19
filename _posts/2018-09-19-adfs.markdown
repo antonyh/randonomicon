@@ -1,0 +1,77 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+SAML SSO with ADFS
+==================
+
+What you'll need
+
+the XML from the IdP or the .crt file, the public certificate file
+
+The URL to redirect to for the login page the Path in AEM to go to after
+the user has signed in
+
+The Server ID, commonly but not always the URL of the server
+
+first up, open the /system/console page in AEM
+
+Then find the SAML configuration
+
+Change the configuration, to set the IdP URL (maybe ending in /adfs/ls/)
+
+Set the paths you want to secure with SAML.
+
+Untick the box to make it POST to the IdP instead of redirect. We want
+SSO and not IdP-initiated authentication.
+
+Set the after-signin path.
+
+Set the groups the user needs to belong to.
+
+in CRXDE open /etc/key and create a node called 'saml'. Add a binary
+property to this new node named 'idp\_cert' and save - you have to save
+before you can upload the binary data for this property. Edit the
+property and upload the .crt file here. Save it, and we are done.
+
+If you only have an xml file from the IdP and no crt file, you can
+extract the key from the file - it should be obvious as a big block of
+base64 data. This needs to be 'top and tailed'
+
+sample from <https://vcl.apache.org/docs/ldap-ca-bundle-ex.html>
+
+-----BEGIN CERTIFICATE-----
+MIICNDCCAaECEAKtZn5ORf5eV288mBle3cAwDQYJKoZIhvcNAQECBQAwXzELMAkG
+A1UEBhMCVVMxIDAeBgNVBAoTF1JTQSBEYXRhIFNlY3VyaXR5LCBJbmMuMS4wLAYD
+VQQLEyVTZWN1cmUgU2VydmVyIENlcnRpZmljYXRpb24gQXV0aG9yaXR5MB4XDTk0
+MTEwOTAwMDAwMFoXDTEwMDEwNzIzNTk1OVowXzELMAkGA1UEBhMCVVMxIDAeBgNV
+BAoTF1JTQSBEYXRhIFNlY3VyaXR5LCBJbmMuMS4wLAYDVQQLEyVTZWN1cmUgU2Vy
+dmVyIENlcnRpZmljYXRpb24gQXV0aG9yaXR5MIGbMA0GCSqGSIb3DQEBAQUAA4GJ
+ADCBhQJ+AJLOesGugz5aqomDV6wlAXYMra6OLDfO6zV4ZFQD5YRAUcm/jwjiioII
+0haGN1XpsSECrXZogZoFokvJSyVmIlZsiAeP94FZbYQHZXATcXY+m3dM41CJVphI
+uR2nKRoTLkoRWZweFdVJVCxzOmmCsZc5nG1wZ0jl3S3WyB57AgMBAAEwDQYJKoZI
+hvcNAQECBQADfgBl3X7hsuyw4jrg7HFGmhkRuNPHoLQDQCYCPgmc4RKz0Vr2N6W3
+YQO2WxZpO8ZECAyIUwxrl0nHPjXcbLm7qt9cuzovk2C2qUtN8iD3zV9/ZHuO3ABc
+1/p3yjkWWW8O6tO1g39NTUJWdrTJXwT4OPjr0l91X817/OWOgHz8UA== -----END
+CERTIFICATE-----
+
+without the begin/end lines, it will be ignored. save this as plain
+text, then upload as per the instructions for crt files.
+
+testing it works\... use a private/incognito browser window, or a fresh
+browser. go to the path you are securing, see the login window
+
+if it doesn't redirect, make sure you're not logged in somehow to AEM,
+particularly if you are setting up author and have used the same browser
+to configure the OSGi components.
+
+UID you might need to adjust the uid setting in osgi, if the IdP uses a
+different property name.
+
+Redirect filter. Set this up to match your needs.
+
+SSO vs IdP initiated SSO asks the provider to auth and expects a crypted
+response, whereas IdP-initiated can start at the IdP and sets a token
+that is used by the service, I think?

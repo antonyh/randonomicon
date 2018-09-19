@@ -1,0 +1,29 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Makefiles for C
+===============
+
+example
+-------
+
+    CC=g++
+    CFLAGS=-c -Wall
+    LDFLAGS=
+    SOURCES=main.cpp hello.cpp factorial.cpp
+    OBJECTS=$(SOURCES:.cpp=.o)
+    EXECUTABLE=hello
+
+    all: $(SOURCES) $(EXECUTABLE)
+        
+    $(EXECUTABLE): $(OBJECTS) 
+        $(CC) $(LDFLAGS) $(OBJECTS) -o $@
+
+    .cpp.o:
+        $(CC) $(CFLAGS) $< -o $@
+
+    \subsection{references}
+    \url{http://mrbook.org/blog/tutorials/make/}

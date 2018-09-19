@@ -1,0 +1,54 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Test-Driven ideologies
+======================
+
+#### The twin philosophies of [TDD]{acronym-label="TDD" acronym-form="singular+short"}; fail-fast versus try/catch
+
+These two things belong together; they are seemingly opposites sides of
+the coin, but they are the same coin nonetheless. They may well be polar
+opposites and share certain aspects making it worthwhile considering
+them together.
+
+The twins of fail-fast and try/catch are all about where and how you
+ascertain that the code is running correctly in the run-time environment
+during the development phase - by using assertions to make it impossible
+to run code that does not conform to the contract of the code, or by
+using exceptions to handle what happens when the rules are broken.
+
+#### Crash, report, fix, repeat
+
+Assertion driven development, where the entire system is designed to
+completely stop where expectations are not met. The idea behind this is
+to halt execution as soon as out-of-band values are encountered to force
+fixing the code (or the calling code) as a means to improving
+reliability by making the program unrunnable.
+
+It should be noted that certainly in modern object-oriented languages
+such as Java and C\# little time is spent mentioning runtime assertions
+despite their usefulness in early stages of implementation. Whether this
+is down to them being too dangerous to add to the code, or that they are
+just no longer in fashion (and so not in favour as 'best practice') is
+unknown. It could also be considered bad form as Java assert() is
+ignored by default. Some might consider this an advantage. Regardless,
+the volume of information, tutorials, and other resources on unit
+testing dwarfs that on the use of inline assertions.
+
+#### Exception-driven code
+
+This is commonly known as Test Driven development, where assumptions are
+tested with mocks and unit tests, then code is added to defend against
+known values to manage these conditions. This results in one of two
+artifacts - either a lot of extra tests to assert conditions, or
+exception handling in try/catch blocks to bury undesirable behaviour. It
+attempts to improve uptime by abandoning attempts at processing or
+masking data errors with defaults.
+
+These styles are not mutually exclusive, and neither of these deal with
+the unknown - both are firmly in the land of the known as asserts make
+the program quit and thus have to be fixed before a system leaves
+development, whereas exceptions

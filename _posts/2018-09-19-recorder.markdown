@@ -1,0 +1,51 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+The Recorder
+============
+
+a proxy that records requests and creates a simple simulation in Scala.
+
+to run the recorder application, run bin/recorder.sh
+
+Network options
+---------------
+
+HTTP proxy If you need to set an outbound proxy enter the details here.
+Most of the time you can leave this blank.
+
+HAR converter\...
+
+Simulation information
+----------------------
+
+In 'simulation information' you should set a package name (as in Java
+package name), and probably change the class name to something
+descriptive (Java class name, rules apply).
+
+Various tick-boxes change simulation behaviour.
+
+Output
+------
+
+This is where the Scala class will be saved.
+
+Filters
+-------
+
+You can have no filters(disabled) or white/black lists using regex.
+
+'No static resources' adds blacklist items for images, js, and css. js
+css gif jpeg jpg ico woff ttf otf png
+
+Recording the simulation
+------------------------
+
+Before you start, you can get the recorder to save preferences. Hit
+start and the recorder will begin proxying.
+
+It'll run until you hit stop & save. Make some requests and it will log
+them.

@@ -1,0 +1,67 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Python
+======
+
+What do I know about Python?
+
+Not much.
+
+Whitespace is significant. Use indents instead of { curly braces }
+Things are imported with 'import' to print to stdout use
+print(\"message) Lines don't end with semicolons to declare a variable
+jsut assign it to create a function
+
+    def function():
+        r = doSomething()
+        return r
+
+to use a global scope item
+
+    def function():
+        global x
+        r = doSomething(x)
+        return r
+
+To check for an unset variable
+
+    def function(thing):
+        if thing is None:
+            return doSomething()
+        else:
+            return thing
+
+To force something to be an integer: something = int(something)
+
+try\...catch
+
+    try:
+        doSomething()
+    except Exception as e:
+        print(e)
+    finally:
+        print("done");
+
+Create an empty array
+
+    list = []
+
+Output an array as JSON data
+
+    import json
+
+    list = []
+    print(json.dumps(list))
+
+Flask
+=====
+
+What do I know about Flask? It uses Python. Specifically, I've used it
+with Python 2.7.
+
+requirements.txt Mine contained\... Jinja 2 MarkupSafe Werkzeug flask
+itsdangerous pyorient

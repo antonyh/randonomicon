@@ -1,0 +1,44 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Headless browsers
+=================
+
+Zombie.js
+---------
+
+#### headless browser, using node
+
+https://github.com/assaf/zombie/blob/master/README.md
+
+http://zombie.labnotes.org
+
+SpookyJS
+--------
+
+#### drive casper from node 
+
+https://github.com/WaterfallEngineering/SpookyJS
+
+Headless Firefox
+----------------
+
+#### Using Xvfb -- the X Virtual FrameBuffer
+
+http://www.installationpage.com/selenium/how-to-run-selenium-headless-firefox-in-ubuntu/
+
+http://www.semicomplete.com/blog/geekery/xvfb-firefox.html
+
+#### On a Mac in X11:
+
+http://afitnerd.com/2011/09/06/headless-browser-testing-on-mac/
+
+HTML5Robot
+----------
+
+#### HTML5Robot is Windows only.
+
+http://html5robot.com

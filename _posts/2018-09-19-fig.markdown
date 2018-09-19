@@ -1,0 +1,111 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+docker-compose
+==============
+
+[Docker-Compose]{acronym-label="Docker-Compose"
+acronym-form="singular+short"} was previously known as
+[Fig]{acronym-label="Fig" acronym-form="singular+short"} until the
+Orchardup team joined Docker. 'docker-compose', like 'fig', is a
+orchestration and provisioning tool for Docker. It provides an array of
+options, configured using a YML file to control the Docker daemon to
+spin up sets of containers and help them interact by defining port
+connections, names, volumes, and other parameters in a way that is
+controlled, repeatable, orders dependencies, and can be
+version-controlled.
+
+Usage for docker-compose
+------------------------
+
+These notes were orginally for the older version of Fig, prior to the
+change of name. Aside from the name change which will see the command
+become 'docker-compose' they should be more-or-less compatible until new
+features are added.
+
+The requirements for docker-compose appear to be Python 2.7 and pip to
+install (although there are alternative methods, and I suspect the
+change of ownership will see further changes).
+
+#### To install docker-compose using pip
+
+For me this was the easiest way to install docker-compose, as I already
+had pip installed. There is an install available via Homebrew, but as
+the docker-compose install guide mentions pip I prefer this method,
+particularly as this works on Linux too.
+
+    sudo pip install -U docker-compose 
+
+To install 'docker-compose' instead, install docker-compose.
+
+    sudo pip install -U docker-compose 
+
+However, I find it tiring and irritating to have to type 14 characters
+instead of three, and for some reason auto-complete doesn't seem to want
+to help me much, so I add an alias to my shell.
+
+    alias fig="docker-compose" 
+
+Now I can keep pretending it's called Fig. For your sake though, I've
+done a search-and-replace to change fig into docker-compose, in the hope
+it makes these notes more useful and less confusing. Really though, they
+are the same.
+
+If you don't have pip, then maybe you don't have python installed. If
+you do, then asking Homebrew gives this useful message:
+
+    $ brew search pip
+    ...
+
+    If you meant "pip" precisely:
+
+    Homebrew provides pip via: `brew install python`. However you will then
+    have two Pythons installed on your Mac, so alternatively you can:
+        sudo easy_install pip
+
+#### If the docker-compose command fails to run
+
+In the event there is a problem with docker-compose, you may need to run
+some upgrades of pip to get a later version of docker-compose.
+
+    sudo pip install --upgrade distribute 
+
+#### docker-compose up
+
+Spinning up a new set of Docker containers is really easy with
+docker-compose, you just need to use one simple and easy-to-remember
+command:
+
+    docker-compose up
+
+This will build or reinstate containers and start them using Docker. It
+doesn't rebuild containers if the Dockerfile has changed.
+
+#### docker-compose build
+
+If you change the docker-compose.yml (or fig.yml if you are old-skool it
+will still work albeit with a warning of deprecation) or the Dockerfile,
+you will need to rebuild the containers. Similarly if you add a new
+container you should build it using this command.
+
+    docker-compose build
+
+This will scan the docker-compose.yml file and build or download any
+Docker images that it needs.
+
+#### If you use boot2docker: Fix certificate problems
+
+Sometimes docker-compose complains about certificate problems, but
+thankfully this is easy to fix by setting an environment variable.
+Unfortunately, you probably don't want to set this universally as it
+will interfere with other tools that use CA requests such as curl. This
+command will do this on a temporary basis:
+
+    REQUESTS_CA_BUNDLE=~/.boot2docker/certs/boot2docker-vm/ca.pem docker-compose up
+
+This sets the variable to the path to the boot2docker certificate then
+calls docker-compose. You can also create an alias to this if you
+prefer.

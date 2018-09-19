@@ -1,0 +1,23 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Testing that things work
+========================
+
+web
+---
+
+### Typography
+
+##### Font fallbacks
+
+<http://ffffallback.com>
+
+A simple tool for bulletproof web typography.
+
+Web fonts are here, sparking an exciting new era in web design.
+FFFFALLBACK makes it easy to find the perfect fallback fonts, so that
+your designs degrade gracefully.

@@ -1,0 +1,169 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Maven release plugin
+====================
+
+<http://maven.apache.org/maven-release/maven-release-plugin/>
+
+The Maven release plug-in is designed to automate many of the dull
+repetitive and error-prone tasks that are associated with releasing a
+version of the code-base. It is a two-step process where the release is
+first prepared, then the release is performed. It is recommended to use
+at least version 3.0.4 due to unspecified issues with settings - given
+this is now quite an old release this is unlikely to cause problems but
+it's good to be aware of this in case anything strange is happening when
+trying to prepare or perform the release.
+
+Goals overview
+--------------
+
+The goals of the release plugin are there to support the two-step design
+of the process.
+
+#### release:help
+
+As always, this displays some helpful text. It can be enhanced by asking
+for more detail, and for a specific goal:
+
+    mvn release:help -Ddetail=true -Dgoal=<goal-name>
+
+#### release:clean
+
+Remove the files that were created as part of release preparation.
+
+#### release:prepare
+
+Get ready for a release. This step works out the release version and
+next version labels and drafts the release files ready for the next
+step.
+
+#### release:prepare-with-pom
+
+This is the same as prepare, except that it will generate POMs for the
+release too.
+
+#### release:rollback
+
+Undo a release, unless you have issued a release:clean.
+
+#### release:perform
+
+Commit to a release into the SCM. This will make changes to the project,
+update version numbers, and push your changes, so it's important to make
+sure that this is what you want and that everything is correct. It's
+also important to make sure that you are on the right branch.
+
+#### release:stage
+
+Release the project into staging instead of the main SCM.
+
+#### release:branch
+
+This prepares the release to target a new branch instead of creating a
+tag.
+
+#### release:update-versions
+
+Update the versions in the POM(s) without doing the rest of the magic.
+This doesn't sound terribly useful to me.
+
+The quick guide
+---------------
+
+Assuming nothing goes wrong, and that your project is already set up
+correctly, and that you have a good version control system and/or
+backups, this is the process you should follow.
+
+#### Pom settings
+
+You'll need a few things present in your project pom.xml file or in the
+parent pom, so make sure you have ans SCM section with a developer
+connection setting, and you'll also need the build plugin too.
+
+The SCM setting will look something like this:
+
+      <scm>
+        <developerConnection>scm:git:ssh://server_name[:port]/path_to_repository</developerConnection>
+      </scm>
+
+You'll need to put the right information into the URL, such as protocol,
+server name, port, and the path to the project. You can find more
+information on Git SCM URLs here:
+<https://maven.apache.org/scm/git.html>. Git supports other SCM systems,
+and you can find details here:
+<https://maven.apache.org/scm/scms-overview.html>. The list of
+fully-implemented SCMs is Bazaar, CVS, Git, Jazz, Mercurial, Perforce,
+StarTeam, Subversion, and CM Synergy. There are also some partially
+implemented SCMs, including Accurev, ClearCase, File system, Visual
+Source Safe, and Team Foundation Server. It's unclear what is meant by
+partial. Out of this list, I've only used Git so I cannot vouch for the
+others, but there are plenty of resources online to help you if you run
+into problems.
+
+The build plugin may have a newer version, but will resemble this
+fragment of XML:
+
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-release-plugin</artifactId>
+            <version>2.5.2</version>
+                <configuration>
+                <!--
+                    During release:perform, enable the "release" profile
+                -->
+                <releaseProfiles>release</releaseProfiles>
+                <preparationGoals>clean verify</preparationGoals>
+            </configuration>
+        </plugin>
+
+I've taken the liberty of adding some configuration options in here that
+I consider useful. If you don't need them, they can be removed or
+modified to fit your needs.
+
+#### Prepare
+
+The first step is to prepare, as with all things. I prefer to use
+dry-run to start with, so I don't have to keep cleaning up the mess
+until I feel that it's likely to work.
+
+    mvn -DdryRun=true release:prepare 
+
+To actually do the prepare, remove the dry-run option:
+
+    mvn release:prepare 
+
+To clean up after a failed prepare, use 'release:clean':
+
+    mvn release:clean
+
+To prepare a release with the default values, as you might do for a
+nightly-build or as part of an automated pipeline, you can set batch
+mode. There's also the capability to set the values when invoking Maven
+if you need specific version numbers or tags:
+
+    mvn --batch-mode release:prepare
+    #or, with specific values
+    mvn --batch-mode -Dtag=release-1.7 release:prepare \
+                     -DreleaseVersion=1.7 \
+                     -DdevelopmentVersion=2.0-SNAPSHOT
+
+If your shell username differs from your SCM username, you can set this
+value as an option:
+
+    mvn -Dusername=your_scm_username release:prepare
+
+Obviously, you can combine all these options if you need them.
+
+#### Perform
+
+When you have successfully prepared a release, you can use the 'perform'
+action to complete it.
+
+    mvn release:perform
+
+There's not really much more to say about this; it will do the release
+then clean up and finish.

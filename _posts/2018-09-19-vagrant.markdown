@@ -1,0 +1,157 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Vagrant
+=======
+
+Introduction
+------------
+
+Vagrant is a tool rather than a technology unto itself, but as there are
+a lot of options and configuration that can ruin you day I've catalogued
+many things I find useful.
+
+Provisioning with SaltStack
+---------------------------
+
+Provisioning a Vagrant machine using SaltStack is easy but needs a few
+settings to work. First, start with a recommended box - Debian Jessie
+x64.
+
+    config.vm.box = "debian/jessie64" 
+
+I like this box because it's fairly minimal, offers a good package
+management system, and seems to work well for most cases. The downside
+is that it doesn't have the Virtualbox guest additions installed, and
+using the SaltStack provisioner requires file synchronisation between
+host and guest.
+
+    vagrant plugin install vagrant-vbguest
+    config.vbguest.auto_update = true
+
+You can then add a provisioner to use Salt.
+
+    ## For masterless, mount your salt file root
+    ## requires vbox guest additions for this to work
+    config.vm.synced_folder "salt/roots/", "/srv/salt/"
+        
+    ## Use all the defaults:
+    config.vm.provision :salt do |salt|
+        salt.masterless = true
+        salt.minion_config = "salt/minion"
+        salt.run_highstate = true
+        salt.verbose = true
+    end      
+
+This will run on 'vagrant up' during first run, or on 'vagrant
+provision' to update.
+
+SaltStack will be covered separately, but if you are desperate for a
+working example, I've put one on GitHub here:
+<https://github.com/antonyh/vagrant-saltstack>
+
+Tricks and tips
+---------------
+
+### Vagrantfile syntax highlighting
+
+In order to make editors such as Vi and Emacs see the Vagrantfile as
+Ruby, add this snippet to the top of the file. This will give you
+formatting and syntax highlighting.
+
+    # -*- mode: ruby -*-
+    # vi: set ft=ruby : 
+
+### Using libvirt on Linux
+
+On Linux, instead of VirtualBox you may want to use libvirt as a
+hypervisor. This is possible by installing some plugins, converting the
+box, then starting using a different provider.
+
+    vagrant plugin install vagrant-libvirt
+    vagrant plugin install vagrant-mutate
+    vagrant mutate ubuntu/vivid64 libvirt
+    vagrant up --provider=libvirt
+
+### debug vagrant
+
+To output verbose information when using Vagrant:
+
+    VAGRANT_LOG=INFO vagrant ssh
+
+To output extremely verbose information when using Vagrant:
+
+    VAGRANT_LOG=DEBUG vagrant ssh
+
+This also works with other commands, such as 'vagrant up' and 'vagrant
+provision', and can yield a lot of useful information when diagnosing
+unexpected behaviour.
+
+### Global options
+
+If you want or need to make settings across all your machines, or want
+to have settings that apply to only your personal environment, you can
+put then in  /.vagrant.d/Vagrantfile.
+
+### Virtualbox guest additions
+
+Installing the vagrant-vbguest plugin then adding this single line to
+the Vagrant file will cause the vbox guest additions to be updated or
+added if they are missing.
+
+      config.vbguest.auto_update = true
+      
+
+Useful plugins
+--------------
+
+Vagrant can extended using plugins, many of which are rather useful.
+
+##### vagrant plugin install vagrant-libvirt
+
+Enable the libvirt provider. You can use this with:
+
+    vagrant up --provider=libvirt
+
+##### vagrant plugin install vagrant-mutate
+
+\- this gives the facility to change the vagrant box to be compatible
+with alternative providers.
+
+    vagrant mutate ubuntu/vivid64 libvirt
+
+##### vagrant plugin install vagrant-vbguest
+
+\- installs the guest addtions for virtualbox, which generally improves
+file sharing and GUI operations.
+
+##### vagrant plugin install vagrant-proxyconf
+
+\- enables using a proxy for the guest machine. Add these lines to make
+it use a proxy
+
+    if Vagrant.has_plugin?("vagrant-proxyconf")
+        config.proxy.http     = "http://192.168.0.2:3128/"
+        config.proxy.https    = "http://192.168.0.2:3128/"
+        config.proxy.no_proxy = "localhost,127.0.0.1,.example.com"
+    end
+      
+
+You can find more information on this plugin and the source code here:
+<https://github.com/tmatilai/vagrant-proxyconf>
+
+Summary
+-------
+
+We covered some usages of Vagrant and options that can help.
+
+-   verbose debugging output
+
+-   how to set global options
+
+-   useful plugins, including installation of Virtualbox guest
+    additions, proxy configuration for corporate environments, and using
+    libvirt on Linux.

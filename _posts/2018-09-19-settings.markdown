@@ -1,0 +1,109 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Maven settings
+==============
+
+You can use a global settings file to avoid littering the pom.xml files
+with non-project-related settings, such as the location on you local
+disk for the repository cache, and settings for proxies and remote
+servers.
+
+To set this up, create an file in the .m2 folder named settings.xml. An
+empty version of this might look like this:
+
+    <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                            https://maven.apache.org/xsd/settings-1.0.0.xsd"> 
+        <localRepository/>
+        <interactiveMode/>
+        <usePluginRegistry/>
+        <offline/>
+        <pluginGroups/> 
+        <servers/>
+        <mirrors/>
+        <proxies/>
+        <profiles/> 
+        <activeProfiles/> 
+    </settings> 
+
+To customise the behaviour of your machine without affecting others, add
+entries into the settings.xml file.
+
+Store the cache elsewhere
+-------------------------
+
+I don't like having the 'repository' folder in the .m2 folder because it
+clutters it. Also I have the .m2 folder under version control because I
+value the effort made in creating the settings.xml file. Another reason
+to move it is to host it on another volume, either for performance
+reasons or to save disk space on higher-performing devices.
+
+    <localRepository>/data/.m2/repository</localRepository> 
+
+This entry moves the file store for Maven. Make sure it has read/write
+access and enough disk space.
+
+Nexus mirrors
+-------------
+
+Using a Nexus mirror is a great idea because it solves a number of key
+problems with Maven:
+
+-   it saves you bandwidth by reducing the number of downloads onto your
+    network
+
+-   it accelerates build time by placing dependencies closer
+
+-   it gives you certainty that a dependency will be available making
+    the build more robust
+
+-   it hosts the output of your builds, so they can become immutable
+
+-   it can proxy other repositories, simplifying development
+    configuration
+
+To set this in the settings.xml, add this fragment to configure the
+mirrors used by Maven.
+
+      <mirrors>
+        <mirror>                               
+          <id>nexus</id>        
+          <mirrorOf>*</mirrorOf>        
+          <url>http://<host>/content/groups/public</url>                         
+        </mirror>  
+      </mirrors> 
+
+This declares that everything has been mirrored by your Nexus server. If
+you need to add a new external repository, all you need to do is add it
+to Nexus as a proxy service without the need to change anything else.
+
+Selecting from multiple settings.xml files
+------------------------------------------
+
+It's trivial to use a different set of settings at build time. This can
+be very useful, such as when switching between projects or clients, or
+when you aren't on your home network but can't run the build in offline
+mode because there are new public dependencies.
+
+    mvn -s ~/.m2/another-settings-file.xml install
+
+This will use the alternative settings that you've created instead of
+the normal settings.xml file. I like to use this for a 'no settings'
+version that has everything as default for when the Nexus server is
+unavailable but I need to build a new project.
+
+Project specific settings file
+------------------------------
+
+Some projects will have a settings file in the SCM repository for
+safekeeping and sharing, and if you work on multiple projects with
+different settings it might be best to invoke Maven like this:
+
+    mvn -s settings.xml install
+
+This will use the settings.xml file in the current directory.

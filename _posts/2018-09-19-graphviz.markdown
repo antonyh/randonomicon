@@ -1,0 +1,151 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Graphviz
+========
+
+A brief introduction to Graphviz and DOT files syntax, which will
+undoubtedly grow as I do more advanced things with this powerful tool
+and as I get more bored with having to constantly look up information,
+especially as the website seems to be down more often that it is up.
+
+##### Installation
+
+As with all topics in this book, I'm not going to cover how to install
+Graphviz - it should be fairly straightforward.
+
+What is Graphviz?
+-----------------
+
+Graphviz, and the DOT file format, is a tool for creating visual
+diagrams based on textual descriptions of relationships. It can be used
+to show how things relate, or to create flowcharts, or network diagrams.
+More or less, anything that you might show with boxes and arrows is a
+good fit for Graphviz.
+
+How to create a graph
+---------------------
+
+Start by creating a new file, and use a file-ending of '.dot'. The basic
+structure you need to add to the file is
+
+    digraph {
+
+    }
+
+you can name your graph, by simply adding a name after the graph type.
+
+    digraph NAME {
+
+    }
+
+Graphs named G seem to be common. This doesn't seem to do much, so you
+can safely ignore it. You might see this in diagrams.
+
+there are other types other than digraph, such as graph.
+
+graph digraph
+
+graphs have attributes
+
+Things that appear in a graph are called nodes. A basic graph with a
+node is
+
+    graph {
+        a;
+    }
+
+You can add many nodes and connect them with lines or arrows.
+
+    graph {
+        a -- b;
+        c -> d;
+    }
+
+double dash creates a line, and -\> creates an arrow.
+
+Styling nodes
+-------------
+
+adding square brackets after a node allows you to set attributes.
+
+    a [shape=box]
+
+creating a node named 'node' allows you to set global properties.
+
+    node [shape=box]
+
+you can control the shape, and fill properties.
+
+    node [shape=box style="filled,rounded" fillcolor=yellow]
+
+This will make rounded boxes filled with yellow. All nodes following
+this declaration will have these attributes.
+
+### Common attributes
+
+Some attributes appear a lot and cover most of the changes from the
+defaults that you are likely to need.
+
+##### shape
+
+My favourites are box and note. Circle box3d are handy too.
+
+##### fontsize
+
+Font size in points. Start with 10 and adjust as needed.
+
+##### style
+
+Different shapes have style options. Most have 'filled' and box shapes
+have 'rounded' to take the edges off the corners.
+
+##### fillcolor
+
+You can set a colour for the shape. For example; yellow, lightblue,
+grey, and so on.
+
+##### fontname
+
+This allows the typeface to change, for example you can use 'Verdana'.
+
+### Labels
+
+If you set the label attribute, it will show this text instead of the
+node name.
+
+    thing [label="This is a Thing"]
+
+lines / arrows are called edges, and edges are labelled when they are
+added to the graph
+
+    acorn -> mightyoaktree [label="grows into"]
+
+multiple lines are possible by adding line break control codes.
+
+    item [label="A\nLabel\nwith\nmany\nlines"]
+
+It's not the easiest to read in the source code, but this is how it's
+done in many other languages, including C, Java, and in shell scripts so
+this should be familiar to most developers.
+
+Rendering a DOT file.
+
+You can get an image from a dot file
+
+    dot -Tpng mygraph.dot > mygraph.png
+
+Will give you a PNG image. There are other output types.
+
+Summary
+-------
+
+we didn't install Graphviz We created a new graph we discussed graph
+types we styled things to look how we wanted them to we rendered a png
+from a .dot file
+
+what we didn't cover\... subgraphs errors all the different shape types
+all the attributes installation rank=sink

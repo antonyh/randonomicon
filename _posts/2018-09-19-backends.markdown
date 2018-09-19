@@ -1,0 +1,51 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Backend servers
+===============
+
+Varnish backends are application servers. If you are familiar with CDN
+platforms, you might know these as 'origins' that hosue the content to
+be delivered, and are defined by IP address and port. Varnish uses
+backends to get the content you want to display.
+
+You can't use DNS names to declare a backend in Varnish. You MUST use an
+IP address and not a domain name. Using DNS entries causes Varnish to
+fail on start. Varnish lacks the facility to do DNS lookups.
+
+Varnish doesn't play well with proxies, or at least this was my
+experience. You may have 'fun' while developing inside corporate
+environments, or it might just work smoothly for you.
+
+An example backend declaration:
+
+    backend s_default {
+        .host = "10.1.1.1";
+        .port = "80";
+    }
+
+There are other options when setting up a backend for timeouts and other
+parameters. Notice how I've named this 's\_default' so that I can use
+any code that works with this server definition which my unit tests.
+
+If you have multiple backends declared, you can add logic into vcl\_recv
+to change which server is used for the backend request.
+
+    # Default backend is set to server1
+    set req.backend = s_server1;
+     
+    if (req.http.host == "antonyh.co.uk") {
+        set req.backend = s_server2;
+    }
+     
+    if (req.http.host == "www.hutchisontechnical.co.uk") {
+        set req.backend = s_server3;
+    }
+
+Varnish will throw a nasty error and not run if you have declared a
+backend but it's not used, or if you try to use a backend that doesn't
+exist. As usual with Varnish, it's very clear on the problem with the
+configuration.

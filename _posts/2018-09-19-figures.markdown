@@ -1,0 +1,42 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Figures and images
+==================
+
+This is better explained here:
+<https://www.sharelatex.com/learn/Lists_of_tables_and_figures> but I
+keep these notes as I find it useful to have a reference I can relate
+to.
+
+``` {language="tex"}
+% graphicx for images
+\usepackage{blindtext}
+\usepackage{comment}
+\usepackage{array}
+\usepackage{graphicx}
+\graphicspath{ {figures/} }
+
+...
+
+\listoffigures
+\listoftables
+\newpage
+
+...
+
+\section{Some section}
+
+Some text...
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{missing}
+\caption{The maven lifecycle(missing)}
+\end{figure}
+
+Some more text...
+```

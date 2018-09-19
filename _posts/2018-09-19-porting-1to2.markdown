@@ -1,0 +1,10 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Upgrading to Ansible 2.0
+========================
+
+<https://github.com/ansible/ansible/blob/devel/docsite/rst/porting_guide_2.0.rst>

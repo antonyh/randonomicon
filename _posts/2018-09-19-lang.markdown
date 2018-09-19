@@ -1,0 +1,67 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Programming Languages
+=====================
+
+##### Elixir
+
+is Erlang
+
+##### gcov
+
+gcov is gnu coverage tool. lcov makes reports from gcov output. gcovr is
+useful to plug it into jenkins; cobertura? Intel has some tools too.
+
+##### IBM
+
+look at developerworks, again.
+
+##### Nim
+
+##### Rust
+
+##### Racket
+
+##### Dropwizard
+
+is Java restful services
+
+##### Kafka
+
+by Apache
+
+##### pkgsrc
+
+is the NetBSD package manager and can be installed almost anywhere.
+
+##### nodejs
+
+passport, express
+
+##### Mailjet
+
+The official Java API for MailJet
+
+<https://github.com/mailjet/mailjet-apiv3-java>
+
+##### Sitespeed.io w/docker
+
+    docker run --rm -v \
+    "$(pwd)":/sitespeed.io sitespeedio/sitespeed.io-standalone \
+    sitespeed.io -u http://www.sitespeed.io 
+
+##### Jekyll
+
+<http://jekyllrb.com/>
+
+##### email 
+
+254 characters The format of email addresses is local-part\@domain where
+the local-part may be up to 64 characters long and the domain name may
+have a maximum of 253 characters -- but the maximum of 256-character
+length of a forward or reverse path restricts the entire email address
+to be no more than 254 characters long.

@@ -1,0 +1,14 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Ansible Tower
+=============
+
+Ansible Tower is a manangement tool to enable running Ansible in a
+'friendly' way. It's billed as 'mission control for Ansible'.
+
+This will not be covered here, yet. You can read more and download a
+trial of Tower here: <https://www.ansible.com/tower>

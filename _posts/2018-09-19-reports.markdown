@@ -1,0 +1,37 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Reporting: Quick \"Site\" Build
+===============================
+
+The site report has all the information from the enabled plugins such as
+Findbugs, Checkstyle, Cobertura, as well as Javadocs.
+
+Building this is trivial, although it can take some time to process.
+Using the 'site' goal will give you a local copy of the reports.
+
+    mvn site -Ddependency.locations.enabled=false
+
+    # by 'staging' the site, it makes it available locally
+    mvn site site:stage -Ddependency.locations.enabled=false   
+
+You should now be able to browse the project 'target' folder and find
+the reports.
+
+This is quite useful done as part of a Jenkins CI build as it makes the
+reports available in the project workspace.
+
+Checkstyle
+==========
+
+<https://maven.apache.org/plugins/maven-checkstyle-plugin/>
+
+This can be invoked from maven with a custom xml ruleset:
+
+    mvn checkstyle:checkstyle -Dcheckstyle.config.location=./google-checkstyle.xml
+
+The results from the checkstyle report are put into the ./target folder
+for the project.

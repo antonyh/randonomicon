@@ -1,0 +1,20 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Serenity [BDD]{acronym-label="BDD" acronym-form="singular+short"}
+=================================================================
+
+What is [Serenity]{acronym-label="Serenity" acronym-form="singular+short"} [BDD]{acronym-label="BDD" acronym-form="singular+short"}?
+------------------------------------------------------------------------------------------------------------------------------------
+
+This is a re-brand of [Thucydides]{acronym-label="Thucydides"
+acronym-form="singular+short"}.
+
+#### Create a sample Serenity BDD project
+
+This is straightforward thanks to the Maven Archetype.
+
+    mvn archetype:generate -DgroupId=com.example -DartifactId=webtests -DarchetypeGroupId=net.serenity-bdd -DarchetypeArtifactId=serenity-cucumber-archetype -DarchetypeVersion=1.0.7 -DinteractiveMode=false 

@@ -1,0 +1,42 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Java 8 refactoring
+==================
+
+This is how Netbeans refactored Java 7 into Java 8.
+
+Anonymous inner class
+---------------------
+
+    final Provider<RenderingContext> renderingEngineProvider = new Provider<RenderingContext>() {  
+                @Override  
+                public RenderingContext get() {  
+                    return RenderContext.get().getRenderingContext();  
+                }  
+            };  
+
+BECOMES
+
+     final Provider<RenderingContext> renderingEngineProvider = () -> RenderContext.get().getRenderingContext(); 
+     
+
+Map entrySet
+------------
+
+    for (Map.Entry<String, String> param : params.entrySet()) { 
+        uriBuilder.append(param.getKey()) 
+        .append('=') 
+        .append(param.getValue()); 
+    } 
+
+BECOMES
+
+     params.entrySet().stream().forEach((param) -> { 
+                                uriBuilder.append(param.getKey()) 
+                                        .append('=') 
+                                        .append(param.getValue()); 
+    }); 

@@ -1,0 +1,87 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Unirest
+=======
+
+HTTP requests made easy - <http://unirest.io/java.html>
+
+Sample code 1:
+
+    Unirest.post("http://httpbin.org/post")
+      .queryString("name", "Marco")
+      .field("last", "Polo")
+      .asJson()
+
+Sample code 2:
+
+    HttpResponse<JsonNode> jsonResponse = Unirest.post("http://httpbin.org/post")
+      .header("accept", "application/json")
+      .queryString("apiKey", "123")
+      .field("parameter", "value")
+      .field("foo", "bar")
+      .asJson();
+
+Add this to the pom.xml:
+
+    <dependency>
+        <groupId>com.mashape.unirest</groupId>
+        <artifactId>unirest-java</artifactId>
+        <version>1.4.5</version>
+    </dependency>
+
+This code checks a reCaptcha response.
+
+            try {
+                HttpResponse<JsonNode> jsonResponse = Unirest.post("https://www.google.com/recaptcha/api/siteverify")
+                        .field("secret", secret)
+                        .field("response", response)
+                        .asJson();
+                return jsonResponse.getBody().getObject().getBoolean("success");
+            } catch (UnirestException | JSONException e) {
+                LOGGER.error("Unirest http call failed", e);
+                return false;
+            }
+
+<http://httpbin.org/> helps with testing request/responses.
+
+Async requests:
+
+    Future<HttpResponse<JsonNode>> future = Unirest.post("http://httpbin.org/post")
+      .header("accept", "application/json")
+      .field("param1", "value1")
+      .field("param2", "value2")
+      .asJsonAsync(new Callback<JsonNode>() {
+
+        public void failed(UnirestException e) {
+            System.out.println("The request has failed");
+        }
+
+        public void completed(HttpResponse<JsonNode> response) {
+             int code = response.getStatus();
+             Map<String, String> headers = response.getHeaders();
+             JsonNode body = response.getBody();
+             InputStream rawBody = response.getRawBody();
+        }
+
+        public void cancelled() {
+            System.out.println("The request has been cancelled");
+        }
+
+    });
+
+Working with the JSON response:
+
+    HttpResponse<JsonNode> request = Unirest.get(URL)
+      .header("Authorization", AUTH)
+      .asJson();
+
+    // retrieve the parsed JSONObject from the response
+    JSONObject obj = request.getBody().getObject();
+
+    // extract fields from the object
+    String message = obj.getString("errormessage");
+    JSONArray array = myObj.getJSONArray();

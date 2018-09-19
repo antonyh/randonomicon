@@ -1,0 +1,283 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Things using JS
+===============
+
+This is a bucket of JS things, mostly libraries that match the pattern
+/\[.\]\*js/
+
+Almost all the text in this chapter will be copied directly from the
+frameworks / websites referenced.
+
+License information is provided as a hint only and may have changed by
+the time you read this. Hire a lawyer if the difference between Apache,
+MIT, and BSD licenses are important to you, or at the very least confirm
+that I've listed the right license and understand how it may impact your
+project.
+
+manifoldjs
+----------
+
+<http://www.manifoldjs.com>
+
+The simplest way to create hosted apps across platforms and devices.
+Start using manifoldJS as part of your build process:
+
+    npm install manifoldjs
+    grunt manifoldjs
+
+By Microsoft. Licensed under the MIT license.
+
+### Why manifoldJS?
+
+manifoldJS helps you reach more users than ever by packaging your web
+experience as native apps across Android, iOS, and Windows.
+
+### How manifoldJS Works
+
+manifoldJS takes the meta-data about your site and generates native
+\"hosted\" apps. If the platform doesn't support hosted apps, we use
+Cordova to polyfill it.
+
+### Standards-based
+
+manifoldJS is based on the latest W3C Manifest working draft. We will
+update manifoldJS as the spec evolves so that you can have confidence
+that your apps will continue to work.
+
+clusterize.js
+-------------
+
+<http://nexts.github.io/Clusterize.js/>
+
+Clusterize.js - Tiny plugin to display large data sets easily.
+
+Licensed under the MIT license.
+
+### How does it work?
+
+The main idea is not to pollute DOM with all used tags. Instead of that
+- it splits the list to clusters, then shows elements for current scroll
+position and adds extra rows to top and bottom of the list to emulate
+full height of table so that browser shows scrollbar as for full list.
+
+vanillajs
+---------
+
+<http://vanilla-js.com>
+
+Vanilla JS is a fast, lightweight, cross-platform framework for building
+incredible, powerful JavaScript applications.
+
+Although this is somewhat tongue-in-cheek, it does highlight that plain
+Javascript already has a lot to offer, including browser DOM access and
+the ability to run almost anywhere.
+
+jquerymy.js
+-----------
+
+<http://jquerymy.com> jquerymy.js - A lightweight jQuery plugin for
+complex two-way data binding in real time.
+
+jQuery.my is licensed under MIT.
+
+### How it works 
+
+jQuery.my is a plugin for real time two-way data binding. It mutates
+object given as data source, reflecting interactions between user and
+UI.
+
+Data bindings, facade appearance and CSS styling of an app are all
+defined using single manifest, which is standard javascript object.
+Manifests are JSONable.
+
+jQuery.my recognize both standard HTML controls and complex composites
+created using rich ui plugins. Controls built with jQuery UI, Select2,
+CodeMirror, Ace, Redactor, CLeditor, jQuery Mobile are supported out of
+the box.
+
+jQuery.my provides comprehensive validation, conditional formatting,
+complex dependencies, runtime form structure manipulation. \$.my forms
+can run nested, each jQuery.my instance can be a composite control for
+parent form.
+
+Syntax of \$.my manifest is very simple, lean and unobtrusive. There
+exist specialized in-browser IDE for \$.my apps authoring. This IDE is a
+built-in component of cloudwall.me system.
+
+elevator.js
+-----------
+
+<http://tholman.com/elevator.js/>
+
+Elevator.js fixes those awkward \"scroll to top\" moments the old
+fashioned way.
+
+Elevator.js is covered by the MIT License. The audio in the demo is
+Creative Commons.
+
+justice.js
+----------
+
+<http://okor.github.io/justice/>
+
+A performance metric bar with a streaming FPS graph. This adds a
+frame-rate graphic to the page in a collapseable panel.
+
+MIT License.
+
+ramjet.js
+---------
+
+<http://www.rich-harris.co.uk/ramjet/>
+
+Ramjet makes it looks as though one DOM element is capable of
+transforming into another, no matter where the two elements sit in the
+DOM tree.
+
+It does so by making copies of the two elements (and all their
+children), setting a fixed position on each, then using CSS transforms
+to morph the two elements in sync.
+
+Ramjet is free and open source software released under the MIT License.
+
+fabric.js
+---------
+
+<http://fabricjs.com/>
+
+<https://github.com/kangax/fabric.js>
+
+Fabric.js is a powerful and simple Javascript HTML5 canvas library.
+Fabric provides interactive object model on top of canvas element.
+Fabric also has SVG-to-canvas (and canvas-to-SVG) parser.
+
+MIT License.
+
+ldapjs
+------
+
+<http://ldapjs.org/>
+
+ldapjs is a pure JavaScript, from-scratch framework for implementing
+LDAP clients and servers in Node.js. It is intended for developers used
+to interacting with HTTP services in node and express.
+
+MIT License.
+
+LABjs
+-----
+
+<http://labjs.com/>
+
+LABjs (Loading And Blocking JavaScript) is an all-purpose, on-demand
+JavaScript loader, capable of loading any JavaScript resource, from any
+location, into any page, at any time. Loading your scripts with LABjs
+reduces resource blocking during page-load, which is an easy and
+effective way to optimize your site's performance.
+
+##### License
+
+MIT.
+
+d3.js
+-----
+
+<http://d3js.org/>
+
+D3.js is a JavaScript library for manipulating documents based on data.
+D3 helps you bring data to life using HTML, SVG, and CSS. D3's emphasis
+on web standards gives you the full capabilities of modern browsers
+without tying yourself to a proprietary framework, combining powerful
+visualization components and a data-driven approach to DOM manipulation.
+
+##### License
+
+BSD.
+
+underscore.js
+-------------
+
+<http://underscorejs.org/>
+
+Underscore is a JavaScript library that provides a whole mess of useful
+functional programming helpers without extending any built-in objects.
+It's the answer to the question: "If I sit down in front of a blank HTML
+page, and want to start being productive immediately, what do I need?"
+... and the tie to go along with jQuery's tux and Backbone's suspenders.
+
+##### License
+
+MIT.
+
+backbone.js
+-----------
+
+<http://backbonejs.org/>
+
+Backbone.js gives structure to web applications by providing models with
+key-value binding and custom events, collections with a rich API of
+enumerable functions, views with declarative event handling, and
+connects it all to your existing API over a RESTful JSON interface.
+
+##### License
+
+MIT
+
+angularjs
+---------
+
+<https://angularjs.org/>
+
+Why AngularJS?
+
+HTML is great for declaring static documents, but it falters when we try
+to use it for declaring dynamic views in web-applications. AngularJS
+lets you extend HTML vocabulary for your application. The resulting
+environment is extraordinarily expressive, readable, and quick to
+develop.
+
+This is Angular 1, for version 2 see <https://angular.io/>
+
+##### License
+
+Code licensed under the The MIT License.
+
+threejs
+-------
+
+todo
+
+##### License
+
+reactjs
+-------
+
+todo
+
+##### License
+
+nodejs
+------
+
+todo
+
+##### License
+
+hammer.js
+---------
+
+todo
+
+##### License
+
+tremula.js
+----------
+
+todo
+
+##### License

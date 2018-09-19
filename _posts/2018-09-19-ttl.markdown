@@ -1,0 +1,70 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Controlling cache time
+======================
+
+There are three primary properties that affect how long an object
+'lives' in the cache, and what happens when that time expires.
+
+The first and most important of these is 'ttl', which is set as
+beresp.ttl, and stored and can be read as obj.tll. Under normal
+circumstances the cached object will be used until this duration is
+reached.
+
+The second value is the 'grace' period. Varnish will use the cached,
+expired, stale, object for this period of time after the TTL has been
+reached. Usually this is because the backend is unavailable. The grace
+period ensures that content can be served when there is no way to get
+fresh content.
+
+The third intrinsic property of Varnish cache objects is 'keep'. It
+controls how long an object will be kept for while backend conditional
+requests are made. If a request for the object is made, but has passed
+it's TTL and so is stale, but is within the 'keep' time, a HEAD request
+is made to the backend, which may return a 304 not modified status code.
+This saves us from having to fully fetch the content - Varnish can
+simply reset the timer safe in the knowledge that the content hasn't
+changed. If it has modified, it just asks the backend as normal.
+
+Setting TTL
+-----------
+
+The TTL value is the basic \"cache, no need to check the backend\"
+timer, and would usually be set in vcl\_recv or vcl\_backend\_request.
+
+The default TTL is set when the Varnish Daemon starts. Personally I
+prefer to override this in the VCL for consistency - I know that it will
+operate exactly as designed regardless of how the system is setup.
+
+Keep has a default of 10 seconds, and should optionally be set whenever
+the TTL changes. In most cases the ten second default is sufficient.
+
+Grace has specific recommendations, mostly revolving around the health
+checks for the backend using the probe directive. The longer the grace
+period, the more likely Varnish is to serve stale content.
+
+In general, TTL should be as long as you can tolerate for your
+application, 'keep' should be set long enough for any backend to return
+a '304 not modified' or return a complete response. 10 seconds is going
+to be more than enough in most cases. Grace should be set to cover
+enough time for complete outage of backend servers.
+
+How long is tolerable for your application? That really depends on
+update frequency. If your application updates extremely often then you
+could see benefit in a one second TTL as it would still cache a lot of
+requests. Alternatively, if you are caching a blog that gets a couple of
+posts a week then that doesn't automatically mean that your TTL should
+be measured in days. Setting a TTL of minutes might still be tolerable
+if the capacity of the backend is able to comfortably serve the pages.
+You might consider caching Javascript, CSS, and Images more but unless
+the backend finds these expensive for some reason the benefits will be
+marginal - the slowest content is dynamically rendered HTML using
+scripting languages, or possibly alternate renditions of the pages as
+PDFs if you are offering this facility. Generated thumbnails or images
+rescaled on the fly for adaptive or responsive layouts can also be high
+cost and worthy of caching for extended periods particularly if you know
+they won't change.

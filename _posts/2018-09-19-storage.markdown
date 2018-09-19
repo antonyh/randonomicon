@@ -1,0 +1,97 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Docker storage
+==============
+
+Docker, like virtually everything else, needs a way to persist files and
+have local configuration and data. Docker provides mechanisms to not
+only store container specific information but to also share it between
+containers running in the same Docker daemon process.
+
+Docker volumes
+--------------
+
+Docker volumes are a way to provide a file system for the container with
+data that isn't part of the docker image. This is significant as it
+gives a way for an application to have transient data and configuration
+files that are not part of the probably shared and hopefully reuseable
+image.
+
+#### Volumes at build-time
+
+When you use 'docker commit', volume contents are not saved. Using
+'docker commit' is generally discouraged, but regardless of this there
+is nothing to be gained by writing to your volumes when the image is
+built as it will be discarded anyway. Using docker build eliminates the
+temptation to populate the volume with data.
+
+#### Volumes are read-write
+
+Normally docker volumes are mounted as read-write, but if you want to
+mount a volume for read-only, you need to explicitly set a :ro flag.
+
+    docker run -v /data/host:/container/readonly:ro  ubuntu /bin/bash
+
+#### Volumes are separate from containers
+
+Docker volumes are stored outside of the container, so long as at least
+one container is using the volume. When the last reference to the volume
+is lost, then the volume itself is destroyed. Volumes can be shared
+between containers using the --volumes-from option.
+
+    docker run -d --volumes-from dbdata --name db1 ubuntu /bin/bash
+
+This will run an instance of Ubuntu, with the volumes available to the
+'dbdata' container, and given the container name 'db1'. It will detach
+from the console, which in this example is perhaps not terribly useful
+but we can attach to it later if we need to.
+
+Commands to manage Docker storage
+---------------------------------
+
+#### Remove all Docker images
+
+You can remove all Docker images from the daemon with these commands -
+I've provided three ways to do this with different shell syntax, choose
+the one you like best. You can force removal with 'docker rmi -f' but
+it's not recommmended - shut down the container first.
+
+    docker rmi `docker images -q`
+    docker images -q |xargs docker rmi 
+    docker rmi \$(docker images -q) 
+
+Of course, if you are using boot2docker you may find it's quicker to
+delete the virtual machine and start again.
+
+    boot2docker destroy
+    boot2docker init
+    boot2docker up
+
+#### Remove Docker containers that are not running
+
+If you need to remove containers that are not running to reclaim disk
+space or as part of housekeeping duties then any of these three commands
+will do it for you.
+
+    docker ps -aq |xargs docker rm 
+    docker rm \$(docker ps -aq)
+    docker rm `docker ps -aq`
+
+#### Stop all running Docker containers
+
+Any of these commands will ask Docker to shutdown all containers.
+
+    docker ps -aq |xargs docker stop 
+    docker stop \$(docker ps -aq)
+    docker stop `docker ps -aq`
+
+The first one pipes it to docker stop via xargs. The second and third
+use shell expansion to achieve the same result. Different system
+configurations may mean you have to use one style to get this to work,
+and the same applies to the other examples in the chapter. If it doesn't
+work, it'll give you a command-not-found or some syntatic error so it
+should be fairly obvious as well as benign.

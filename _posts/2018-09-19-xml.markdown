@@ -1,0 +1,38 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+XML in Java
+===========
+
+    //setup a document
+    DocumentBuilderFactory dbf 
+      = DocumentBuilderFactory.newInstance();
+    DocumentBuilder db;
+    db = dbf.newDocumentBuilder();
+    Document doc = db.newDocument();
+
+    //create a root node
+    Element rootElement 
+      = doc.createElement("root");
+    doc.appendChild(rootElement);
+
+    //get the root node
+    Element rootNode 
+      = document.getDocumentElement();
+    assert (rootNode != null);
+
+    //create an element node
+    Element newElement 
+      = document.createElement("sv:node");
+      
+    //add an attribute
+    Attr attr 
+      = document.createAttribute("name");
+    attr.setValue(p);
+
+    //attach the new node
+    rootNode.appendChild(newElement);
+            

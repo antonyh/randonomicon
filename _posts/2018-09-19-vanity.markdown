@@ -1,0 +1,44 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+digraph G
+
+graph\[compound=true, overlap=false, ranksep=\"0.5\", nodesep=\"0.9\"\];
+
+node \[shape=hexagon, style=\"filled,rounded\", fontname=\"Verdana\",
+fontsize=14\];
+
+subgraph EXTERNAL node \[fillcolor=lightyellow\]; info
+\[shape=underline, label=\"The Vanity URL change flow\",
+fillcolor=lightgrey\]
+
+subgraph main
+
+node \[fillcolor=lightblue\];
+
+start \[label=\"START\", shape=oval, fillcolor=palegreen\]; done
+\[label=\"DONE\", shape=oval, fillcolor=palegreen\]; rejected
+\[label=\"REJECTED\", shape=oval, fillcolor=red\];
+
+checkurl \[label=\"Is there already the URL?\", shape=diamond,
+fillcolor=lightyellow\]; righturl \[label=\"Is it going to correct
+URL?\", shape=diamond, fillcolor=lightyellow\]; isitsimple \[label=\"Is
+the simple, /vanityurl ?\", shape=diamond, fillcolor=lightyellow\];
+alreadyinaem \[label=\"Is the already AEM?\", shape=diamond,
+fillcolor=lightyellow\]; removefromvarnish \[label=\"Dev needs to the
+redirect varnish\", shape=box, fillcolor=lightpink\]; addtovarnish
+\[label=\"Dev needs to the redirect varnish\", shape=box,
+fillcolor=lightpink\]; portalsupport \[label=\"Portal Support to
+add/update redirect AEM\", shape=box, fillcolor=lightblue\];
+
+start -\> checkurl; checkurl -\> righturl \[label=\"YES\"\]; checkurl
+-\> isitsimple \[label=\"NO\"\]; righturl -\> done \[label=\"YES\"\];
+righturl -\> alreadyinaem \[label=\"NO\"\]; alreadyinaem -\>
+portalsupport \[label=\"YES\"\]; alreadyinaem -\> removefromvarnish
+\[label=\"NO\"\]; alreadyinaem -\> rejected \[label=\"The vanity URL
+already for purpose\"\]; removefromvarnish -\> isitsimple; isitsimple
+-\> portalsupport \[label=\"YES\"\]; isitsimple -\> addtovarnish
+\[label=\"NO\"\]; portalsupport -\> done; addtovarnish -\> done;

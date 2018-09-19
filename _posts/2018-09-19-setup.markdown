@@ -1,0 +1,328 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+ModSecurity setup
+=================
+
+'modsecurity\_crs\_10\_setup.conf' is the base file for configuring
+ModSecurity, and should be included first. It configures some vital
+values, such as if the rules engine is off, in a detect-only mode, or
+fully active. It also defines score thresholds and default actions.
+Paranoid mode can be enabled here.
+
+The first thing to do when setting up modsec is to look over this file
+and make sure you are happy with everything. There are some controls
+over logging here, and thresholds that can be adjusted. You can also
+configurate a MaxMind GeoIP database there for cross-referencing
+location.
+
+Rule 900012 is of interest as it declares allowed HTTP methods, content
+mime types, HTTP protocol versions, restricted request extensions such
+as .exe, and prohibited HTTP headers. These are used by other rules
+(specifically the '30' rules for HTTP policy), and can be altered if you
+are experiencing false positives.
+
+Optional parts of the 'setup' file
+----------------------------------
+
+Even though the 'modsecurity\_crs\_10\_setup.conf' should really be
+about setup and configuration, it does contain some rules. Some of these
+are meta-rules that block based on accumulated scores. In fact, these
+are SecAction and not SecRule definitions, which is something we will
+look at later but for now it's important to notice this subtle
+difference in the file - on first glance you might not see this.
+
+Some of the SecRule and SecAction lines in the file are removed as
+comments, and have notes as to their function. This includes:
+
+-   anomaly detection scoring
+
+-   geoip
+
+-   regression testing mode
+
+-   HTTP policy limits, most of which tend to trigger false positives
+
+-   content security policy (CSP) action
+
+-   brute force protection
+
+-   DoS protection
+
+-   UTF encoding check
+
+There are detailed comments in the file that explain the rule/action and
+the values you can adjust if you choose to enable it. Unfortunately it's
+not completely clear in most cases why it has been disabled, but it's
+possible to speculate that it either causes excessive false positives or
+has other side effects such as memory usage or reduced response times.
+
+Apache module configuration
+===========================
+
+Some of the vital settings are in the module configuration for
+mod\_security and need to be tuned to match not only the available
+resources on the machine but also the security needs.
+
+There are four values mentioned in 'modsecurity\_crs\_10\_setup.conf'
+that need to be set in the modsecurity.conf file for HTTPd:
+
+-   SecRuleEngine
+
+-   SecRequestBodyAccess
+
+-   SecAuditEngine
+
+-   SecDebugLog
+
+SecRuleEngine
+-------------
+
+SecRuleEngine has three possible values - On, Off, or DetectionOnly.
+
+#### SecRuleEngine On
+
+fully enables the rules engine and will block requests. This is the mode
+you want to use in a production setting.
+
+#### SecRuleEngine Off
+
+completely disabled the rules engine, so ModSecurity will do nothing.
+
+#### SecRuleEngine DetectionOnly
+
+runs all the rules but instead of blocking requests it will write the
+matches to a log file. This is mostly useful for checking rules and
+preparing to enable the rule set. You can use the output in the log file
+to make sure that you are not blocking valid requests.
+
+SecRequestBodyAccess
+--------------------
+
+You can turn SecRequestBodyAccess on or off to control access to the
+request body. Disabling this stops ModSecurity from accessing POST
+requests, opening up exploitable huge holes. I suppose you could turn
+this off if you are completely blocking POST requests, such as a
+read-only RESTful service or a static file server like a CDN which only
+uses GET or HEAD requests as a performance optimisation, but in all
+normal circumstances this should be left in the default 'on' mode.
+
+There are a number of parameters which can be tuned for this option to
+limit the memory usage and provide better control over the request body.
+There's also a number of SecRule entries here that reinforce the
+security of the request body mostly around validating multipart
+boundaries, and enabling XML or JSON data processors.
+
+#### Rule 200000; enable XML processor
+
+for mime type text/xml the request body will be processed and validated
+as XML.
+
+#### Rule 200001; enable JSON processor
+
+for mime type 'application/json' - you will need to adjust this if you
+are using a different mime type. Some applications will use text/json,
+text/javascript, or text/x-json.
+
+#### SecRequestBodyLimit 13107200
+
+request buffer limit, ten times the 128Kb of the in-memory limit.
+
+#### SecRequestBodyNoFilesLimit 131072
+
+request buffer data limit, without files. This should be set as low as
+possible according to the comment, but I would suggesting leaving this
+alone unless you have good reason to change it.
+
+#### SecRequestBodyInMemoryLimit 131072
+
+after this amount of data, the request body will be buffered to disk,
+which is both slow and unavoidable. Increasing this will obviously make
+large requests quicker to process but will also make it likely that you
+will be able to process fewer simultaneously.
+
+#### SecRequestBodyLimitAction Reject
+
+When a request exceeds the limit, what should happen? The default is to
+reject the request.
+
+#### Rule 200002; request body parse
+
+A fairly obvious and straightforward rule - if the request body is no
+parsable, reject the request.
+
+#### Rule 200003; multipart validation
+
+This is a strict validation rule for multipart/form-data requests. In
+some cases it might be necessary to make this less strict or change it
+from 'reject' to 'detect' and just have it log a high-severity message.
+The guidance offered is not to remove this rule.
+
+#### Rule 200004; stray multipart boundary
+
+This rule looks for unmatched multipart boundaries and will deny
+requests that have a boundary that doesn't have the right value. Some
+PDF documents may trigger this rule. This rule may also potentially be
+triggered by form fields that start with two hyphens. The message this
+rule presents in the log files is
+
+> \"Multipart parser detected a possible unmatched boundary. This may be
+> an impedence mismatch attack, a broken application or a broken
+> connection. This is not a false positive. Check your application or
+> client for errors.\"
+
+which lays the blame squarely on either an attack or a broken
+application without giving much of a clue as to how to correct this.
+
+SecResponseBodyAccess
+---------------------
+
+ModSecurity is also able to process the response content, which allows
+it to log and block responses that contain errors such as stack traces
+or enforce compliance with PCI by preventing anything that looks like a
+credit card number from being included in the output.
+
+#### SecResponseBodyAccess On
+
+The default is on, allowing ModSecurity to inspect the response body,
+and is required for some rules to work.
+
+#### SecResponseBodyMimeType
+
+This defines the mimes types that should be inspected. The default is
+SecResponseBodyMimeType text/plain text/html text/xml as these are
+reasonable types to check. You may wish to add JSON to this list if you
+are using AJAX or dynamic data to ensure that you have no stack traces
+or information leaks.
+
+#### SecResponseBodyLimit
+
+This sets the buffer size for the response to help manage memory usage.
+The default is 524288 or 512Kb.
+
+#### SecResponseBodyLimitAction
+
+This defines what happens when we 'break the bank' in relation to the
+SecResponseBodyLimit setting. \"SecResponseBodyLimitAction
+ProcessPartial\" is the default, and will ignore the remaining content.
+This is a little less secure, but sufficient for most purposes.
+
+SecAuditEngine
+--------------
+
+The audit engine logs transactions. Basically it is capable of logging
+almost every request with some exceptions for 400 and 404 errors, and is
+usually set to log 'Relevant Only' transactions. This means transactions
+that have a warning or have caused an error.
+
+There are two ways to configure messages in the audit log; globally, and
+per-rule using ctl. If you need to change the log information for a
+specific rule, you can.
+
+The default configuration provided with the CRS rule set gives this set
+of instructions for the audit log:
+
+    # -- Audit log configuration -------------------------------------------------
+
+    # Log the transactions that are marked by a rule, as well as those that
+    # trigger a server error (determined by a 5xx or 4xx, excluding 404,  
+    # level response status codes).
+    #
+    SecAuditEngine RelevantOnly
+    SecAuditLogRelevantStatus "^(?:5|4(?!04))"
+
+    # Log everything we know about a transaction.
+    SecAuditLogParts ABIJDEFHZ
+
+    # Use a single file for logging. This is much easier to look at, but
+    # assumes that you will use the audit log only ocassionally.
+    #
+    SecAuditLogType Serial
+    SecAuditLog /var/log/modsec_audit.log
+
+    # Specify the path for concurrent audit logging.
+    #SecAuditLogStorageDir /opt/modsecurity/var/audit/
+
+#### SecAuditEngine
+
+controls if it logs nothing, relevant, or everything. Normally you
+wouldn't want nothing, equally you usually wouldn't want everything.
+
+#### SecAuditLogRelevantStatus
+
+This is a regex that matches against the HTTP status code, which in the
+example configuration is 4xx except 404, and any 5xx class error.
+
+#### SecAuditLogParts
+
+The logging is highly configurable. This controls the level of detail
+that appears in the log. A and Z are mandatory.
+
+ABIJDEFHZ gives a good view of the request/response.
+
+ABIJDFHZ omits section E (the response body) and so reduces log size
+considerably at the expense of diagnostic information.
+
+You probably won't need to meddle with this too much, unless you have
+specific needs.
+
+#### SecAuditLogType
+
+Serial or Concurrent.
+
+Serial writes all the audit records to a single file, in the same way
+that most log files work. It blocks while writing takes place, so it can
+cause a bottleneck.
+
+Concurrent creates a new file for each logged transaction. You have to
+use this if you need to use remote logging.
+
+#### SecAuditLog
+
+This is the file path to store the serial log or concurrent log index.
+This is also where you can pipe the log to `mlogc` to use remote
+logging.
+
+#### SecAuditLogStorageDir
+
+This is where concurrent log entries are created.
+
+SecPcreMatchLimit
+-----------------
+
+There are two settings to manage the maximums for the rules using PCRE -
+Perl Compatible Regular Expressions. This limit mitigates DoS attacks by
+preventing excessive recursion. When you hit this limit, ModSecurity
+with block the request with status 403 Forbidden and emit a message into
+the log 'MSC\_PCRE\_LIMITS\_EXCEEDED' and the details of the rule it was
+processing at the time.
+
+The default settings are:
+
+    SecPcreMatchLimit 1000
+    SecPcreMatchLimitRecursion 1000
+
+There are tales online of folk increasing these, values of 150'000 are
+not uncommon. Be aware, and beware, this allows it to recurse to this
+maximum depth. Question if you expect any of the regex to do this when
+presented with valid data. Question if you think the default values are
+not reasonable. Question if you think the developer who set this value
+thought that a thousand recursions was safe in terms of false positives.
+
+One strategy is to run the WAF in DetectionOnly mode and inspect the
+logs. If you 'PCRE limits exceeded' then increase this value by 500,
+restart Apache, and try the test again. When you are able to load all
+your pages and resources with all the cookies values (don't forget
+external cookie set by analytics, et cetera), then you have a useful
+value. You might need to increase this again if you add custom rules, or
+include optional or experimental rules.
+
+Other settings in modsecurity.conf
+----------------------------------
+
+There's quite a few other settings in the modsecurity.conf file, most of
+which are self-evident or can be ignored. It's best that you read the
+file and adjust it according to the comments to have the right values.

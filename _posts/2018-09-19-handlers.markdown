@@ -1,0 +1,54 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Handlers
+========
+
+This contains a handlers file named 'main.yml'. I sure wish they had
+named all these YAML files after their purpose instead of 'main', it
+would have made it easier when using an editor with multiple panes or
+tabs, and easier to find the file by name.
+
+Handlers are tasks that are only run if triggered by a 'notify'
+directive on another task. This is typically used to restart a service
+only if configuration files has changed.
+
+Using a handler
+---------------
+
+    - name: Configure Wingnuts 
+      template: src=wingnuts.config.j2 dest=/etc/wingnuts
+      handler: restart wingnuts
+
+This will log an event to call the handler 'restart wingnuts'. Ansible
+is smart. It will only run the task for the handler once, after all the
+tasks that trigger this event have completed.
+
+Declaring a handler
+-------------------
+
+In the 'handlers/main.yml' file, you declare a handler exactly as you
+wold define a task.
+
+    ---
+    # Handlers for Wingnut
+
+    - name: restart wingnut
+      service: name=wingnut state=restarted
+
+The name matches the name given in the 'handler' declaration of the
+task, and Ansible does the rest.
+
+Caveats
+-------
+
+Handlers should avoid using includes, because of known issues with
+run-time evaluation causing the handler not to be seen.
+
+It might not be wise to have a handler that has a 'handler', aside from
+the risk of recursion. If you need to have nested dependencies, things
+have already become too complex and gotten out of hand. Frankly, this
+might not even be legal syntax.

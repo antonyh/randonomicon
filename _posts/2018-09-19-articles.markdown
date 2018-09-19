@@ -1,0 +1,69 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+REWRITE THIS
+------------
+
+Articles, Blogs, and Links
+--------------------------
+
+#### Sing a Whale Song
+
+This useful blog post has ten tips and tricks that might help.
+
+<http://nathanleclaire.com/blog/2014/07/12/10-docker-tips-and-tricks-that-will-make-you-sing-a-whale-song-of-joy/>
+
+#### Random Docker Tips
+
+This site has a selection of docker tips.
+
+<http://csaba.palfi.me/random-docker-tips/>
+
+#### vs Vagrant
+
+<http://stackoverflow.com/questions/16647069/should-i-use-vagrant-or-docker-io-for-creating-an-isolated-environment>
+
+Tools
+-----
+
+<https://clusterhq.com/>
+
+<http://kubernetes.io/>
+
+Notes & Articles 
+-----------------
+
+<http://security.stackexchange.com/questions/70827/passing-secret-keys-securely-to-docker-containers>
+
+<http://stackoverflow.com/questions/22651647/docker-and-securing-passwords>
+
+<https://groups.google.com/forum/#!topic/docker-user/CppazuCC7Xk>
+
+AWS Specific 
+-------------
+
+<http://r.32k.io/adf>
+
+<https://github.com/ryandotsmith/adf-config>
+
+Articles on fig and docker-compose
+----------------------------------
+
+There are a number of useful online articles on Fig / docker-compose
+that are worth looking at if you have the time.
+
+#### Fig with Lavavel
+
+This article provides a useful guide to using Docker and Fig in
+combination with Laravel PHP.
+
+<http://www.dylanlindgren.com/laravel-development-docker-fig/>
+
+#### docker-compose
+
+Fig is now 'docker-compose', and integrates with docker-swarm.
+
+<http://chrisbarra.me/posts/docker-orchestration.html>

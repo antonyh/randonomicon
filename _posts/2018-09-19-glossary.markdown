@@ -1,0 +1,36 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+\newglossaryentry{bash}
+{
+  name=Bash,
+  description={The Bourne Again Shell}
+}
+\newglossaryentry{zsh}
+{
+  name=Zsh,
+  description={A shell}
+}
+\newglossaryentry{shell}
+{
+  name=Shell,
+  description={A console where you can type in comannds and receive feedback}
+}
+\newglossaryentry{commandline}
+{
+  name=Command line,
+  description={This is what Windows users call their shell, also knows as cmd.exe}
+}
+\newglossaryentry{terminal}
+{
+  name=Terminal,
+  description={This is the application on OS X that runs the shell}
+}
+\newglossaryentry{powershell}
+{
+  name=Powershell,
+  description={A newer, more integrated Windows Shell. It lives up to it's name}
+}

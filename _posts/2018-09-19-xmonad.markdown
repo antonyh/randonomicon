@@ -1,0 +1,247 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+create a new pane - alt-shift-enter
+
+What is XMonad? It's a tiling window manager, that you can control
+extremely well purely from the keyboard without a mouse. It's also very
+good with multiple monitors.
+
+A tiling window manager takes away the burden of moving windows by
+laying them out for you optimally, with the option of changing the
+layout with deft keystrokes. It's a very efficient way of working,
+particularly with terminal windows.
+
+Installing XMonad into XQuartz on OSX
+=====================================
+
+Here's a fragment of my shell history, this is what I did to get it
+installed and running.
+
+To start, you need homebrew & cask to install GHC, Cabal, and
+XScreenSaver. Yes, XMonad depends on the X11 screensaver, albeit
+indirectly - it's really a dependency of a dependency. A cousin, if you
+will. There's some voodoo with library paths to make this work, so this
+might be where it doesn't work for you.
+
+    #install haskell
+    brew install ghc
+
+    #install cabal
+    brew install cabal-install
+
+    #install xscreensaver
+    brew install Caskroom/cask/xscreensaver
+
+    #download list of packages for cabal
+    cabal update
+
+    #install x11 library using cabal
+    LIBRARY_PATH=/opt/X11/lib:$LIBRARY_PATH cabal install X11
+
+    #install xmonad
+    cabal install xmonad
+
+    #set XQuartz to use xmonad as the WM
+    mkdir ~/.xinitrc.d
+    echo 'USERWM=~/.cabal/bin/xmonad' >~/.xinitrc.d/90-wm.sh
+    chmod +x ~/.xinitrc.d/90-wm.sh
+
+    #compile xmonad.hs into an executable
+    ~/.cabal/bin/xmonad --recompile
+
+You could roll the brew install commands together, but for demonstration
+I've kept them separate. In all likelihood, you'll run through all these
+steps without any real problems until the last line, where it will
+whinge about not having a xmonad.hs file. Create the file and recompile
+and it should all work nicely.
+
+configuring  /.xmonad/xmonad.hs
+===============================
+
+This is a basic sample that supposed to work well on Xquartz. There are
+many options and variants, so it's worth searching online for examples.
+
+``` {language="haskell"}
+import XMonad
+
+main = xmonad defaultConfig
+        { modMask = mod4Mask
+        , terminal = "urxvt"
+        }
+```
+
+When you have created the file, you can run build xmonad from your
+config with one easy command:
+
+    xmonad --recompile
+
+When it finishes, then you should open XQuartz and see XMonad as the
+window manager. It works better in fullscreen mode (set it in the
+XQuartz preferences panel) and use cmd-opt-a to switch between osx and
+x11.
+
+xresources settings
+===================
+
+You can control the display of the terminal windows in the  /.xresources
+file so that xterm is better for you. It's highly subjective, but if you
+want a reasonable start with a monospaced fairly small typeface and
+white-on-black colours, try this:
+
+    xterm*background: Black
+    xterm*foreground: White
+    xterm*termName: xterm-color
+    xterm*faceName: Monaco:size=10
+    xterm*dynamicColors:      true
+    xterm*utf8:               2
+    xterm*eightBitInput:      true
+    xterm*saveLines:          512
+    xterm*scrollKey:          true
+    xterm*scrollTtyOutput:    false
+    xterm*scrollBar:          true
+    xterm*rightScrollBar:     true
+    xterm*jumpScroll:         true
+    xterm*multiScroll:        true
+    xterm*toolBar:            false
+
+I've added scrollbars and so on, the scrollback buffer is way too small
+for me, but this is a good start for customisation. Just remember when
+picking fonts in X11, you might not be able to use all the fonts from
+OSX - I've found that some just don't seem to work. You can use
+'xfontsel' to get the right name'. Mostly, it seems to be a case of just
+using lower case.
+
+Default keyboard bindings
+=========================
+
+Maybe it's a bit cheeky to include this here, particularly as it is so
+easy to change the bindings so it might not be accurate for you, but
+this list cribbed from the manpage is useful.
+
+'mod' usually represents 'alt' but may Ådiffer based on the operating
+system or the xmonad configuration.
+
+#### mod-shift-return
+
+Launch terminal
+
+#### mod-p
+
+Launch dmenu
+
+#### mod-shift-p
+
+Launch gmrun
+
+#### mod-shift-c
+
+Close the focused window
+
+#### mod-space
+
+Rotate through the available layout algorithms
+
+#### mod-shift-space
+
+Reset the layouts on the current workspace to default
+
+#### mod-n
+
+Resize viewed windows to the correct size
+
+#### mod-tab
+
+Move focus to the next window
+
+#### mod-shift-tab
+
+Move focus to the previous window
+
+#### mod-j
+
+Move focus to the next window
+
+#### mod-k
+
+Move focus to the previous window
+
+#### mod-m
+
+Move focus to the master window
+
+#### mod-return
+
+Swap the focused window and the master window
+
+#### mod-shift-j
+
+Swap the focused window with the next window
+
+#### mod-shift-k
+
+Swap the focused window with the previous window
+
+#### mod-h
+
+Shrink the master area
+
+#### mod-l
+
+Expand the master area
+
+#### mod-t
+
+Push window back into tiling
+
+#### mod-comma
+
+Increment the number of windows in the master area
+
+#### mod-period
+
+Deincrement the number of windows in the master area
+
+#### mod-shift-q
+
+Quit xmonad
+
+#### mod-q
+
+Restart xmonad
+
+#### mod-shift-slash
+
+Run xmessage with a summary of the default keybindings (useful for
+beginners)
+
+#### mod-\[1..9\]
+
+Switch to workspace N
+
+#### mod-shift-\[1..9\]
+
+Move client to workspace N
+
+#### mod-{w,e,r}
+
+Switch to physical/Xinerama screens 1, 2, or 3
+
+#### mod-shift-{w,e,r}
+
+Move client to screen 1, 2, or 3
+
+#### mod-button1
+
+Set the window to floating mode and move by dragging
+
+#### mod-button2
+
+Raise the window to the top of the stack
+
+#### mod-button3
+
+Set the window to floating mode and resize by dragging

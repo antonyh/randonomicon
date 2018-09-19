@@ -1,0 +1,22 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Design guidelines
+=================
+
+Windows 10
+----------
+
+If you are interested in designing for the forthcoming Universal Windows
+10 Platform, here is the place to start:
+
+<http://design.windows.com>
+
+##### Design UWP apps
+
+A great app starts with a great user interface. Learn how to design a
+Universal Windows Platform (UWP) app that looks fantastic on all Windows
+10-based devices, from phones and tablets to PCs and Surface Hub.

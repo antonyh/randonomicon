@@ -1,0 +1,26 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+In Summary
+==========
+
+We covered a number of interesting things with terminals, command lines,
+and shells.
+
+-   bash shell
+
+-   zsh shell
+
+-   some useful and common shell commands
+
+-   tmux
+
+-   xmonad
+
+-   freebsd, and some notes and help for those more familiar with Linux
+
+This is just the foothills of the mountain, some useful tools to get
+started.

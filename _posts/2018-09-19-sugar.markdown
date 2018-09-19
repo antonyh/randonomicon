@@ -1,0 +1,57 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Sugar
+=====
+
+Fructose
+--------
+
+Fruit sugar. <http://en.wikipedia.org/wiki/Fructose>
+
+### Sources
+
+### Benefits
+
+### Problems
+
+Glucose
+-------
+
+Sugar. Dextrose. <http://en.wikipedia.org/wiki/Glucose>
+
+### Sources
+
+### Benefits
+
+### Problems
+
+Sucrose
+-------
+
+### Sources
+
+### Benefits
+
+### Problems
+
+Lactose
+-------
+
+Sugars found in dairy produce, such as milk and cream.
+
+### Sources
+
+### Benefits
+
+### Problems
+
+Artificial Sugars
+-----------------
+
+### Stavia
+
+### ?

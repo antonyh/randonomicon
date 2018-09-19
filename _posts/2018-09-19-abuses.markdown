@@ -1,0 +1,44 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+REWRITE THIS
+------------
+
+Docker abuses and anti-patterns
+-------------------------------
+
+There are quite a few abuses possible with Docker; I'm sure there are
+many more than this section suggests even for such a young platform as
+Docker.
+
+#### taking over the hosts network stack 
+
+docker run --net=host allows reusing the network stack of the host.
+Don't do this.
+
+#### Running SSHd inside Docker
+
+This violates the single concern principles of Docker, is unnecessary
+with 'docker exec' and is widely condemned. Don't do this.
+
+#### Running your command as ROOT
+
+By default everything runs as root in Docker containers and all the
+build steps are done by root. The USER keyword changes user, and
+subsequent instructions are issued as that user, including setting file
+ownerships and permissions. If possible make sure you add a USER
+directive and avoid using the root user, for the sake of general good
+security. Just because it's encapsulated in a container doesn't mean we
+should be lax over permissions, particularly as the cost for changing
+users is so low. Don't do this.
+
+#### Docker in docker
+
+Spawning a docker inside a docker is generally considered an
+architectural defect and should usually be avoided. The need to run
+Docker daemon as privileged is a risk itself. Mounting the docker Unix
+socket is a flatter and cleaner approach better suited to most uses.
+Don't do this.

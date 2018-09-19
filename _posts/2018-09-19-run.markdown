@@ -1,0 +1,75 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Run Jetty using Maven
+=====================
+
+Some projects can be run using Jetty using the jetty:run mojo or with
+jetty:run-war. You'll probably need to set MAVEN\_OPTS to give enough
+heap space for the server, and with Java 7 or earlier you might also
+need to set MaxPermSize to a suitable value.
+
+    MAVEN_OPTS="-Xmx512m -XX:MaxPermSize=128m" 
+    mvn jetty:run-war 
+
+Run Tomcat using Maven
+======================
+
+The 'Cargo' plugin allows Maven to create a running Tomcat instance with
+the application-under-development for convenience during development and
+testing. I wouldn't imagine that this is a great way of productionising
+your code, so please limit this to uses where it makes sense to have the
+source code available.
+
+You can find more about this here
+
+-   <http://cargo.codehaus.org/Maven2+plugin>
+
+-   <http://cargo.codehaus.org/Static+deployment+of+expanded+WAR>
+
+This is the plugin declaration you will need to make this work.
+
+    <plugin>
+        <groupId>org.codehaus.cargo</groupId>
+        <artifactId>cargo-maven2-plugin</artifactId>
+            <version>1.4.8</version>
+            <configuration>
+                <container>
+                    <containerId>tomcat8x</containerId>
+                    <home>${env.CATALINA_HOME}</home>
+                </container>
+                <configuration>
+                    <type>existing</type>
+                    <home>${env.CATALINA_HOME}</home>
+                </configuration>
+                <deployables>
+                    <deployable>
+                        <groupId>com.yourcompany</groupId>
+                        <artifactId>ROOT</artifactId>
+                        <type>war</type>
+                    <properties>
+                        <context>${project.build.finalName}</context>
+                    </properties>
+                </deployable>
+            </deployables>
+            <deployer>
+                <type>installed</type>
+            </deployer>
+        </configuration>
+    </plugin>
+
+Finally, to make it start Tomcat:
+
+    mvn cargo:run
+
+If you don't want to modify the POM, you can take the dirty shortcut and
+use the plugin directly from the command line at the expense of lack of
+control of the plugin settings:
+
+    mvn clean verify org.codehaus.cargo:cargo-maven2-plugin:run
+
+Cargo also offers the facility to use alternatives to Tomcat, namely
+Glassfish, Jetty, JBoss, and so on.

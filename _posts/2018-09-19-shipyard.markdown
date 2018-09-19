@@ -1,0 +1,32 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Shipyard
+========
+
+#### What is [Shipyard]{acronym-label="Shipyard" acronym-form="singular+short"}?
+
+<http://shipyard-project.com/>
+
+\"Composable Docker Management
+
+Built on the Docker cluster management toolkit Citadel,
+[Shipyard]{acronym-label="Shipyard" acronym-form="singular+short"} gives
+you the ability to manage Docker resources including containers, hosts
+and more.
+
+According to Shipyard, it differs from other management applications in
+that it promotes 'composability'. At the core, Shipyard only manages
+Docker (containers, etc). However, using \"Extension Images\" you can
+add functionality such as application routing and load balancing,
+centralised logging, deployment and more. You decide which components to
+use that fit your needs.\"
+
+#### Shipyard setup
+
+Shipyard runs in Docker, so it's very easy to setup and get it running.
+
+    docker run -i -t -v /var/run/docker.sock:/docker.sock shipyard/deploy setup

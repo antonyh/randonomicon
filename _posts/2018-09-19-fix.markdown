@@ -1,0 +1,20 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Fixing things
+=============
+
+fix problems with Brew (on OS X)
+--------------------------------
+
+    brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
+
+
+    When I run 
+    brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup 
+    I get:
+    Error: brew-cask 0.53.3 already installed
+    brew update; brew upgrade brew-cask;  brew cleanup ; brew cask cleanup    

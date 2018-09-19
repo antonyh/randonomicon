@@ -1,0 +1,15 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Shell and terminal
+==================
+
+Mastering shell and terminal commands is a challenge, but with some
+careful selection of tools, creating some useful aliases, and making
+good notes it's possible to make rapid gains. With the Unix philosophy
+that most of the tools follow of 'do one thing and do it well' it means
+that you can master one (often simple) tool, and combine it with others
+to get the results that you need.

@@ -1,0 +1,88 @@
+---
+layout: post
+
+date:   2018-09-19 22:25:52 +0100
+categories: jekyll update
+---
+Roles
+=====
+
+Roles define the duties that the server must fulfil. The common pattern
+seems to be to have a 'common' role that is applied to all servers.
+Beyond this there are service-based roles for each part of a stack, such
+as 'mongodb' or 'rabbitmq' that installs and configures the service.
+Each role defines the state needed and the action needed to achieve that
+desired state.
+
+The advantage of this is that the boring, mundane, generic tasks go in
+'common' making the other roles cleaner. The role only needs to deal
+with the details needed for the service being configured. Each role then
+becomes isolated and responsible for just one application.
+
+This gives flexibility as a server could be configured to take two
+roles, to run two services, such as hosting Nexus and Jenkins, or a
+development box might have all the services in the stack packed into a
+single virtual machine. One common use of this might be to configure
+Postfix for sending email as a secondary role to something else so that
+SMTP can be set to use localhost from the application.
+
+Anatomy of a Role
+-----------------
+
+In essence, a role contains a number of folders with specific purposes.
+These folders are:
+
+-   files
+
+-   tasks
+
+-   handlers
+
+-   templates
+
+-   roles
+
+-   filter\_plugins
+
+-   vars
+
+-   meta
+
+-   defaults
+
+For the most part, these are optional. You'll likely always see tasks.
+Files is common too unless you are generating all the files for
+configuration using template or using the defaults.
+
+Sure, it's possible to just use a task to install a service and start it
+with default settings but often this isn't much use. Perhaps you have a
+role that installs development tools that don't need configuration; you
+would have only tasks in this case.
+
+Let's explore the meaning and contents of each of these folders; Some of
+the important (but somehow unremarkable) folders are listed here.
+There's not much to say about a folder named 'files'. Also, some of the
+folders you might never need to create or use. After this, we'll inspect
+the major folders in detail.
+
+#### files
+
+This folder contains resources for the copy or synchronize operations,
+and any shell scripts you want to use. Literally, files.
+
+#### roles
+
+Sub-roles for this role. You might want to use this to reuse primitive
+roles that solve smaller problems, such as setting up Apache HTTPd. You
+might never need to nest roles like this.
+
+#### filter\_plugins
+
+You won't need this. It's possible for advanced users to create new
+filters for the Jinja2 templating system. If you don't know what a
+filter is, or if you don't know how to create one, ignore this folder.
+
+#### vars
+
+In the 'vars' folder there is a 'main.yml' file that contains variables
+for the role. These values can be used in tasks, handlers, templates.
