@@ -1,8 +1,8 @@
 ---
 layout: post
-
+title: Docker basics
 date:   2018-09-19 22:25:52 +0100
-categories: jekyll update
+categories: dockrer
 ---
 The basics
 ==========

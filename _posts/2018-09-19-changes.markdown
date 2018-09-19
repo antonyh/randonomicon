@@ -21,3 +21,9 @@ New Chapter: Git. New Chapter: ModSecurity. Fix line spacing for item
 lists without messing up the spacing in the glossary. Add the
 bibiography, small as it is. Fix the header warnings Add a few more
 glossary entries.
+
+September 2018
+--------------
+
+Recreated the original source from LaTeX into Markdown and published using Jekyll.
+
