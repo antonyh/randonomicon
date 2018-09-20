@@ -2,19 +2,20 @@
 layout: post
 
 date:   2018-09-19 22:25:52 +0100
-categories: jekyll update
+categories: python
 ---
 Python
 ======
 
-What do I know about Python?
+Whitespace is significant. 
 
-Not much.
+Use indents instead of { curly braces }
 
-Whitespace is significant. Use indents instead of { curly braces }
 Things are imported with 'import' to print to stdout use
-print(\"message) Lines don't end with semicolons to declare a variable
-jsut assign it to create a function
+print(\"message) 
+
+Lines don't end with semicolons to declare a variable
+just assign it to create a function
 
     def function():
         r = doSomething()

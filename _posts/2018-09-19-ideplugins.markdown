@@ -2,7 +2,7 @@
 layout: post
 
 date:   2018-09-19 22:25:52 +0100
-categories: jekyll update
+categories: ide, java, half-baked
 ---
 Infinitest needs infinitest.filters file containing: .\*ITCase to filter
 out integration tests.

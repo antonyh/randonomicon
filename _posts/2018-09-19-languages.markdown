@@ -2,7 +2,7 @@
 layout: post
 
 date:   2018-09-19 22:25:52 +0100
-categories: jekyll update
+categories: notes
 ---
 All the content here is the blurb, copied directly from the respective
 web site.

@@ -2,7 +2,7 @@
 layout: post
 
 date:   2018-09-19 22:25:52 +0100
-categories: jekyll update
+categories: arch-linux, half-baked
 ---
 mount /dev/\... /mnt mkdir /mnt/home mount /dev/\... /mnt/home mkdir
 /mnt/boot mount /dev/\... /mnt/boot arch-chroot /mnt pacman -S grub
