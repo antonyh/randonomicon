@@ -14,3 +14,14 @@ Adobe Experience Manager, version 6, is a Web CMS platform with page
 management, (digital) asset management, heaps of marketing tools and
 campaign management, and unsurprisingly many integrations with other
 parts of the Adobe Cloud.
+
+Runtime container: Java JVM
+Development languages: Java, Javascript
+Templating: JSP, Sightly / HTL
+Cost: $$$
+Frameworks used: 
+- Apache Felix
+- Apache Sling
+Data storage:
+- JCR
+- Proprietary binary format 

@@ -4,9 +4,6 @@ title: Docker Abuses
 date:   2018-09-19 22:25:52 +0100
 categories: docker
 ---
-REWRITE THIS
-------------
-
 Docker abuses and anti-patterns
 -------------------------------
 
@@ -14,31 +11,41 @@ There are quite a few abuses possible with Docker; I'm sure there are
 many more than this section suggests even for such a young platform as
 Docker.
 
-#### taking over the hosts network stack 
+#### Don't use the 'host' network stack 
 
-docker run --net=host allows reusing the network stack of the host.
-Don't do this.
+It's possible to bind docker to the network stack of the container host using the command
 
-#### Running SSHd inside Docker
+docker run --net=host 
 
-This violates the single concern principles of Docker, is unnecessary
-with 'docker exec' and is widely condemned. Don't do this.
+This allows reusing the network stack of the host. Don't do this. 
 
-#### Running your command as ROOT
+#### Don't run SSHd inside Docker
 
-By default everything runs as root in Docker containers and all the
-build steps are done by root. The USER keyword changes user, and
-subsequent instructions are issued as that user, including setting file
-ownerships and permissions. If possible make sure you add a USER
+Running SSHd inside a docker container that runs another service 
+violates the single concern principles of Docker, and is unnecessary
+with 'docker exec'. Rightly so this is widely condemned. Don't do this.
+
+You could however have a container running SSHd as it's service, but it's not clear what you would gain from this, aside from the capability to port-forward into the docker network. There are probably few legitimate reasons to do this.
+
+#### Don't run your command inside docker as the root user
+
+With Docker the default is that everything runs as root. This includes when the Docker containers and all the build steps are processed. 
+
+The USER keyword changes user and subsequent instructions are issued as that user, including setting file ownerships and permissions. 
+
+If possible make sure you add a USER
 directive and avoid using the root user, for the sake of general good
-security. Just because it's encapsulated in a container doesn't mean we
+security. Even if the runtime is encapsulated in a container doesn't mean we
 should be lax over permissions, particularly as the cost for changing
 users is so low. Don't do this.
 
-#### Docker in docker
+#### Don't run Docker inside Docker
 
-Spawning a docker inside a docker is generally considered an
-architectural defect and should usually be avoided. The need to run
-Docker daemon as privileged is a risk itself. Mounting the docker Unix
-socket is a flatter and cleaner approach better suited to most uses.
-Don't do this.
+Spawning a Docker container inside a Docker container is an
+architectural defect. Don't do this.
+
+Permitting this means that a Docker container is suddenly a Docker service with multiple child services, which is a loss of control and management. 
+
+The need to run the Docker daemon as privileged in order to enable this behaviour is a risk itself. 
+
+Mounting the docker Unix socket is a flatter and cleaner approach better suited to most uses. There may be other ways to achieve the same thing for services that need to create new containers.

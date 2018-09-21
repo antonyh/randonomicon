@@ -7,9 +7,10 @@ categories: java
 ANTLR
 =====
 
-ANTLR is literally 'ANother Tool for Language Recognition', and is in
+ANTLR is an acronym of 'ANother Tool for Language Recognition', and is in
 effect a compiler-compiler along the same lines as yacc or bison. Right
 or wrong, I pronounce it 'antler' as an allusion to it's fore-bearers.
+
 It enables DSLs to be created and formatted files to be processed by
 using grammar file created in BNF format to lex and parse files. It
 provides a powerful listener-driven approach that feels somewhat similar
@@ -17,6 +18,8 @@ to the SAX parsers used to process XML.
 
 The main reference material I've used with ANTLR has been the Parr book
 [@parr2012]. It has some excellent examples and covers the topic well.
+
+These notes cover ANTLR v4.3
 
 Online resources
 ----------------
@@ -26,13 +29,13 @@ small selection to help you get started.
 
 #### The ANTLR 4 website
 
-this is an excellent if somewhat obvious place to start. Make sure you
+This is an excellent if somewhat obvious place to start. Make sure you
 are looking at ANTLR 4 and not ANTLR 3 as they are quite different.
 <http://www.antlr.org>
 
 #### Parsing Java Properties with ANTLR
 
-this question posted in 2011 offers a good insight into the challenges
+This question posted in 2011 offers a good insight into the challenges
 of crafting the grammar for a parser, even for something as seemingly
 simple as Java property files, which on the surface seem to be just
 key/value pairs.

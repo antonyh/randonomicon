@@ -1,13 +1,13 @@
 ---
 layout: post
-
+title: Docker articles, blogs, and links
 date:   2018-09-19 22:25:52 +0100
-categories: jekyll update
+categories: docker, review
 ---
 REWRITE THIS
 ------------
 
-Articles, Blogs, and Links
+Docker Articles, Blogs, and Links
 --------------------------
 
 #### Sing a Whale Song
@@ -15,6 +15,8 @@ Articles, Blogs, and Links
 This useful blog post has ten tips and tricks that might help.
 
 <http://nathanleclaire.com/blog/2014/07/12/10-docker-tips-and-tricks-that-will-make-you-sing-a-whale-song-of-joy/>
+
+Note that this article is from 2014 and things have changes a lot since then.
 
 #### Random Docker Tips
 
