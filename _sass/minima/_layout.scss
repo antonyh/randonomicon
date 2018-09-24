@@ -198,6 +198,11 @@
       margin: 1em;
       padding: 1em;
       background-color: $brand-color;
+      box-shadow: 5px 10px #888888;
+  }
+
+  > li:hover {
+      background-color: lighten($brand-color, 10%)
   }
 }
 
