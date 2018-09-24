@@ -2,7 +2,7 @@
 layout: post
 
 date:   2018-09-19 22:25:52 +0100
-categories: java, cucumber
+categories: java, cucumber, testing, review
 ---
 Cucumber JVM
 ============

@@ -2,10 +2,12 @@
 layout: post
 
 date:   2018-09-19 22:25:52 +0100
-categories: mac
+categories: mac, review
 ---
 brew tools
 ==========
+
+Here's a list of common tools for OSX Homebrew, at least in my setup. 
 
 ##### john-jumbo
 
@@ -129,17 +131,3 @@ ASCII-art cows saying things.
 
 Run a command every N seconds and display the output on a clean screen.
 I find this useful for monitoring processes.
-
-    brew list
-    antlr           fontconfig      gnutls          john-jumbo      libssh2         pango           ruby193
-    atk         freetype        gobject-introspection   jpeg            libtasn1        pcre            s-lang
-    autoconf        gdbm            gpg-agent       jruby           libtiff         phantomjs198        sqlite
-    bash-completion     gdk-pixbuf      gradle          libassuan       libusb          pinentry        swig
-    brew-cask       gettext         groovy          libcroco        libusb-compat       pixman          tidyp
-    bsdmake         git         gtk+            libevent        libyaml         pkg-config      tmux
-    cairo           git-flow        gts         libffi          lighttpd        pth         tree
-    cowsay          git-review      harfbuzz        libgcrypt       maven           python          watch
-    curl            glib            htop-osx        libgpg-error        midnight-commander  rbenv           wget
-    dirmngr         gmp         icu4c           libksba         netpbm          readline        xz
-    emacs           gnupg           jasper          libpng          nettle          ruby            zsh
-    figlet          gnupg2          jenv            librsvg         openssl         ruby-build

@@ -6,11 +6,12 @@ categories: shell
 ---
 Bash
 ====
-
-default osx shell default on many linux default on cygwin
+Bash is the default shell on many operating systems in this era, including Apple OSX / MacOS, most Linux distributions, and on Windows when using Cygwin or the Microsoft-supplied Linux for Windows subsystem (itself based on the Ubuntu distribution of Linux).
 
 Bash script options
 -------------------
+
+There's a few options you should always set when creating Bash shell scripts for safety reasons.
 
 See also <http://www.tldp.org/LDP/abs/html/options.html>
 
@@ -23,3 +24,10 @@ Commonly, 'set -eux' is used.
 
 This will set the script to fail on any error (e), fail on unset
 variables (u), and to expand commands and display them (x).
+
+You want it to fail fast, before it does something unexpected because an earlier command failed.
+
+You want it to fail on unset variables, to help catch typos and other errors.
+
+It's also a good idea to make it expand and echo the commands too, so if you have got something wrong you get a chance to hit break and halt execution.
+

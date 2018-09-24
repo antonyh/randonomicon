@@ -7,9 +7,9 @@ categories: docker
 Boot2Docker
 ===========
 
-Boot2Docker is now deprecated in favour of docker-machine - some of this
-information will still apply, and if you have to use older tools then
-maybe this will help you until you are able to upgrade.
+Boot2Docker is now deprecated in favour of docker-machine / docker-tools 
+- some of this information will still apply, and if you have to use older 
+tools then maybe this will help you until you are able to upgrade.
 
 What is Boot2Docker?
 --------------------
