@@ -24,6 +24,10 @@ layout: default
             {{ post.title | escape }}
           </a>
         </h3>
+	<span>
+	  {{ post.categories }}
+	</span>
+
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
         {%- endif -%}

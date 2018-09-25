@@ -20,7 +20,7 @@
 
   &,
   &:visited {
-    color: $grey-color-dark;
+    //color: $grey-color-dark;
   }
 }
 
@@ -208,8 +208,9 @@
 
 .post-meta {
   font-size: $small-font-size;
-  color: $grey-color;
-  display: none;
+//  color: $grey-color;
+  color: lighten($grey-color, 30%)
+  //display: none;
 }
 
 .post-link {
