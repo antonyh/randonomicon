@@ -7,9 +7,6 @@ categories: docker, revise
 Deprecated; Docker Tricks and Tips
 ==================================
 
-REWRITE THIS
-------------
-
 Docker security
 ---------------
 

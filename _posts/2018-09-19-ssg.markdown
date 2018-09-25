@@ -14,7 +14,7 @@ roots
 
 What is Roots?
 
-Roots is a static site compiler, that generates static html, css, and
+(blurb) Roots is a static site compiler, that generates static html, css, and
 javascript files. It's very good at helping to build static front-ends.
 It is sponsored heavily by Carrot Creative, and makes frequent, highly
 variable builds quicker and easier for freelancers and agencies. It's a

@@ -1,13 +1,11 @@
 ---
 layout: post
-
+title: Adobe AEM - Sightly drop targets
 date:   2018-09-19 22:25:52 +0100
 categories: adobe-aem, revise
 ---
 Drop targets
 ============
-
-REWRITE
 
 <http://stackoverflow.com/questions/25143752/sightly-and-cqdroptargets>
 

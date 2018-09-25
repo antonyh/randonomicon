@@ -1,6 +1,6 @@
 ---
 layout: post
-
+title: Varnish - the  Ban Lurker
 date:   2018-09-19 22:25:52 +0100
 categories: varnish
 ---

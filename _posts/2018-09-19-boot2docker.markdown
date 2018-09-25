@@ -2,7 +2,7 @@
 layout: post
 
 date:   2018-09-19 22:25:52 +0100
-categories: docker
+categories: docker, outdated
 ---
 Boot2Docker
 ===========

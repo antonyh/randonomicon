@@ -1,11 +1,13 @@
 ---
 layout: post
-
+title: Adobe AEM - ldap configuration
 date:   2018-09-19 22:25:52 +0100
-categories: cq5, adobe-aem, ldap, review
+categories: cq5, adobe-aem, ldap, rewrite, rough notes
 ---
 cq5 ldap
 ========
+
+This was for CQ5 but should hold water for later versions.
 
 working ldap sample; for Apache DS
 ----------------------------------

@@ -4,7 +4,7 @@ layout: post
 date:   2018-09-19 22:25:52 +0100
 categories: mac, review
 ---
-brew tools
+Tools for Mac Homebrew
 ==========
 
 Here's a list of common tools for OSX Homebrew, at least in my setup. 
