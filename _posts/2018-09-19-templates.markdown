@@ -29,9 +29,11 @@ not logic-less.
 One common token (and a good place to start) is the 'ansible\_managed'
 value. For example, many configuration files will start with:
 
+{% raw %}
     # {{ ansible_managed }}
 
     # rest of file
+{% endraw %}
 
 The \# is a comment line as many readers will automatically realise.
 'ansible\_managed' will drop in a message to show that the file has been
@@ -50,9 +52,11 @@ templates.
 
 For example, you can use for-loops to iterate over collections.
 
+{% raw %}
     {% for item in items %}
       item = {{ item.name }}
     {% endfor %}
+{% endraw %}
 
 This is a highly convoluted example, but you get the drift.
 
@@ -63,6 +67,7 @@ Basic if-tests are easy in Jinja2. The only thing to watch out for (if
 you're not a Python programmer) is you have to use 'elif' instead of
 elseif.
 
+{% raw %}
     { % if thing.good %}
         Thing is good.
     { % elif thing.bad %}
@@ -70,6 +75,7 @@ elseif.
     { % else %}
         Thing is neither good nor bad.
     { % endif %}
+{% endraw %}
 
 Another dull example, but it gets the point across.
 
@@ -81,7 +87,9 @@ will get a failure when using the template. It's better to define a
 default where there is any doubt unless you deliberately want the
 template to fail - for some values there simply are no useful defaults.
 
+{% raw %}
     {{ port_number | default(6081) }}
+{% endraw %}
 
 This fragment would use the 'port\_number' value if it's been set, with
 a default if it hasn't been defined. Use this pattern liberally, as most

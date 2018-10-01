@@ -1,6 +1,6 @@
 ---
 layout: post
-
+title: Docker - diagnosing issues
 date:   2018-09-19 22:25:52 +0100
 categories: docker
 ---
@@ -17,7 +17,8 @@ very least run correctly.
 The first thing to do is to collect some basic information from Docker
 and the containers it is running.
 
-#### docker version
+docker version
+--------------
 
 This will tell you what version of Docker you are using, both client
 version and server (daemon) version. It will also tell you if you can
@@ -35,15 +36,17 @@ important to learn how to find useful values from the output.
 The output from 'docker inspect' can be somewhat overwhelming. The
 in-built Go template system allows the extraction of a single key. For
 example, is the last run container still running?
-
+{% raw %}
     docker inspect --format '{{.State.Running}}' $(docker ps -lq)  
+{% endraw %}
 
 #### How to find the path to the underlying volume
 
 This example also inspects the last run container, but instead of run
 state it tells you the mapped volumes.
-
+{% raw %}
     docker inspect --format '{{.Volumes}}' $(docker ps -lq)  
+{% endraw %}
 
 docker events
 -------------
