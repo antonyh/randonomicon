@@ -1,11 +1,13 @@
 ---
 layout: post
-
+title: Arch Linux Notes
 date:   2018-09-19 22:25:52 +0100
 categories: arch-linux, half-baked, rough-notes
 ---
 Arch Linux Notes
 ================
+
+I've stopped using Arch for the moment, but these notes are still useful to me.
 
 mount /dev/\... /mnt 
 mkdir /mnt/home 

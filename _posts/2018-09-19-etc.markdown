@@ -1,9 +1,9 @@
 ---
 layout: post
-
+title: Jenkins Wallboard plugin
 date:   2018-09-19 22:25:52 +0100
 categories: half-baked, jenkins
 ---
-wallboard
-
-Jan Molak Build Monitor is a good wallboard
+Wallboard
+=========
+Jan Molak Build Monitor is a good wallboard.

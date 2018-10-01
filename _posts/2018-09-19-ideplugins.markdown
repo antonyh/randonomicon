@@ -1,6 +1,6 @@
 ---
 layout: post
-
+title: Infinitest notes
 date:   2018-09-19 22:25:52 +0100
 categories: ide, java, half-baked
 ---

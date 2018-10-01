@@ -1,6 +1,6 @@
 ---
 layout: post
-
+title: Emacs - rough notes
 date:   2018-09-19 22:25:52 +0100
 categories: emacs, half-baked, rough-notes
 ---

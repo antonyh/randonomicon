@@ -4,6 +4,8 @@ title: Adobe AEM - components
 date:   2018-09-19 22:25:52 +0100
 categories: adobe-aem, rewrite
 ---
+Adobe AEM - components
+=======================
 Source:
 http://docs.adobe.com/docs/en/cq/5-6-1/developing/components.html
 

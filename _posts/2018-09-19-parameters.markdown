@@ -1,10 +1,10 @@
 ---
 layout: post
-
+title: Maven command line paramters
 date:   2018-09-19 22:25:52 +0100
 categories: maven
 ---
-Maven options
+Maven command line paramters
 =============
 
 Skip tests

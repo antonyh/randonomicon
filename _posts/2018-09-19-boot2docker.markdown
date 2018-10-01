@@ -1,6 +1,6 @@
 ---
 layout: post
-
+title: Docker - Boot2Docker
 date:   2018-09-19 22:25:52 +0100
 categories: docker, outdated
 ---

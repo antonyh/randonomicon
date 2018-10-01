@@ -1,10 +1,10 @@
 ---
 layout: post
-
+title: Code snippet - Makefile for C
 date:   2018-09-19 22:25:52 +0100
 categories: c, make
 ---
-Makefiles for C
+Makefile for C
 ===============
 
 example
