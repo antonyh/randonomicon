@@ -4,8 +4,8 @@ layout: post
 date:   2018-09-19 22:25:52 +0100
 categories: shell
 ---
-Bash
-====
+Bash Shell
+==========
 Bash is the default shell on many operating systems in this era, including Apple OSX / MacOS, most Linux distributions, and on Windows when using Cygwin or the Microsoft-supplied Linux for Windows subsystem (itself based on the Ubuntu distribution of Linux).
 
 Bash script options

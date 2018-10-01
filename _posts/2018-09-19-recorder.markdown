@@ -4,7 +4,7 @@ title: Gatling Recorder
 date:   2018-09-19 22:25:52 +0100
 categories: gatling, scala, testing
 ---
-The Recorder
+Gatling Recorder
 ============
 
 a proxy that records requests and creates a simple simulation in Scala.

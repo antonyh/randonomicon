@@ -4,8 +4,8 @@ title: LaTeX lists
 date:   2018-09-19 22:25:52 +0100
 categories: latex
 ---
-How to: Lists
-=============
+LaTeX Lists
+============
 
 Lists are an incredibly useful construct, and let you present
 information in a way that shows they are connected.

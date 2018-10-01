@@ -2,10 +2,12 @@
 layout: post
 
 date:   2018-09-19 22:25:52 +0100
-categories: nutrition
+categories: nutrition, rewrite, half-baked, todo
 ---
 Sugar
 =====
+
+This is a discussion on the types of sugar.
 
 Fructose
 --------

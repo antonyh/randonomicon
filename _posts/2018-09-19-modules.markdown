@@ -4,7 +4,7 @@ title: Ansible modules
 date:   2018-09-19 22:25:52 +0100
 categories: ansible
 ---
-Modules
+Ansible Modules
 =======
 
 Modules are essentially Python programs that can be used in the Ansible

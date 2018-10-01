@@ -4,7 +4,7 @@ title: Maven POM files
 date:   2018-09-19 22:25:52 +0100
 categories: maven
 ---
-Anatomy of the pom.xml file
+Maven - Anatomy of the pom.xml file
 ===========================
 
 The pom.xml is the Project Object Model, a declarative XML document that

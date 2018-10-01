@@ -4,7 +4,7 @@ title: Maven and Git
 date:   2018-09-19 22:25:52 +0100
 categories: git, maven, java
 ---
-Project setup
+Maven Git Project Setup
 =============
 
 Git and Maven

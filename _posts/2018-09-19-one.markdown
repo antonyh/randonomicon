@@ -4,14 +4,13 @@ title: Adobe AEM - Sightly templating
 date:   2018-09-19 22:25:52 +0100
 categories: adobe-aem
 ---
-Sightly
-=======
-
-Introduction
-------------
+Adobe AEM - Sightly templating
+==============================
 
 Sightly
 -------
+
+These are templates in AEM. Also known by some as HTL.
 
 ##### data-sly-use
 

@@ -2,7 +2,7 @@
 layout: post
 
 date:   2018-09-19 22:25:52 +0100
-categories: gatling
+categories: gatling, testing
 ---
 Generating load with Gatling
 ============================

@@ -2,12 +2,12 @@
 layout: post
 title: ZMQ - bind vs connect
 date:   2018-09-19 22:25:52 +0100
-categories: zmq, review
+categories: zmq
 ---
-When should I use bind versus connect?
-======================================
+ZMQ bind versus connect
+=======================
 
-Use bind for 
+In brief you should use bind for:
 - stable things; use connect for volatile things
 - when there is on; use connect when the number is unknown
 - when listening;  use connect when broadcasting
@@ -24,11 +24,13 @@ http://api.zeromq.org/4-0:zmq-connect
 
 From <http://zeromq.org/area:faq>
 
-    As a very general advice: use bind on the most stable points in your architecture and connect from the more volatile endpoints. For request/reply the service provider might be point where you bind and the client uses connect. Like plain old TCP.
+As a very general advice: use bind on the most stable points in your architecture and connect from the more volatile endpoints. For request/reply the service provider might be point where you bind and the client uses connect. Like plain old TCP.
 
-    If you can't figure out which parts are more stable (i.e. peer-to-peer) think about a stable device in the middle, where boths sides can connect to.
+If you can't figure out which parts are more stable (i.e. peer-to-peer) think about a stable device in the middle, where boths sides can connect to.
 
-    The question of bind or connect is often overemphasized. It's really just a matter of what the endpoints do and if they live long — or not. And this depends on your architecture. So build your architecture to fit your problem, not to fit the tool.
+The question of bind or connect is often overemphasized. It's really just a matter of what the endpoints do and if they live long — or not. And this depends on your architecture. So build your architecture to fit your problem, not to fit the tool.
+
+See also:
 
 http://stackoverflow.com/questions/16109139/zmq-when-to-use-zmq-bind-or-zmq-connect
 

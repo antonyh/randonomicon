@@ -19,16 +19,12 @@ project.
 Log4J
 -----
 
-[]()
-
 Logging framework for Java.
 
 ##### License
 
 Neo4J
 -----
-
-[]()
 
 Graph database, a stand-alone product/platform build with Java and
 running in a JVM.
@@ -37,8 +33,6 @@ running in a JVM.
 
 Reco4J
 ------
-
-[]()
 
 Recommendation engine.
 
@@ -65,33 +59,4 @@ large, interoperating systems.
 MX4J is released under an Apache-style license: The MX4J License,
 Version 1.0
 
-slf4j
------
 
-[]()
-
-##### License
-
-[]()
-
-##### License
-
-[]()
-
-##### License
-
-[]()
-
-##### License
-
-[]()
-
-##### License
-
-[]()
-
-##### License
-
-[]()
-
-##### License

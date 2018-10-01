@@ -30,4 +30,3 @@ as undesirable. They are most often introduced by accident, and as such
 are harder to identify. They tend not to follow any convention due to
 their incidental appearance as opposed to intentionally applying them.
 
-\- why are patterns good - why are patterns bad

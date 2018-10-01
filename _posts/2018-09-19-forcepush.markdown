@@ -4,7 +4,7 @@ layout: post
 date:   2018-09-19 22:25:52 +0100
 categories: git
 ---
-Force push
+Git - Force push
 ==========
 
 To 'force push' is exactly as it sounds, to forcefully push your changes

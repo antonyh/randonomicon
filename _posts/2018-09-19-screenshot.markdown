@@ -4,7 +4,7 @@ layout: post
 date:   2018-09-19 22:25:52 +0100
 categories: cucumber, java, testing
 ---
-Taking screenshots of failed tests
+Cucumber - Taking screenshots
 ==================================
 
 This code hooks an 'after' event to the tests, and if it fails a

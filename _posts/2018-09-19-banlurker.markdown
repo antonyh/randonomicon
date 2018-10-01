@@ -4,7 +4,7 @@ title: Varnish - the  Ban Lurker
 date:   2018-09-19 22:25:52 +0100
 categories: varnish
 ---
-The 'ban lurker'
+Varnish 'ban lurker'
 ================
 
 Banning and purging content from the cache is an invalidation technique

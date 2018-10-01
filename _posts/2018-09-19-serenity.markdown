@@ -4,14 +4,13 @@ layout: post
 date:   2018-09-19 22:25:52 +0100
 categories: java, revise
 ---
-Serenity [BDD]{acronym-label="BDD" acronym-form="singular+short"}
+Serenity [BDD]
 =================================================================
 
-What is [Serenity]{acronym-label="Serenity" acronym-form="singular+short"} [BDD]{acronym-label="BDD" acronym-form="singular+short"}?
+What is Serenity?
 ------------------------------------------------------------------------------------------------------------------------------------
 
-This is a re-brand of [Thucydides]{acronym-label="Thucydides"
-acronym-form="singular+short"}.
+This is a re-brand of Thucydides.
 
 #### Create a sample Serenity BDD project
 

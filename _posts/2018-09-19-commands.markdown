@@ -14,40 +14,39 @@ options will vary depending on versions.
 may even give you useful examples. 'man' will help you but only if you
 ask.
 
-    Listing files
-
+Listing files
     ls
     ls -al
     ls -la
     dir
 
-    Moving files
+Moving files
     mv
     ren
 
-    Deleting files
+Deleting files
     rm
     del
 
-    Getting information on files
+Getting information on files
     file
     head
     tail
     strings
 
-    File permissions
+File permissions
     chmod
     chown
     chgrp
     mask
 
-    Outputting files
+Outputting files
     cat
     less
     more
     tee
 
-    Creating and editing files
+Creating and editing files
     touch
     echo
     vi
@@ -55,27 +54,25 @@ ask.
     nano
 
 
-    Finding files
-    find . -name '.DS_*' 
+Finding files
+    find . -name '.DS_*'
     find . -name '.DS_*' -delete
-
     grep
-
     locate
     slocate
 
 
-    Batch operations 
+Batch operations 
     xargs
     sort
     uniq
 
-    Scheduled jobs
+Scheduled jobs
     cron
     crontab
 
 
-    processes
+processes
     vmstat
     iostat
     top

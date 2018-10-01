@@ -4,6 +4,9 @@ layout: post
 date:   2018-09-19 22:25:52 +0100
 categories: i18n, half-baked
 ---
+Internationalisation
+====================
+
 http://www.w3.org/International/questions/qa-html-dir
 
 If the overall document direction is right-to-left, add dir=\"rtl\" to

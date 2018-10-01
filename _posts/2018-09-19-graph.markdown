@@ -2,7 +2,7 @@
 layout: post
 
 date:   2018-09-19 22:25:52 +0100
-categories: dot, half-baked
+categories: dot, half-baked, diagram
 ---
 digraph graphname
 

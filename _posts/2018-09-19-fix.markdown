@@ -2,9 +2,9 @@
 layout: post
 
 date:   2018-09-19 22:25:52 +0100
-categories: mac
+categories: mac,homebrew
 ---
-Fixing things
+Mac Homebrew - Fixing things
 =============
 
 fix problems with Brew (on OS X)

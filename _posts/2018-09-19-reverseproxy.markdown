@@ -4,7 +4,7 @@ layout: post
 date:   2018-09-19 22:25:52 +0100
 categories: httpd
 ---
-Reverse proxy configuration
+HTTPd - Reverse proxy configuration
 ===========================
 
 If you are using ModSecurity with embedded into the application server

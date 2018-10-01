@@ -4,8 +4,8 @@ title: Vanish Objects
 date:   2018-09-19 22:25:52 +0100
 categories: varnish
 ---
-Objects in Varnish
-==================
+Varnish Objects
+===============
 
 Objects are things referenced by URL. pages, images, and so on -
 requests, cached items, clients, servers - these are all objects. Please

@@ -2,7 +2,7 @@
 layout: post
 
 date:   2018-09-19 22:25:52 +0100
-categories: java, cucumber, testing, rewrite
+categories: java, cucumber, testing
 ---
 Cucumber JVM
 ============
@@ -14,12 +14,3 @@ Cucumber JVM
 <http://cukes.info/install-cucumber-jvm.html>
 <https://github.com/masterthought/jenkins-cucumber-jvm-reports-plugin-java>
 
-Maven
------
-
-inputchapters/cucumber-jvm/phantomjs-in-maven.tex
-
-TODO
-----
-
-\[restructure this chapter\] \[add missing sections\]

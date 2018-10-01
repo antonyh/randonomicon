@@ -4,7 +4,7 @@ title: Ansible playbooks
 date:   2018-09-19 22:25:52 +0100
 categories: ansible
 ---
-Playbook
+Ansible Playbook
 ========
 
 What is a playbook, and what does a playbook look like? In terms of

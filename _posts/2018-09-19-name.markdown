@@ -4,11 +4,10 @@ title: Adobe AEM - links
 date:   2018-09-19 22:25:52 +0100
 categories: adobe-aem
 ---
-Links
-=====
+Adobe AEM - Links
+===============
 
-admin
------
+This is a dumped list of bookmarks for Adobe AEM, some of which may be rotten or outdated.
 
 personalisation
 ---------------

@@ -29,7 +29,7 @@ Statsd
 by etsy; Simple daemon for easy stats aggregation; node.js based
 https://github.com/etsy/statsd
 
-prometheus
+Prometheus
 ----------
 
 http://5pi.de/2015/02/10/prometheus-on-raspberry-pi/

@@ -4,7 +4,7 @@ title: Docker basics
 date:   2018-09-19 22:25:52 +0100
 categories: docker
 ---
-The basics
+Docker basics
 ==========
 
 As with all such things that are not widely understood, it's often much

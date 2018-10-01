@@ -4,27 +4,40 @@ layout: post
 date:   2018-09-19 22:25:52 +0100
 categories: bsd
 ---
-to install a package pkg pkg search x pkg install xyz
+Random BSD Notes
+================
+
+to install a package 
+    pkg 
+    pkg search xyz
+    pkg install xyz
 
 to set DHCP
 
-add to /etc/rc.conf interface\_em0=\"DHCP\" and reboot
+add to /etc/rc.conf 
+    interface\_em0=\"DHCP\"
+and reboot
 
-to install X11 pkg install xorg
+to install X11 
+    pkg install xorg
 
-to install virtualbox guest additions pkg install
-virtualbox-ose-additions
+to install virtualbox guest additions 
+    pkg install virtualbox-ose-additions
 
-to start X11 startx
+to start X11 
+    startx
 
-to install xmonad pkg install hs-xmonad
+to install xmonad 
+    pkg install hs-xmonad
 
-to boot into X11 pkg install xdm
-
+to boot into X11 
+    pkg install xdm
+    
 add this to /etc/ttys (it should already be there, change the off to on)
+    ttyv8 \"/usr/local/bin/xdm -nodaemon\" xterm on secure
 
-ttyv8 \"/usr/local/bin/xdm -nodaemon\" xterm on secure
+install emacs 
+    pkg install emacs24
 
-install emacs pkg install emacs24
-
-install zsh pkg install zsh
+install zsh 
+    pkg install zsh

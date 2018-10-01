@@ -7,4 +7,4 @@ categories: agile
 DEEP
 ====
 
-detailed emergent estimated prioritised
+Detailed Emergent Estimated Prioritised

@@ -112,5 +112,3 @@ quote marks, and other rules.
 
 anything following a ; on a line is ignored
 
-summary
--------
