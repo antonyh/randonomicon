@@ -7,6 +7,8 @@ categories: jenkins
 Jenkins CLI
 ===========
 
+(this is for quite an old version of Jenkins)
+
 You can access various features in Jenkins through a command-line tool.
 To get started, download jenkins-cli.jar, and run it as follows:
 

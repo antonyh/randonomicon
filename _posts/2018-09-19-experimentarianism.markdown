@@ -20,8 +20,7 @@ The effects of this are to increase developer interest in the project as
 well as providing the developer with career building opportunities, but
 also to add what may well be a risky, unproven, lightly documented
 component to the system. A very real example of this would have been
-projects that used [Docker]{acronym-label="Docker"
-acronym-form="singular+short"} prior to the release of v1.0 despite
+projects that used Docker prior to the release of v1.0 despite
 disclaimers by the Docker team not to use it in production.
 
 #### The benefits of betas

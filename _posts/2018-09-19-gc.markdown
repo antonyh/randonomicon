@@ -7,9 +7,7 @@ categories: java
 JVM GC settings
 ===============
 
-Avoid.
-
-If you must\...
+Avoid optimising the Java Garbage Collector unless you have very specific performance model requirements that demand a specific GC, or if you have a known problem with the throughput or JVM pauses.
 
 Class unloading 
 ----------------

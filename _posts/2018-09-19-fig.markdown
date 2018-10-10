@@ -7,10 +7,8 @@ categories: docker
 Docker Compose
 ==============
 
-[Docker-Compose]{acronym-label="Docker-Compose"
-acronym-form="singular+short"} was previously known as
-[Fig]{acronym-label="Fig" acronym-form="singular+short"} until the
-Orchardup team joined Docker. 'docker-compose', like 'fig', is a
+Docker-Compose was previously known as
+Fig until the Orchardup team joined Docker. 'docker-compose', like 'fig', is a
 orchestration and provisioning tool for Docker. It provides an array of
 options, configured using a YML file to control the Docker daemon to
 spin up sets of containers and help them interact by defining port

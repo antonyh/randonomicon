@@ -1,118 +1,17 @@
 ---
 layout: post
 title: Mac - Tools for Homebrew
-date:   2018-09-19 22:25:52 +0100
-categories: mac, review
+date:   2018-10-10 18:22:52 +0100
+categories: mac
 ---
 Tools for Mac Homebrew
 ==========
 
-Here's a list of common tools for OSX Homebrew, at least in my setup. 
+Here's a list of common tools for OSX Homebrew, at least in my setup. Now in non-random alphabetical order (mostly).
 
-##### john-jumbo
+##### antigen
 
-Password cracking toolkit; this is a last ditch tool if you forget a GPG
-passphrase (oops), or if you want to check that \*your\* password is
-secure (eek).
-
-##### phantomjs198
-
-Headless web browser, useful for doing headless things like Cucumber
-testing.
-
-##### git
-
-A newer version of git, replacing the antique version provided by Apple.
-
-##### tmux
-
-Terminal Multiplexing. Basically this is split panels on the same
-terminal tty, allowing for each to behave independently much like a
-text-based windowing system. In truth, I rarely use this.
-
-##### git-flow
-
-Git extensions to support Git Flow; this can be useful to start/finish
-features from the command line.
-
-##### git-review
-
-Git extension for Gerrit; this allows one-line push-to-review, so long
-as the changes have been squashed to a single commit.
-
-##### tree
-
-Display the tree of the current directory as ASCII-art; this is useful
-for visualising and for documentation.
-
-##### maven
-
-Installing Maven via brew is possibly the easiest way to get it,
-particularly on newer Macs where Apple have chosen not to install it at
-all.
-
-##### python
-
-The Python scripting language is needed by a lot of other things. Watch
-out which version - 2 and 3 don't play well together.
-
-##### curl
-
-The essential file download tool, this is also very useful for making
-POST requests and checking server headers.
-
-##### htop-osx
-
-This alternative to 'top' gives a better output in my opinion, and is
-highly configurable.
-
-##### midnight-commander
-
-If you've ever used Norton Commander, this is somewhat similar but for
-the Terminal console. It's quite handy to use to explore directories and
-run commands.
-
-##### rbenv
-
-Manage Ruby version.
-
-##### emacs
-
-Forget Sublime, this is the mother of all text editors. You could live
-in here, it's so roomy and has all mod-cons. It's virtually an operating
-system in itself.
-
-##### gnupg
-
-Encryption for privacy; this is useful mostly to scramble files
-containing passwords.
-
-##### zsh
-
-An alternative to the bash shell usually installed everywhere; I prefer
-this for the auto complete options and the readiness of themes.
-
-##### figlet
-
-ASCII-art banners with a selection of typefaces. Useful for making
-pretty console output.
-
-      __ _       _      _   
-     / _(_) __ _| | ___| |_ 
-    | |_| |/ _` | |/ _ \ __|
-    |  _| | (_| | |  __/ |_ 
-    |_| |_|\__, |_|\___|\__|
-           |___/            
-
-##### ruby
-
-The Ruby language, to replace the antiquated version provided by Apple.
-
-##### jenv
-
-Manage versions of Java. I personally don't use this, but it seems to
-crop up in 'how to set up development environment' guides quite
-frequently.
+This is a kind of plugin tool to extend ZSH with themes and features.
 
 ##### cowsay
 
@@ -127,7 +26,125 @@ ASCII-art cows saying things.
                     ||----w |
                     ||     ||
 
+
+##### curl
+
+The essential file download tool, this is also very useful for making
+POST requests and checking server headers.
+
+##### emacs
+
+Forget Sublime, this is the mother of all text editors. You could live
+in here, it's so roomy and has all mod-cons. It's virtually an operating
+system in itself.
+
+##### figlet
+
+ASCII-art banners with a selection of typefaces. Useful for making
+pretty console output.
+
+      __ _       _      _   
+     / _(_) __ _| | ___| |_ 
+    | |_| |/ _` | |/ _ \ __|
+    |  _| | (_| | |  __/ |_ 
+    |_| |_|\__, |_|\___|\__|
+           |___/            
+
+There's an option to produce banners with only # symbols that I use in configuration files mostly because this is a comment character. This has the advantage of being visible in the 'minimap' feature in text editors like Sublime making it much easier to jump to the right section.
+
+##### git
+
+A newer version of git, replacing the antique version provided by Apple.
+
+##### git-flow
+
+Git extensions to support Git Flow; this can be useful to start/finish
+features from the command line.
+
+##### git-review
+
+Git extension for Gerrit; this allows one-line push-to-review, so long
+as the changes have been squashed to a single commit.
+
+##### gnupg
+
+Encryption for privacy; this is useful mostly to scramble files
+containing passwords.
+
+##### htop-osx
+
+This alternative to 'top' gives a better output in my opinion, and is
+highly configurable.
+
+##### jenv
+
+Manage versions of Java. I personally don't use this, but it seems to
+crop up in 'how to set up development environment' guides quite
+frequently.
+
+##### john-jumbo
+
+Password cracking toolkit; this is a last ditch tool if you forget a GPG
+passphrase (oops), or if you want to check that \*your\* password is
+secure (eek).
+
+##### maven
+
+Installing Maven via brew is possibly the easiest way to get it,
+particularly on newer Macs where Apple have chosen not to install it at
+all.
+
+##### midnight-commander
+
+If you've ever used Norton Commander, this is somewhat similar but for
+the Terminal console. It's quite handy to use to explore directories and
+run commands.
+
+##### OpenSSL
+
+You might think that the Apple-provided version is good enough, but there are (were in OSX 10.10) some significant deficiencies in the supplied toolchain. For me it was the lack of support for ProxyJump directives that I needed to use with multi-hop SSH sessions that forced the issue. The tradeoff is the lack of support for the Keychain, which may be a good thing depending on your point-of-view. 
+
+##### phantomjs198
+
+Headless web browser, useful for doing headless things like Cucumber
+testing. Now deprecated in favour of newer versions of PhantomJS or headless Chrome.
+
+##### python
+
+The Python scripting language is needed by a lot of other things. Watch
+out which version - 2 and 3 don't play well together.
+
+##### rbenv
+
+Manage Ruby version.
+
+##### ruby
+
+The Ruby language, to replace the antiquated version provided by Apple.
+
+##### sslscan
+
+I use this tool all the time to check SSL / TLS certificates and to collect domain names that may need further investigate assuming they aren't using wildcards. It's been super-useful. 
+
+Tip: use the --no-heartbleed option so you don't need to use sudo.
+
+##### tmux
+
+Terminal Multiplexing. Basically this is split panels on the same
+terminal tty, allowing for each to behave independently much like a
+text-based windowing system. In truth, I rarely use this. I prefer screen generally, but it does have some advantages. Integration with iTerm2 is good.
+
+##### tree
+
+Display the tree of the current directory as ASCII-art; this is useful
+for visualising and for documentation.
+
 ##### watch
 
 Run a command every N seconds and display the output on a clean screen.
 I find this useful for monitoring processes.
+
+##### zsh
+
+An alternative to the bash shell usually installed everywhere; I prefer
+this for the auto complete options and the readiness of themes.

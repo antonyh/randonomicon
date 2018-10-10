@@ -2,7 +2,7 @@
 layout: post
 title: Docker articles, blogs, and links
 date:   2018-09-19 22:25:52 +0100
-categories: docker, rought-notes
+categories: docker, rough-notes
 ---
 Docker Articles, Blogs, and Links
 --------------------------

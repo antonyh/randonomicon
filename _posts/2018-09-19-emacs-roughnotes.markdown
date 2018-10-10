@@ -76,12 +76,32 @@ Packages
 
 Useful packages
 
-org; aka org-mode butler; jenkins integration auto-complete crontab-mode
-dockerfile-mode egg; git eclim; could not get this working feature-mode;
-gherkin git git-timemachine javap-mode jenkins-watch jira malabar-mode;
-jvm integration marcopolo; docker integration markdown-mode
-maven-test-mode mvn nexus nginx-mode olivetti s; string manipulation
-library ssh ssh-config-mode with-editor
+org; aka org-mode 
+butler; jenkins integration 
+auto-complete 
+crontab-mode
+dockerfile-mode 
+egg; git 
+eclim; could not get this working 
+feature-mode;
+gherkin 
+git 
+git-timemachine 
+javap-mode 
+jenkins-watch 
+jira 
+malabar-mode; jvm integration
+marcopolo; docker integration 
+markdown-mode
+maven-test-mode 
+mvn 
+nexus 
+nginx-mode 
+olivetti 
+s; string manipulation library 
+ssh 
+ssh-config-mode 
+with-editor
 
 more packages; flycheck
 

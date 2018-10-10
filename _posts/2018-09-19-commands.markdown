@@ -53,14 +53,12 @@ Creating and editing files
     emacs
     nano
 
-
 Finding files
     find . -name '.DS_*'
     find . -name '.DS_*' -delete
     grep
     locate
     slocate
-
 
 Batch operations 
     xargs
@@ -70,7 +68,6 @@ Batch operations
 Scheduled jobs
     cron
     crontab
-
 
 processes
     vmstat
@@ -83,3 +80,4 @@ processes
     ps -efaww
     kill
     killall
+    lsof
