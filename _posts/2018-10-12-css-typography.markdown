@@ -1,7 +1,7 @@
 ---
-layout:
-date:
-title:
+layout: post
+date: 2099-12-13 23:59:59 +100
+title: CSS typography notes
 categories: css
 ---
 
