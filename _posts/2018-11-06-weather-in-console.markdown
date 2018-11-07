@@ -1,6 +1,6 @@
 --
 layout: post
-date: 2099-12-13 23:59:59 +100
+date: 2018-11-06 08:59:59 +000
 title: Bash: weather command
 categories: bash
 --
