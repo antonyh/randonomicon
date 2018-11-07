@@ -1,10 +1,9 @@
---
-
+---
 layout: post
 date: 2099-12-13 08:59:59 +000
 title: UX notes
 categories: 
---
+---
 
 1. categories are for my use only and are not really useful on the site
 1. need to embed cc-by-sa licence into each post
