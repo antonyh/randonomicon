@@ -14,12 +14,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: The Randonomicon
-email: editorial@randonomi.com
+email: antonyh@gmail.com # editorial@randonomi.com
 description: >- # this means to ignore newlines until "baseurl:"
-  The Randonomicon is a long standing collection of random articles, notes, guides, and links
-  for your amusement, pleasure, and profit.
+  The Randonomicon is a heavily opinionated collection of random articles, notes, guides, and links. Definitely not a blog.
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://www.randonomicon.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://www.randonomicon.com" 
 twitter_username: ntnyh
 github_username:  antonyh
 
