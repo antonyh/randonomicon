@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-11-06 07:59:59 +000
-title: Java: Quick changing between versions on MacOS 
+title: Quick changing Java versions on MacOS 
 categories: java, mac 
 ---
 

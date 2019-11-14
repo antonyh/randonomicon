@@ -8,6 +8,8 @@
 
   // Positioning context for the mobile navigation icon
   position: relative;
+
+  background-image: linear-gradient(to right, #cdefab, #efcdab);
 }
 
 .site-title {
@@ -178,6 +180,7 @@
 .page-content {
   padding: $spacing-unit 0;
   flex: 1;
+  background-image: linear-gradient(to right, #efcdab, #cdefab);
 }
 
 .page-heading {
