@@ -7,6 +7,7 @@ A blog. A book. A steaming pile. It is what it is, which greatly depends on your
 1. all changes must pass `jekyll doctor`.
 2. all changes must include a visual change of some sort, no matter how small.
 3. only one new post per change.
+4. changing style without adding a post is ok, but adding a post is better
 
 
 ## Jekyll
