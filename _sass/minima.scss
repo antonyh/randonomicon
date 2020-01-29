@@ -2,30 +2,30 @@
 
 // Define defaults for each variable.
 
-$base-font-family: serif, !default;
-$base-font-size:   18px !default;
+$base-font-family: sans-serif, !default;
+$base-font-size: 16px !default;
 $base-font-weight: 400 !default;
-$small-font-size:  $base-font-size * 0.875 !default;
+$small-font-size: $base-font-size * 0.825 !default;
 $base-line-height: 1.25 !default;
 
-$spacing-unit:     20px !default;
+$spacing-unit: 20px !default;
 
-$text-color:       #444422 !default;
+$text-color: #344422 !default;
 $background-color: #eaeaea; //!default;
-$brand-color: #7c6f8b !default;
-$link-color:       #162562 !default;
+$brand-color: #ac6f8b !default;
+$link-color: #f62562 !default;
 
-$grey-color:       #828272 !default;
+$grey-color: #a28272 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
-$grey-color-dark:  darken($grey-color, 25%) !default;
+$grey-color-dark: darken($grey-color, 25%) !default;
 
 $table-text-align: left !default;
 
 // Width of the content area
-$content-width:    1000px !default;
+$content-width: 1000px !default;
 
-$on-palm:          600px !default;
-$on-laptop:        800px !default;
+$on-palm: 600px !default;
+$on-laptop: 800px !default;
 
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -45,8 +45,6 @@ $on-laptop:        800px !default;
 }
 
 // Import partials.
-@import
-  "minima/base",
-  "minima/layout",
-  "minima/syntax-highlighting"
-;
+@import "minima/base",
+"minima/layout",
+"minima/syntax-highlighting";
