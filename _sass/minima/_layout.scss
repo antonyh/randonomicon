@@ -9,7 +9,7 @@
   // Positioning context for the mobile navigation icon
   position: relative;
 
-  background-image: linear-gradient(to right, #cdefab, #fff);
+  background-color: $brand-color;
 }
 
 .site-title {
@@ -19,6 +19,7 @@
   letter-spacing: -1px;
   margin-bottom: 0;
   float: left;
+  color: #212318;
 
   &,
   &:visited {
@@ -200,21 +201,26 @@
     display: block;
     width: 16em;
     margin: 1em;
+    padding: 3em 1em;
     text-align: center;
-    padding: 4em 1em;
-    background-color: darken($brand-color, 10%);
-    color: whitesmoke;
-    //background-image: linear-gradient(to right, lighten($brand-color, 20%), $brand-color);
-    background-image: radial-gradient(circle at center,  $brand-color, darken($brand-color, 20%));
-    border-radius: 3px;
-    border: 5pt solid black;
+    color: darken($brand-color, 50%);
+    background-color:  lighten($brand-color, 20%);
+    border-radius: 1px;
+    border: 5pt solid lighten($brand-color, 40%);
+    border-right-color: darken($brand-color, 40%);
+    border-bottom-color: darken($brand-color, 40%);
+
+    > a {
+      padding: 3em 1em;
+    }
   }
 
   > li:hover {
-    background-color: lighten($brand-color, 10%);
-    color: black;
-    //background-image: linear-gradient(to right, lighten($brand-color, 30%), lighten($brand-color, 70%));
-    background-image: radial-gradient(circle at center, lighten($brand-color, 30%), darken($brand-color, 20%));
+    color: whitesmoke;
+    border-top-color: darken($brand-color, 40%);
+    border-left-color: darken($brand-color, 40%);
+    border-right-color: lighten($brand-color, 40%);
+    border-bottom-color: lighten($brand-color, 40%);
   }
 }
 
@@ -228,7 +234,7 @@
 .post-link {
   display: block;
   @include relative-font-size(1.3);
-  color: whitesmoke;
+  color: darken($brand-color, 50%);
   text-align: center;
   font-weight: bold;
 }
