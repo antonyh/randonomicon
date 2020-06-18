@@ -205,9 +205,9 @@
     background-color: darken($brand-color, 10%);
     color: whitesmoke;
     //background-image: linear-gradient(to right, lighten($brand-color, 20%), $brand-color);
-    background-image: radial-gradient(circle at center,  $brand-color, darken($brand-color, 40%));
-    border-radius: 0px;
-    clip-path: polygon(0 33%, 50% 0, 100% 33%, 100% 66%, 50% 100%, 0 66%);
+    background-image: radial-gradient(circle at center,  $brand-color, darken($brand-color, 20%));
+    border-radius: 3px;
+    border: 5pt solid black;
   }
 
   > li:hover {
