@@ -3,6 +3,7 @@ layout: post
 title: ZMQ - bind vs connect
 date:   2018-09-19 22:25:52 +0100
 categories: zmq
+comments: true
 ---
 ZMQ bind versus connect
 =======================
