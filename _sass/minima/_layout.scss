@@ -192,14 +192,14 @@
 .post-list {
   margin-left: 0;
   list-style: none;
-  display: flex;
+  display: block;
   flex-wrap: wrap;
 
   > li {
     display: block;
-    width: 16em;
-    margin: 1em;
-    padding: 3em 1em;
+    width: 100%;
+    margin: 0.3em;
+    padding: 0.5em 0.5em;
     text-align: center;
     color: darken($brand-color, 50%);
     background-color:  lighten($brand-color, 20%);

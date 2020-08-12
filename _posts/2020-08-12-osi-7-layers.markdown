@@ -1,0 +1,141 @@
+---
+layout: post
+date: 2020-08-12 08:59:59 +000
+title: OSI 7 Layer Model
+categories: cissp
+---
+My notes for the CISSP revision on the 7 Layers of the OSI model. 
+
+## HOST layers
+
+### User
+
+The thing between the keyboard and the chair, and only interacts directly with the application. They don't directly use the lower levels. 
+
+### Application (layer 7)
+
+The thing the user interacts with. The 'program' or 'app' or 'exe'.
+
+Aspects that live in layer 7 are authentication, authorisation, web browsers, http, and general end-user services.
+
+Layer 7 deals with DATA.
+
+### Presentation (layer 6)
+
+Data representation. Encryption and compression. Translating formats to a suitable mode for use on the network. 
+
+Encrypting data for network transmission. Dealing with MIME types. MPEG, ASCII, SSL, TLS, JPEG and other image formats. 
+
+Anything that translates between network needs and application need is in the presentation layer.
+
+Layer 6 deals with DATA.
+
+### Session (layer 5)
+
+Inter-host communication between two hosts. 
+
+Logical ports. 
+
+Management of the 'session' or connection on the behalf of applications. Network sockets. Network APIs. Connections to SQL databases. NFS and SMB connections. SIP.
+
+Authentication, permissions, and session restoration. 
+
+Layer 5 deals with DATA.
+
+### Transport (layer 4)
+
+End-to-End connections with error and flow control. 
+
+Transport protocols such as TCP and UDP, with error recovery and flow control. 
+
+Layer 4 deals with SEGMENTS.
+
+## MEDIA layers
+
+### Network (layer 3)
+
+Path determination.
+
+Switches and routers. The management of pathways through the network of data links. The technology that makes only the appropriate data links used based on packet destination.
+
+Virtual circuits, address handling, routing and forwarding. 
+
+IP, IPSec, ICMP. 
+
+The common example of this is 'IP' or Internet Protocol. Address schemes in use are IPv4 and IPv6.
+
+Layer 3 deals with PACKETS.
+
+### Data Link (layer 2)
+
+Physical addressing. 
+
+Things that connect to the physical layer, with MAC addresses. Examples: Wifi cards, 802.11, Ethernet. 
+
+Encoding and decoding of data packets happens in layer 2.
+
+Layer 2 deals with FRAMES.
+
+### Physical (layer 1)
+
+Signalling and binary transmission.
+
+Wires. Radio waves. Carrier pigeons. Electro/mechanical objects in the real world used as the medium for transferring data.
+
+Layer 1 deals with BITS.
+
+## Mnemonics
+
+Ok I might have gotten carried away here, but writing these helps me remember. The 'sausage pizza' is found elsewhere and commonly used. 
+
+Alsatian
+Puppies
+Salivate
+Thinking
+Nice
+Delicious 
+Popcorn
+
+Allow 
+Purple
+Saws
+To
+Notch
+Dangerous
+Powercables
+
+Any
+Partridge
+Seen
+Thrice
+Never
+Disappoints
+People
+
+Army
+Personnel
+Stand
+Tall
+Near
+Deputy
+President
+
+A
+Plucky
+Stockholder
+Takes
+Nearly
+Double
+Percentages
+
+
+(inverted)
+Please 
+Do 
+Not
+Throw
+Sausage
+Pizza
+Away
+
+
