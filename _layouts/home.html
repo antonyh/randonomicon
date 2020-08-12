@@ -21,7 +21,7 @@ layout: default
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
         <span class="post-link">
-          <a class="post-link" href="{{ post.url | relative_url }}#disqus_thread">
+          <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
           </a>
         </span>
@@ -32,5 +32,4 @@ layout: default
 
     <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
   {%- endif -%}
-    <script id="dsq-count-scr" src="//randonomicon.disqus.com/count.js" async></script>
 </div>
