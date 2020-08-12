@@ -2,14 +2,12 @@
  * Site header
  */
 .site-header {
-  border-top: 5px solid $grey-color-dark;
-  border-bottom: 1px solid $grey-color-light;
-  min-height: $spacing-unit * 1.865;
-
+  //border-top: 5px solid $grey-color-dark;
+  //border-bottom: 1px solid $grey-color-light;
+  min-height: $spacing-unit * 2;
   // Positioning context for the mobile navigation icon
   position: relative;
-
-  background-color: $brand-color;
+  background-color: $background-color;
 }
 
 .site-title {
@@ -20,7 +18,7 @@
   margin-bottom: 0;
   float: left;
   color: #212318;
-
+  font-variant: small-caps common-ligatures;
   &,
   &:visited {
     //color: $grey-color-dark;
@@ -180,7 +178,7 @@
 .page-content {
   padding: $spacing-unit 0;
   flex: 1;
-  background-image: linear-gradient(to right, #efcdab, #ffffff);
+  //background-image: linear-gradient(to right, #efcdab, #ffffff);
 }
 
 .page-heading {
