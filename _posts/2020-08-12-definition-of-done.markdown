@@ -3,6 +3,7 @@ layout: post
 date: 2020-08-12 08:59:59 +000
 title: Definition of Done & Definition of Ready
 categories: agile
+comments: true
 ---
 
 Here are some definitions useful in Agile processes. 

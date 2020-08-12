@@ -3,6 +3,7 @@ layout: post
 date: 2020-08-12 08:59:59 +000
 title: OSI 7 Layer Model
 categories: cissp
+comments: true
 ---
 My notes on the 7 Layers of the OSI model. Taken during CISSP revision.
 

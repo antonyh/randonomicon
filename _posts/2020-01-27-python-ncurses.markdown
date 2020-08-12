@@ -3,9 +3,10 @@ layout: post
 date: 2020-01-20 08:59:59 +000
 title: Build a developers menu with Python and NCurses 
 categories: Python
+comments: true
 ---
 
-If you are anything like me then you get bored and tired of remembering mundate
+If you are anything like me then you get bored and tired of remembering mundane
 commands that you have to type every day and sometimes find that the shell history is somewhat forgetful. My answer to this is to build a menu to do the common things.
 
 This is based on the teachings and notes found at this highly useful article.
