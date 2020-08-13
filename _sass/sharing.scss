@@ -1,0 +1,69 @@
+
+#sharing-panel {
+  font-size: $small-font-size;
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid aquamarine;
+}
+.share-text{
+  font-family: $base-font-family;
+}
+
+.title {
+  padding-top: 0.3em;
+}
+
+.share-button {
+  margin: 0 3px 10px 0;
+  padding: 5px 10px 5px 10px;
+}
+.share-button:hover {
+  opacity: 1;
+  color: #ffffff;
+}
+
+.fa{
+  transition: 0.314159s;
+}
+
+/* Facebook button */
+.fa-facebook {
+  color: #3b5998;
+}
+.fa-facebook:hover {
+  background-color: #3b5998;
+}
+
+/* Twitter button */
+.fa-twitter {
+  color: #55acee;
+}
+.fa-twitter:hover {
+  background-color: #55acee;
+}
+
+
+/* Reddit button */
+.fa-reddit {
+  color: #ff4500;
+}
+.fa-reddit:hover {
+  background-color: #ff4500;
+}
+
+/* LinkedIn button */
+.fa-linkedin {
+  color: #007bb5;
+}
+.fa-linkedin:hover {
+  background-color: #007bb5;
+}
+
+/* Email button */
+.fa-envelope {
+  color: #444444;
+}
+.fa-envelope:hover {
+  background-color: #444444;
+}

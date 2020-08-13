@@ -48,3 +48,7 @@ $on-laptop: 800px !default;
 @import "minima/base",
 "minima/layout",
 "minima/syntax-highlighting";
+
+//import sass for sharing panel
+@import "sharing.scss";
+
