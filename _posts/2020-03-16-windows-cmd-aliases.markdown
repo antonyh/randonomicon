@@ -4,6 +4,7 @@ date: 2020-02-28 08:59:59 +000
 title: Aliases in Windows 10 cmd.exe
 categories: windows
 comments: true
+sharing: true
 ---
 
 If you are like me and constantly typing `ls` in the windows command prompt, you'll like this.

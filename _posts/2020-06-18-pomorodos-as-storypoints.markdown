@@ -4,6 +4,7 @@ date: 2020-06-18 08:59:59 +000
 title: Pomodoros as Agile Storypoints
 categories: agile
 comments: true
+sharing: true
 ---
 
 A 'pomodoro' is a tomato, but as part of the Pomodoro Technique it's a unit of time, nominally 25 minutes, where someone can focus exclusively on a single task and defer any interuptions. 

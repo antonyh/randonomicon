@@ -4,6 +4,7 @@ date: 2020-06-11 08:59:59 +000
 title: Favicon generator
 categories: tools
 comments: true
+sharing: true
 ---
 
 A good simple generator when you want a simple icon with a letter or two on it. Allows for typeface selection from Google Fonts and selection of colours, as gives different sizes and a code snippet. 

@@ -1,8 +1,10 @@
 ---
 layout: post
-date: 2099-12-13 23:59:59 +100
+date: 2020-08-13 21:59:59 +100
 title: CSS typography notes
 categories: css
+comments: true
+sharing: true
 ---
 
 # Notes and thoughts on CSS typography
