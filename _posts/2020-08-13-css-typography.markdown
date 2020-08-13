@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2020-08-13 21:59:59 +100
+date: 2020-08-13 19:59:59 +100
 title: CSS typography notes
 categories: css
 comments: true
@@ -11,7 +11,7 @@ sharing: true
 
 ## Rendering options
 
-Setting rendering options can help make text look better than the defaults. It also gives a chance to chose what to optimise for, which can have an impact on mobile devices if there is large quantities of text. Thankfully the majority of the pages on this site are relatively short so it's safe enough to chose the more aggressive 'optimizeLegibility' setting.
+Setting rendering options can help make text look better than the defaults. It also gives a chance to chose what to optimise for, which can have an impact on mobile devices if there are large quantities of text. Thankfully the majority of the pages on this site are relatively short, so it's safe enough to choose the more aggressive 'optimizeLegibility' setting.
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -19,7 +19,7 @@ Setting rendering options can help make text look better than the defaults. It a
 
 ## Kerning
 
-For typography kerning is important. Controlling the spacing between letters makes it more readable and the overall look more polished.
+For typography kerning is important. Controlling the spacing between letters makes it more readable, and the overall look more polished.
 
     -webkit-text-size-adjust: 100%;
     -webkit-font-feature-settings: "kern" 1;
@@ -38,19 +38,19 @@ There are contrast guidelines published by the WCAG which should be adhered to. 
 
 Don't make the text too small. This is relative to the device size and use but as a general rule a line of text shouldn't be longer than 60-80 characters for best flow and ease of reading. 
 
-Conversely don't make it too big either as it inhibits speed reading and forces scrolling. 
+Conversely, don't make it too big either as it inhibits speed reading and forces scrolling. 
 
-Some font faces work best on displays, others are intended for printing, and some only look right at large sizes. As a preference, this site avoids webfonts to not require an additional download.
+Some font faces work best on displays, while others are for printing, and some only look right at large sizes. As a preference, this site avoids webfonts to not require an additional download.
 
-Third party font services track your visitors. If it's possible and you must have a particular typeface because of brand or stylistic reasons host the font yourself. Make it part of the site and don't rely on external hosting.
+Third party font services track your visitors. If it's possible, and you must have a particular typeface because of brand or stylistic reasons, then host the font yourself. Make it part of the site and don't rely on external hosting.
 
 The general rule is to use sans-serif for headers and titles, serif for body copy, and fixed width for code. More commonly the headings are fancy sans-serif with the main text as a simplified typeface that looks better at smaller sizes. 
 
 ## Line spacing / line height
 
-The gaps between the lines of text are more important than are often given credit. Too much and it looks loose, but too close and it's hard to read. Pick a spacing that balances this, which may vary depending on the styles chosen. Don't be tempted to compromise the spacing because of space issues. A good starting point is 1.25 or 1.5.
+The gaps between the lines of text are more important than are often given credit. Too much and it looks loose; but too close, and it's hard to read. Pick a spacing that balances this, which may vary depending on the styles chosen. Don't be tempted to compromise the spacing because of space issues. A good starting point is 1.25 or 1.5.
 
-Alternatively set line height, ensuring it's large enough for your text plus the required gap.
+Alternatively set line height, ensuring its large enough for your text plus the required gap.
 
 
 
