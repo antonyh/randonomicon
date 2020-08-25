@@ -3,19 +3,19 @@
 // Define defaults for each variable.
 
 $base-font-family: 'Muli', sans-serif !default;
-$base-font-size: 16px !default;
+$base-font-size: 15px !default;
 $base-font-weight: 400 !default;
 $small-font-size: $base-font-size * 0.825 !default;
 $base-line-height: 1.25 !default;
 
 $spacing-unit: 20px !default;
 
-$text-color: #344422 !default;
+$text-color: #273222 !default;
 $background-color: #ffffff; //!default;
-$brand-color: #aaaaaa !default;
-$link-color: #f62562 !default;
+$brand-color: #ba9987 !default;
+$link-color: #5655f2 !default;
 
-$grey-color: #a28272 !default;
+$grey-color: #ba9987 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
 $grey-color-dark: darken($grey-color, 25%) !default;
 

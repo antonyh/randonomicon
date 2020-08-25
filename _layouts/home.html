@@ -22,7 +22,7 @@ layout: default
         <span class="post-meta">{{ post.date | date: date_format }}</span>
         <span class="post-link">
           <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
+            {{ post.title | escape }} <div class="post-snippet">{{ post.content | strip_html | escape | truncatewords: 40}}</div>
           </a>
         </span>
       </li>
