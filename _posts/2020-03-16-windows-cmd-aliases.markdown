@@ -5,6 +5,7 @@ title: Aliases in Windows 10 cmd.exe
 categories: windows
 comments: true
 sharing: true
+icon: windows
 ---
 
 If you are like me and constantly typing `ls` in the windows command prompt, you'll like this.

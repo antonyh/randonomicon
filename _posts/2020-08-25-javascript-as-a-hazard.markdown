@@ -5,6 +5,7 @@ title: JavaScript as a Hazard
 categories: development, javascript
 comments: true
 sharing: true
+icon: warning
 ---
 
 In my mind, JavaScript is a hazard that all developers in the modern era need to be aware of and savvy to in order to survive their career. I call it JavaScript-as-a-Hazard: JSaaH.

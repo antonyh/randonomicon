@@ -8,11 +8,11 @@ comments: true
 ZMQ bind versus connect
 =======================
 
-In brief you should use bind for:
+In brief, you should use bind for:
 - stable things; use connect for volatile things
 - when there is on; use connect when the number is unknown
 - when listening;  use connect when broadcasting
-- long lived process should bind; short lived should connect
+- long-lived process should bind; short-lived should connect
 - bind for incoming; connect for outgoing
 - bound sockets start muted; connected sockets start ready \[except router
 sockets\]

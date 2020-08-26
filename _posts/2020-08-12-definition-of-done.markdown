@@ -5,6 +5,7 @@ title: Definition of Done & Definition of Ready
 categories: agile
 comments: true
 sharing: true
+icon: pie-chart
 ---
 
 Here are some definitions useful in Agile processes. 

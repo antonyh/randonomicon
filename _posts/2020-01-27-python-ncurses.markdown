@@ -5,6 +5,7 @@ title: Build a developers menu with Python and NCurses
 categories: Python
 comments: true
 sharing: true
+icon: terminal
 ---
 
 If you are anything like me then you get bored and tired of remembering mundane

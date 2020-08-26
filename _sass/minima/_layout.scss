@@ -209,8 +209,10 @@
     > a {
       padding: 3em 1em;
       color:  darken($brand-color, 20%);
+    }
 
-
+    > a:hover {
+      text-decoration: none;
     }
   }
 
@@ -239,6 +241,7 @@
   color: darken($brand-color, 50%);
   text-align: left;
   font-weight: bold;
+  text-decoration: none;
 
   > .post-snippet {
     @include relative-font-size(0.9559);
@@ -250,6 +253,12 @@
 
 }
 
+.post-icons {
+  font-size: 2em;
+  color: white;
+  display: inline;
+  vertical-align: middle;
+}
 
 /**
  * Posts

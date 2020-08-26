@@ -5,6 +5,7 @@ title: CSS typography notes
 categories: css
 comments: true
 sharing: true
+icon: css3
 ---
 
 # Notes and thoughts on CSS typography

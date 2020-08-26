@@ -5,6 +5,7 @@ title: OSI 7 Layer Model
 categories: cissp
 comments: true
 sharing: true
+icon: microchip
 ---
 My notes on the 7 Layers of the OSI model. Taken during CISSP revision.
 

@@ -3,6 +3,7 @@ layout: post
 date: 2018-11-06 08:59:59 +000
 title: Bash alias for the weather
 categories: bash
+icon: terminal
 ---
 
 To get the weather in a terminal/console/bash shell:
