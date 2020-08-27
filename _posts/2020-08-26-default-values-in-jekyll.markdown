@@ -10,6 +10,6 @@ icon: code
 
 Defaults in the Liquid templates used by Jekyll is easy but is something I always forget. Here's how to do it:
 
-```{ post.something | default: 'randonomicon' }}```
+```{{ post.something | default: 'randonomicon' }}```
 
 It will use the default if 'something' has no value. That's all there is to it. 

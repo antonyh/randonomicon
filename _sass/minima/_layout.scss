@@ -178,7 +178,6 @@
 .page-content {
   padding: $spacing-unit 0;
   flex: 1;
-  //background-image: linear-gradient(to right, #efcdab, #ffffff);
 }
 
 .page-heading {
@@ -197,7 +196,6 @@
 
   > li {
     display: block;
-    //width: 100%;
     margin: 0.555em;
     padding: 0.777em 0.777em;
     text-align: center;
@@ -205,6 +203,7 @@
     background-color:  lighten($brand-color, 20%);
     border-radius: 12px;
     border: 2pt solid darken($brand-color, 40%);
+    transition: background-color 1s ease, color 1s ease;
 
     > a {
       padding: 3em 1em;
@@ -222,9 +221,15 @@
 
     > span a {
       color: lighten($brand-color, 50%);
+      text-decoration: none;
+      transition: 1s;
       > .post-snippet {
         color: lighten($brand-color, 50%);
       }
+    }
+
+    > span a:hover {
+      text-decoration: none;
     }
   }
 }
