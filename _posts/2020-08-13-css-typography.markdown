@@ -41,9 +41,9 @@ Don't make the text too small. This is relative to the device size and use but a
 
 Conversely, don't make it too big either as it inhibits speed reading and forces scrolling. 
 
-Some font faces work best on displays, while others are for printing, and some only look right at large sizes. As a preference, this site avoids webfonts to not require an additional download.
+Some font faces work best on displays, while others are for printing, and some only look right at large sizes. 
 
-Third party font services track your visitors. If it's possible, and you must have a particular typeface because of brand or stylistic reasons, then host the font yourself. Make it part of the site and don't rely on external hosting.
+Third party font services track your visitors. If it's possible, and you must have a particular typeface because of brand or stylistic reasons, then host the font yourself. Make it part of the site and don't rely on external hosting. However, this site uses webfonts to that require an additional download.
 
 The general rule is to use sans-serif for headers and titles, serif for body copy, and fixed width for code. More commonly the headings are fancy sans-serif with the main text as a simplified typeface that looks better at smaller sizes. 
 
