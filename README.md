@@ -21,5 +21,9 @@ rbenv install 2.6.5 # or whatever useful version
 bundle exec jekyll doctor
 ```
 
-There's some shenanigans going on with Osx 10.11 and Ruby 2.6 that causes faults sometimes. I don't think this is a 
+There are some shenanigans going on with Osx 10.11 and Ruby 2.6 that causes faults sometimes. I don't think this is a 
 fault in this project or in Jekyll, but an underlying incompatibility with an obsolescent OS version. 
+
+##icons
+
+https://fontawesome.com/v4.7.0/icons/

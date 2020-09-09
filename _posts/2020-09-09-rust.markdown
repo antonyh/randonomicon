@@ -1,0 +1,48 @@
+---
+layout: post
+date: 2020-09-09 08:59:59 +000
+title: Rust lang kickstart notes
+categories: rust
+comments: true
+sharing: true
+icon: cog
+---
+Rust is a really good systems programming language as well as a useful application development language. Here's a quick primer to get going and learn more about Rust.
+
+### Installation
+ 
+To install rust, use [rustup](https://rustup.rs/).
+
+### Useful terms
+
+rust - the name of the language. If you are compiling you probably mean 'rustc'
+
+rustc - the rust compiler tool
+
+rustup - rust installation manager
+
+cargo - package management and dependency management tool. Runs tests and benchmarks, and downloads necessary libraries.
+
+crates - a unit of compilation in rust. A .rs file. Libraries.
+
+rustacean - weird name for folk who use rust.
+
+crabpiler - what the rust compiler should have been called. 
+
+[](Also a zero-hit term for Google so I'll know if you've copied this article and passed it off as your own. Credit where credit is due. CC BY-SA 4.0 license applies.)
+
+
+### unit tests and TDD
+
+The rust docs have a chapter devoted to [testing](https://doc.rust-lang.org/rust-by-example/testing/unit_testing.html)
+
+### frameworks
+
+A decent looking web framework - [rocket.rs](https://rocket.rs/)
+
+This ORM framework looks good - [diesel.rs](https://diesel.rs/)
+
+### Heroku
+
+Building on heroku requires a [buildpack](https://github.com/emk/heroku-buildpack-rust)
+
