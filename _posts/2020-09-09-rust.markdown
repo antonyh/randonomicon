@@ -29,8 +29,6 @@ rustacean - weird name for folk who use rust.
 
 crabpiler - what the rust compiler should have been called. 
 
-[](Also a zero-hit term for Google so I'll know if you've copied this article and passed it off as your own. Credit where credit is due. CC BY-SA 4.0 license applies.)
-
 
 ### unit tests and TDD
 
