@@ -203,7 +203,6 @@
     color: darken($brand-color, 30%);
     background-color:  lighten($brand-color, 20%);
     border-radius: 12px;
-    border: 2pt solid darken($brand-color, 40%);
     transition: background-color 0.5s ease, color 1s ease;
 
     > a {
