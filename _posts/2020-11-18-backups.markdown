@@ -1,0 +1,135 @@
+---
+layout: post
+date: 2020-11-18 08:59:59 +000
+title: On backups and restores
+categories: devops
+comments: true
+sharing: true
+icon: floppy-o
+---
+
+###Why should you make a backup?
+
+So you don't have to redo complex or lengthy work.
+
+So you don't lose valuable data, like code or documents.
+
+So you don't lose unique data that cannot be reproduced, like photography or sales orders.
+
+To defend against ransomware.
+
+###When should you make a backup?
+When the changes made have enough value that it would cost you more to redo than to restore from a backup. 
+
+When the old backup is no longer fit for purpose.
+
+Before making potentially destructive changes.
+
+When the value of unrepeatable changes crosses a threshold. (think product orders)
+
+
+###When should you restore a backup?
+
+When it's cheaper to restore than redo the work.
+
+When it's impossible to redo the work and the value of that work is more than you'd be willing to lose.
+
+
+###When should you delete a backup?
+When it has no value. 
+
+When it's too old.
+
+If you don't need to retain the data within for retention or regulatory purposes.
+
+When you have enough backups that you know you'll never need to restore one.
+
+You might keep older backups as a defence against ransomware.
+
+###When should you test a backup?
+Always after the backup as finished if you value the ability to restore the backup.
+
+
+###What are the backup strategies?
+
+#### Father/Grandfather types
+
+Keep more of the more recent backups, gradually increasing the gap between full backups as they get older, such as daily x7 then weekly x4 then monthly x4. Adjust the numbers until it fits needs, costs, and capacity.
+
+#### Incremental vs full
+
+Daily backups are often incremental to make them quicker. They backup only the changes since the last full weekly backup.
+
+Full backups start from nothing and backup everything. They provide the foundation for incremental backups.
+
+# Online vs offline, hot vs warm vs cold
+
+Online gives fast access, a 'hot' backup.
+
+Warm backups are readily available with a limited delay.
+
+Cold backups take the longest to access but are often the cheapest and most reliable option.
+
+Offline backups are stored on equipment that's not powered, such as USB HDDs or Blu-ray/DVD. 
+
+###On-site, off-site, cloud backups
+
+On-site, is the draw next to your computer. Or a locked cabinet in the server room. Somewhere in the same locality. Somewhere the backup would be lost in the case of a meteor strike.
+
+Off-site is your car glovebox, your grannies house, or a secure lockup facility. Somewhere close but not likely to get destroyed by an act of nature. Don't be fooled into putting it in the garden shed or the office next door that could be wiped out by fire or flood at the same time as the on-site backups.
+
+Cloud backups are files uploaded to the internet. File sync services like Dropbox, OneDrive, pCloud, NextCloud and so on are NOT backups. Why: because if you are daft enough to accidentally remove from one sync'd node, it will automatically scrub them from all the others. If you do use this as a backup store, it counts as 0.5 backups, half a backup.
+
+###How many backups do I need?
+
+The old adage is "one backup is no backups, two backups is one backup".
+
+You need at least three copies MINIMUM. 
+
+With modern threats such as randomware, this isn't quite true. You need 3 current copies of data that is mallable and can change, plus immutable backups of anything you can't afford to lose. Optical media is highly effective for static data. 
+
+You should also have older backups as insurance against ransomware, as many strains don't activate until they have infected backups, so it might be months before they make their demands. 
+
+
+###Systems with versioning
+
+Some data stores have built in versioning, or are intended as version control systems. This includes SCM like SVN, Git, and Mercurial, but also some application data stores like Apache Jackrabbit. 
+
+Some cloud sync services have the option to revert to old versions. Some filesystems also have this ability, such as ZFS and 'time capsule' on Mac. 
+
+This does NOT mean you can skip the backups.
+
+Distributed SCM like Git has the option to 'force push' overwriting history. 
+
+File systems can become corrupt.
+
+Ransomware can strike.
+
+Indexes in JCR / Apache Jackrabbit can become corrupt, and for large systems take a long time to rebuild from scratch. 
+
+Versioning can save your bacon though if a user deletes something it can be fast to restore, or if they save something by accident. 
+
+###Compression
+
+Use a reliable form of compression, that permits extracting a files even if the archive has become corrupt. Often some is better than none.
+
+
+###Encryption
+
+If it's private then you must backup with encryption. No exceptions.
+
+If it can be accessed without you knowing then you must backup with encryption. No exceptions.
+
+If it can be modified without your knowledge then you must backup with encryption. No exceptions. Expecially so if there's any element of financial data or for executable application files.
+
+Don't lose the encryption key if you ever want to restore the data. This is highly important for long term backups.
+
+###Labelling
+
+If you don't label the backups correctly you'll never know which one to restore, which one to discard, and which one to update. 
+
+
+###Final notes
+
+Even the mighty Internet is backed up - many sites are available on the Wayback Machine Internet Archive. 
+
