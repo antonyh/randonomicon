@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Code snippet - Java Unirest library
+description: HTTP requests made easy with Unirest
 date:   2018-09-19 22:25:52 +0100
 categories: rest, java
 ---

@@ -2,6 +2,7 @@
 layout: post
 title: MacOS Developers Tools - Emacs
 date:   2018-09-19 22:25:52 +0100
+description: Running Emacs Daemon on OSX
 categories: mac, emacs
 ---
 Developers Tools

@@ -23,7 +23,7 @@ layout: default
         <span class="post-link">
           <a class="post-link" href="{{ post.url | relative_url }}">
             <span class="post-icons fa fa-{{ post.icon | default: 'random' }}"></span>
-            {{ post.title | escape }} <div class="post-snippet">{{ post.content | strip_html | escape | truncatewords: 40}}</div>
+            {{ post.title | escape }} <div class="post-snippet">{{ post.description | default: post.content | strip_html | escape | truncatewords: 40}}</div>
           </a>
         </span>
       </li>

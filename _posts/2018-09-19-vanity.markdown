@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Adobe AEM - vanity urls [diagram]
+description: A graphviz diagram for vanity URLs in Adobe AEM
 date:   2018-09-19 22:25:52 +0100
 categories: dot, revise
 ---
