@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2020-01-20 08:59:59 +000
-title: Build a developers menu with Python and NCurses 
+title: Build a Developers menu with Python and NCurses 
 categories: Python
 comments: true
 sharing: true

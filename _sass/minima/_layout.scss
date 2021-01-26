@@ -200,7 +200,7 @@
     padding: 0.777em 0.777em;
     text-align: center;
     color: darken($brand-color, 30%);
-    background-color:  lighten($brand-color, 20%);
+    background-color:  transparent;
     border-radius: 12px;
     transition: background-color 0.5s ease, color 1s ease;
 
@@ -259,7 +259,7 @@
 
 .post-icons {
   font-size: 2em;
-  color: yellow;
+  color: lighten($grey-color, 30%);
   display: inline;
   vertical-align: top;
   text-shadow: black 2px 2px;
