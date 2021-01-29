@@ -1,14 +1,5 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en-GB" }}">
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<!--  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160751836-1"></script>-->
-<!--  <script>-->
-<!--    window.dataLayer = window.dataLayer || [];-->
-<!--    function gtag(){dataLayer.push(arguments);}-->
-<!--    gtag('js', new Date());-->
-<!--    gtag('config', 'UA-160751836-1', {'anonymize_ip': true});-->
-<!--  </script>-->
-
   {%- include head.html -%}
   <body unselectable="on"
         onselectstart="return false;"
@@ -25,6 +16,13 @@
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-160751836-1', 'auto');
       ga('send', 'pageview');
+    </script>
+    <script>
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "56q17uvt85");
     </script>
   </body>
 </html>
