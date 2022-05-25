@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en-GB" }}">
   {%- include head.html -%}
-  <body unselectable="on"
-        onselectstart="return false;"
-        onmousedown="return false;">
+  <body unselectable="off"
+        onselectstart="return true;"
+        onmousedown="return true;">
     {%- include header.html -%}
     <main class="page-content" aria-label="Content">
         {{ content }}
