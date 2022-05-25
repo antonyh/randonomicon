@@ -13,7 +13,7 @@ I've got as far as
 
 Power down the VM and run in powershell:
 
-    > Set-VMVideo -VMName 'selfridges-ubuntu2204' -HorizontalResolution 2560 -VerticalResolution 1440 -ResolutionType Single
+    > Set-VMVideo -VMName 'randonomicon' -HorizontalResolution 2560 -VerticalResolution 1440 -ResolutionType Single
 
 Start the VM, open a terminal, and run this command:
 
