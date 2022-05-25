@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2022-05-25 18:59:59 +000
+date: 2022-05-25 17:59:59 +000
 title: How to update dependency and plugin versions for Maven projects
 description: Refresh Maven projects with the latest dependencies and plugin versions automatically
 categories: java, maven

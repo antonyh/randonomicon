@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2022-05-25 18:59:59 +000
+date: 2022-05-25 00:59:59 +000
 title: Change video resolution on HyperV Linux VMs
 description: HyperV doesn't like linux framebuffers much
 categories: hyperv
