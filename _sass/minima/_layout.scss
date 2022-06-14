@@ -7,7 +7,7 @@
   min-height: $spacing-unit * 2;
   // Positioning context for the mobile navigation icon
   position: relative;
-  background-color:  lighten($brand-color, 20%);
+  background-color: lighten($brand-color, 20%);
   border-bottom: 2pt solid darken($brand-color, 40%);
 }
 
@@ -19,6 +19,7 @@
   margin-bottom: 0;
   float: left;
   color: #212318;
+
   &,
   &:visited {
     //color: $grey-color-dark;
@@ -200,13 +201,13 @@
     padding: 0.777em 0.777em;
     text-align: center;
     color: darken($brand-color, 30%);
-    background-color:  transparent;
+    background-color: transparent;
     border-radius: 12px;
     transition: background-color 0.5s ease, color 1s ease;
 
     > a {
       padding: 3em 1em;
-      color:  darken($brand-color, 20%);
+      color: darken($brand-color, 20%);
     }
 
     > a:hover {
@@ -216,12 +217,13 @@
 
   > li:hover {
     color: lighten($brand-color, 50%);
-    background-color:  darken($brand-color, 50%);
+    background-color: $brand-highlight-colour;
 
     > span a {
       color: lighten($brand-color, 50%);
       text-decoration: none;
       transition: 1s;
+
       > .post-snippet {
         color: lighten($brand-color, 50%);
       }
@@ -263,6 +265,10 @@
   display: inline;
   vertical-align: top;
   text-shadow: black 2px 2px;
+}
+
+.post-icons:hover {
+  color: yellow;
 }
 
 /**
