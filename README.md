@@ -1,6 +1,6 @@
 # Randonomicon
 
-A blog. A book. A steaming pile. It is what it is, which greatly depends on your interpretation.
+A blog. A book. A steaming pile. It is what it is which greatly depends on your interpretation of the material.
 
 ## Changes to Randonomicon
 
@@ -11,18 +11,21 @@ A blog. A book. A steaming pile. It is what it is, which greatly depends on your
 
 
 ## Jekyll
-This site uses Jekyll. If you know how to use this, then you can ignore the rest of this README.md file. 
+This site uses Jekyll. 
+If you know how to use this,
+then you can ignore the rest of this README.md file. 
 
 ## Installation
 With `rbenv`...
 
 ```
-rbenv install 2.6.5 # or whatever useful version
+rbenv install 2.7.3 # or whatever useful version
 bundle exec jekyll doctor
 ```
 
-There are some shenanigans going on with Osx 10.11 and Ruby 2.6 that causes faults sometimes. I don't think this is a 
-fault in this project or in Jekyll, but an underlying incompatibility with an obsolescent OS version. 
+There are some shenanigans going on with OSX 10.11 and Ruby 2.6 that causes faults sometimes. 
+I don't think this is a fault in this project or in Jekyll, 
+but an underlying incompatibility with an obsolescent OS version. 
 
 ##icons
 
