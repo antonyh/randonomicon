@@ -9,7 +9,7 @@ sharing: true
 icon: bath
 ---
 
-Random notes on nodejs, npm, nvm, and more
+Random notes on nodejs, npm, nvm, and more. Most of this applies to Windows 10 or Windows 11, some of it for Linux-based systems, and maybe it might even help Macintosh users.
 
 ## How to work around ENOAUDIT error message
 
@@ -20,14 +20,31 @@ Run the audit against the npmjs.org registry instead of the local Nexus server o
 
 ## Making nvm4w work properly
 
-This solved the ERROR 1 and ERROR 5 states for me.
+This solved the ERROR 1 and ERROR 5 states for me. These look a lot like:
 
-1. burn it all. Uninstall nodejs and nvm
+    PS C:\Users\randonomicon> nvm use 12.13.1
+    exit status 1: Access is denied.
+
+or
+    
+    PS C:\Users\nocimonodnar> nvm on
+    nvm enabled
+    exit status 5: Access is denied.
+
+1. burn it all. Uninstall nodejs and nvm. The errors are mostly caused by permissions or old installs. Cleaning out broken installs will help.
 2. clean up any nvm data in your roaming profile
 3. As administrator, install nvm4w
 
 
      winget install CoreyButler.NVMforWindows
+
+4. set the install location to somewhere better than the 'roaming' profile folder. I used:
+
+
+    mkdir c:\mvn
+    nvm root c:\nvm
+
+This will install the npm binaries into a more useful location.
 
 
 4. As your user, install the versions you need to use for your projects
