@@ -297,6 +297,9 @@
     @include media-query($on-laptop) {
       @include relative-font-size(1.75);
     }
+    padding-top: 1.4em;
+    padding-bottom: 0;
+    border-bottom: thin solid darken($brand-color, 40%);
   }
 
   h3 {
