@@ -41,8 +41,9 @@ or
 4. set the install location to somewhere better than the 'roaming' profile folder. I used:
 
 
-    mkdir c:\mvn
-    nvm root c:\nvm
+     mkdir c:\mvn
+     nvm root c:\nvm
+
 
 This will install the npm binaries into a more useful location.
 
