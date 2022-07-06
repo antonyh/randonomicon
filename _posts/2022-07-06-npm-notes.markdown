@@ -94,4 +94,21 @@ Sometimes, you'll have hostnames in your package.lock that aren't suitable for y
 
 This will remove the 'resolved' value from package.lock and let the build server use it's configured setting.
 
+Bonus: you can keep the integrity hashes so you know you have the same valid dependency artifacts. Add `--skipIntegrity ` to the `locktt` command.
+
+```
+    locktt --skipIntegrity 
+```
+
+If you want to keep the resolved urls but rewrite them to use a different registry that's possible too. For example if you need to reset them to npmjs.org this will do the job:
+
+```
+    locktt --skipIntegrity --replacePackageLockRegistry --registry=https://registry.npmjs.org
+```
+
+You can shorten this to:
+
+```
+    locktt -s -p -r https://registry.npmjs.org
+```
 
