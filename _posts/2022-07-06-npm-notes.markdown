@@ -1,0 +1,66 @@
+---
+layout: post
+date: 2022-07-06 12:12:12 +000
+title: Random notes on nodejs, npm, nvm, and more
+description: A mix of ideas, notes, and workaround for front-end development
+categories: js, npm, nvm, nodejs
+comments: true
+sharing: true
+icon: bath
+---
+
+Random notes on nodejs, npm, nvm, and more
+
+## How to work around ENOAUDIT error message
+
+Run the audit against the npmjs.org registry instead of the local Nexus server or whatever you're using to serve up the npm dependencies as a proxy.
+
+    npm audit --registry=https://registry.npmjs.org/
+
+
+## Making nvm4w work properly
+
+This solved the ERROR 1 and ERROR 5 states for me.
+
+1. burn it all. Uninstall nodejs and nvm
+2. clean up any nvm data in your roaming profile
+3. As administrator, install nvm4w
+
+
+     winget install CoreyButler.NVMforWindows
+
+
+4. As your user, install the versions you need to use for your projects
+
+
+     nvm install latest
+     nvm install lts
+     nvm install 18.4.0
+
+5. As administrator, activate the version you want to use
+
+
+     nvm use 18.4.0
+
+
+6. Confirm as your user (not administrator) that you have the right version selected.
+
+
+     nvm list
+     node -v
+
+
+7. Use npm and node as normal.
+
+
+## Fix incorrect dependency source hostnames
+
+Sometimes, you'll have hostnames in your package.lock that aren't suitable for your CI server or some other reason, or you need to use a different source server. There's a way to do this.
+
+
+    npm install -g @kie/lock-treatment-tool
+    locktt
+
+This will remove the 'resolved' value from package.lock and let the build server use it's configured setting.
+
+

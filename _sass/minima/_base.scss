@@ -167,7 +167,8 @@ pre,
 code {
   @include relative-font-size(0.9375);
   border: 0;
-  background-color: lighten($background-color, 20%);
+  background-color: lighten($brand-color, 25%);
+  color: darken($brand-color, 50%);
 }
 
 code {
