@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2022-07-06 12:12:12 +000
+date: 2022-07-06 02:12:12 +000
 title: Random notes on nodejs, npm, nvm, and more
 description: A mix of ideas, notes, and workaround for front-end development
 categories: js, npm, nvm, nodejs
