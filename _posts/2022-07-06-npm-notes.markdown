@@ -15,35 +15,42 @@ Random notes on nodejs, npm, nvm, and more. Most of this applies to Windows 10 o
 
 Run the audit against the npmjs.org registry instead of the local Nexus server or whatever you're using to serve up the npm dependencies as a proxy.
 
+```
     npm audit --registry=https://registry.npmjs.org/
-
+```
 
 ## Making nvm4w work properly
 
 This solved the ERROR 1 and ERROR 5 states for me. These look a lot like:
-
+```
     PS C:\Users\randonomicon> nvm use 12.13.1
     exit status 1: Access is denied.
+```
 
 or
-    
+
+```
     PS C:\Users\nocimonodnar> nvm on
     nvm enabled
     exit status 5: Access is denied.
+```
 
 1. burn it all. Uninstall nodejs and nvm. The errors are mostly caused by permissions or old installs. Cleaning out broken installs will help.
 2. clean up any nvm data in your roaming profile
 3. As administrator, install nvm4w
 
 
+```
      winget install CoreyButler.NVMforWindows
+```
 
 4. set the install location to somewhere better than the 'roaming' profile folder. I used:
 
 
+```
      mkdir c:\mvn
      nvm root c:\nvm
-
+```
 
 This will install the npm binaries into a more useful location.
 
@@ -51,22 +58,26 @@ This will install the npm binaries into a more useful location.
 4. As your user, install the versions you need to use for your projects
 
 
+```
      nvm install latest
      nvm install lts
      nvm install 18.4.0
+```
 
 5. As administrator, activate the version you want to use
 
 
+```
      nvm use 18.4.0
-
+```
 
 6. Confirm as your user (not administrator) that you have the right version selected.
 
 
+```
      nvm list
      node -v
-
+```
 
 7. Use npm and node as normal.
 
@@ -76,8 +87,10 @@ This will install the npm binaries into a more useful location.
 Sometimes, you'll have hostnames in your package.lock that aren't suitable for your CI server or some other reason, or you need to use a different source server. There's a way to do this.
 
 
+```
     npm install -g @kie/lock-treatment-tool
     locktt
+```
 
 This will remove the 'resolved' value from package.lock and let the build server use it's configured setting.
 
