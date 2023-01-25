@@ -19,6 +19,7 @@
   margin-bottom: 0;
   float: left;
   color: #212318;
+  font-variant-caps: small-caps;
 
   &,
   &:visited {
@@ -195,6 +196,12 @@
   display: block;
   flex-wrap: wrap;
 
+  @include media-query($on-laptop) {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
   > li {
     display: block;
     margin: 0.555em;
@@ -204,6 +211,10 @@
     background-color: transparent;
     border-radius: 12px;
     transition: background-color 0.5s ease, color 1s ease;
+    @include media-query($on-laptop) {
+      padding: 0;
+      padding-bottom: 1em;
+    }
 
     > a {
       padding: 3em 1em;
@@ -248,13 +259,22 @@
   text-align: left;
   font-weight: bold;
   text-decoration: none;
+  @include media-query($on-laptop) {
+    background-color: darken($brand-color, 10%);
+    color: lighten($brand-color, 50%);
+    padding: 12px;
+    margin: 12px;
+    margin-left: 0px;
+  }
 
   > .post-snippet {
     @include relative-font-size(0.9559);
     color: darken($brand-color, 40%);
     display: block;
     font-weight: normal;
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    font-style: italic;
   }
 
 }
@@ -325,6 +345,20 @@
  */
 .home {
   padding-right: $spacing-unit;
-  padding-left: $spacing-unit;
+  padding-left: $spacing-unit*4;
+  @include media-query($on-laptop) {
+    padding: 0;
+    margin: 0;
+  }
   @extend %clearfix;
+}
+
+.site_nav_item {
+  display: inline-block;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  @include media-query($on-laptop) {
+    margin-left: 18px;
+    display: block;
+  }
 }

@@ -18,9 +18,11 @@ email: antonyh@gmail.com # editorial@randonomi.com
 description: >- # this means to ignore newlines until "baseurl:"
   The Randonomicon is a heavily opinionated collection of random articles, notes, guides, and links. Definitely not a blog.
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://www.randonomicon.com" 
-twitter_username: ntnyh
+url: "https://www.randonomicon.com"
 github_username:  antonyh
+mastodon:
+    username: antony
+    instance: mastodon.ie
 lang: en-GB
 
 # Build settings

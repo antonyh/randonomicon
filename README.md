@@ -20,6 +20,7 @@ With `rbenv`...
 
 ```
 rbenv install 2.7.3 # or whatever useful version
+bundle install
 bundle exec jekyll doctor
 ```
 
