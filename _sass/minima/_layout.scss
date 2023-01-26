@@ -281,10 +281,10 @@
 
 .post-icons {
   font-size: 2em;
-  color: lighten($grey-color, 30%);
+  color: lighten($brand-highlight-colour, 30%);
   display: inline;
   vertical-align: top;
-  text-shadow: black 2px 2px;
+  text-shadow: lighten($brand-highlight-colour, 10%) 2px 2px;
 }
 
 .post-icons:hover {
