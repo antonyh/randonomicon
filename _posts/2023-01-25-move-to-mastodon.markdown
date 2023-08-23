@@ -10,11 +10,9 @@ icon: info-circle
 ---
 "25th January 2023"
 
-I little late to add this update here, two months late. 
+I've moved my social presence (as quiet as it is) over to Mastodon, and can now be located at
 
-I've moved my social presence (as quite as it is) over to Mastodon, and can now be located at
-
-https://mastodon.ie/@antony
+[https://mastodon.ie/@antony](https://mastodon.ie/@antony)
 
 There's plenty of non-random reasons for the switch, and plenty of public discussion on the subject 
 which I don't care to repeat. What I have found, it's Mastodon as a community is far more interesting, 

@@ -15,7 +15,7 @@ So you're trying to use SSH on Windows, and all it gives you is this crumby old 
     Load key "C:\\Users\\randonomicon/.ssh/id_rsa": invalid format
     git@github.com: Permission denied (publickey).
 
-How do you fix it? (I hope to have an answer soon)
+How do you fix it? (I hope to have an answer soon, but I ended up switching to Linux for development as the ultimate solution to this problem)
 
 
 
