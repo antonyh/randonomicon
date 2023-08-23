@@ -39,7 +39,7 @@ Autumn oak, Matador, Ultra green, Marine, Bilberry.
 I've not yet tried these, aside from Autumn Oak. 
 
 ### Autumn Oak
-A nice enough orange, but a little too light for general use.
+A nice enough orange, with brownish red overtones and a good flow. I'd like it more if it was slightly more brown, but the effect matches the name quite well. It's not really an everyday ink for me. 
 
 _3/5_
 
