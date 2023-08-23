@@ -44,7 +44,7 @@ A nice enough orange, with brownish red overtones and a good flow. I'd like it m
 _3/5_
 
 ### E'au de nil
-A turquiosy blue green. Pleasant. Deserves a broader nib.
+A turquoise blue green. Pleasant. Deserves a broader nib.
 
 _4/5_
 
