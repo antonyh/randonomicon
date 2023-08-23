@@ -31,7 +31,7 @@ For typography kerning is important. Controlling the spacing between letters mak
 
 ## Text contrast
 
-For general text there should be enough contrast to read it, obviously. This has nothing to do with accessibility per se but is basic common sense. Why would you write something then make it hard to read. 
+For general text there should be enough contrast to read it, obviously. This has nothing to do with accessibility per se but is basic common sense. Why would you write something then make it hard to read? 
 
 There are contrast guidelines published by the WCAG which should be adhered to. Mostly though, dark text on light/white background is the right option. 
 
