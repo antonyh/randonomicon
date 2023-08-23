@@ -1,0 +1,105 @@
+---
+layout: post
+date: 2023-08-23 08:59:59 +000
+title: Fountain Pen Ink
+description: A list of inks for fountain pens and how I feel about them
+categories: calligraphy, fountain pens, stationary
+comments: true
+sharing: true
+icon: paint-brush
+---
+
+I've tried a few inks in my collection of pens, and here's a brief list of 
+the colours and brands, and how I personally rate them.
+
+## Diamine
+
+I like Diamine ink. It's great quality, easily available, good colours, and 
+inexpensive. It's not too dry nor too wet. It dries quickly enough for me 
+and doesn't bleed or show through on the notebooks I use (Clairfontaine, 
+Leuchtturm 1917, Paperchase).
+
+### Earl Gray
+My favourite colour in Diamines range. Use an extra fine nib and it almost 
+looks like graphite pencil.
+
+### Blue Black
+The bottle is sitting on the shelf waiting for the right moment to make it's 
+mark on the page. I have no doubts this will be a useful everyday ink.
+
+### Fiesta cartriges
+Autumn oak, Matador, Ultra green, Marine, Bilberry.
+I've not yet tried these, aside from Autumn Oak. 
+
+### Autumn Oak
+A nice enough orange, but a little too light for general use.
+
+### E'au de nil
+A turquiosy blue green. Pleasant. Deserves a broader nib.
+
+## Robert Oster
+I've only one RO ink so far, and I feel mostly positive about it.
+
+### Melon Tea
+It's a weird brown green. I like the ink but not the colour, and I just 
+don't have a use for it.
+
+## Pelikan 4001
+These inks strike me as more free flowing than the others, but I've only 
+tried one so far.
+
+### Red
+It's orange, and seems a little wet and watery. I need to get a different 
+red, something more definitely crimson.
+
+## Parker
+Quink is easy to get in the UK as it's stocked everywhere. It's a quick 
+drying and as such quite a dry ink. Pairs well with Parker pens, 
+unsurprisingly. 
+
+## Faber Castel
+I've only used cartridges from FC.
+
+### Konigsblau Royal Blue
+Lovely erasable ink, in a mid blue. Good for schoolwork. Cartridges only, so 
+kept for the FC pens.  
+
+## Lamy
+Cartidges given free with the pens.
+
+### T10 blue
+A washable mid blue. Ok but not my favourite as I prefer darker, less 
+saturated colours. They do have a good amount of ink in the cartridge though 
+which is a benefit. 
+
+## Waterman
+These are lovely inks with super saturation. I need a few more out of their 
+colour range as I've only two but they are really nice.
+
+### Tender Purple
+A really strong purple colour. Incredibly bold and best used sparingly.
+
+### Green
+My favourite green colour. It's dark but not excessively so, and pleasant on 
+the eye.
+
+## Diplomat
+These are now sold as Octopus, but I don't believe the formula has changed. 
+
+### Blue
+A somewhat wet blue, mid colour, and useful as a general purpose ink. It's 
+not top of my list but was inexpensive and does get used in the rotation.
+
+## Herbin
+I like these in the little metal tins of 6 cartridges purely because they 
+fit perfectly into Kaweco Sport pens. I've found other brands don't work 
+very well, so having a supply in a case is a bonus.
+
+### Lie de tea
+A good brown colour that flows well, dries well, and looks smart. It's best 
+for fine nibs because it doesn't really shade at all.
+
+### Bleu des profondeurs
+Amazingly rich deep blue. One of my favourite colours. The depth of the blue 
+makes me want to try it with a broader nib.
+
