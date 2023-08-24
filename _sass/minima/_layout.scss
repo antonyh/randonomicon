@@ -2,13 +2,12 @@
  * Site header
  */
 .site-header {
-  //border-top: 5px solid $grey-color-dark;
-  //border-bottom: 1px solid $grey-color-light;
   min-height: $spacing-unit * 2;
   // Positioning context for the mobile navigation icon
   position: relative;
   background-color: lighten($brand-color, 20%);
   border-bottom: 2pt solid darken($brand-color, 40%);
+  font-family: sans-serif;
 }
 
 .site-title {
@@ -177,6 +176,12 @@
 /**
  * Page content
  */
+
+article.post {
+  max-width: 60em;
+  margin: 0 auto;
+}
+
 .page-content {
   padding: $spacing-unit 0;
   flex: 1;

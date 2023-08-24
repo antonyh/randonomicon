@@ -167,10 +167,12 @@ blockquote {
  */
 pre,
 code {
-  @include relative-font-size(0.9375);
-  border: 0;
-  background-color: lighten($brand-color, 25%);
+  @include relative-font-size(0.750);
+  border: 3px;
+  border-radius: 12px;
+  background-color: lighten($brand-color, 27%);
   color: darken($brand-color, 50%);
+  line-height: 1.75em;
 }
 
 code {
