@@ -1,0 +1,51 @@
+---
+layout: post
+date: 2099-12-13 08:59:59 +000
+title: 
+description:
+categories: 
+comments: true
+sharing: true
+icon: bath
+---
+
+Useful commands for GCP when using the gcloud cli tools
+
+#### Cheat Sheet & Help
+
+Start here for a long list of useful commands.
+
+    gcloud cheat-sheet 
+
+Options are described in 'help'
+
+    gcloud help
+
+This will give you the latest and up-to-date information for your version of gcloud cli. You can also search in the help via a command
+
+    gcloud help -- <search term>
+
+this will give a limited set of results and helps find answers quickly.
+
+#### Configuration sets
+
+I needed to have multiple logins, and the best way to achieve that objective was via configuration sets.
+
+    gcloud config configurations 
+    gcloud config configurations list
+    gcloud config configurations create <name>
+    gcloud config configurations activate <name>
+    gcloud config configurations describe <name>
+
+
+#### Switch projects
+
+Usually GCP will have multiple projects, and you will need to specify which one to use.
+
+    gcloud config set project <my-project-id>
+
+#### Get the load balancers for the project with external IP addresses
+
+It's important to know the external interface to GCP, which are enumerated as 'forwarding-rules'.
+
+    gcloud compute forwarding-rules list
