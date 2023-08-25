@@ -39,9 +39,13 @@ Autumn oak, Matador, Ultra green, Marine, Bilberry.
 I've not yet tried these, aside from Autumn Oak. 
 
 ### Autumn Oak
-A nice enough orange, with brownish red overtones and a good flow. I'd like it more if it was slightly more brown, but the effect matches the name quite well. It's not really an everyday ink for me. 
+A nice enough orange, with brownish red overtones and a good flow. I'd like it more if it was slightly darker brown, but the effect matches the name quite well. 
 
-_3/5_
+From a cartridge it bleeds badly on quality paper, but is fine on copier/printer paper.  I can only assume the bottled ink is the same formula, but it could be the pen is particularly wet just as easily.
+
+It's not an everyday ink for me. 
+
+_2/5_
 
 ### E'au de nil
 A turquoise blue green. Pleasant. Deserves a broader nib.
