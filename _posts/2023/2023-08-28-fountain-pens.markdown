@@ -49,19 +49,25 @@ This fun pen was sold as 'Indian Summer' with a black 'fine' nib, and it's reall
 
 _4/5_
 
+### Kaweco Sport Brass
+
+A heavier version of the sport, this is a favourite already. The heft and build quality is perfect for me, and it feels indestructible. Medium nib is smooth, much better than fine.
+
+_4/5_
+
 ## Jinhao
 
-These are good pens, albeit a little heavier in the hand. I like heavy pens. 
+These are good pens, albeit a little heavier in the hand. I like heavy pens sometimes. 
 
 ### 1200 'Dragon'
 
-Over the top gold pen with a Dragon for the clip complete with red 'gems' for eyes. Nice nib, and a solid writer.
+Over the top gold pen with a Dragon for the clip complete with red 'gems' for eyes. It has a nice nib, and is a solid writer. I've paired it with Parker Quink with good results.
 
 _3/5_
 
 ## Waterman
 
-I'm on the fence with Waterman. I'm just not sure.
+I'm on the fence with Waterman. I'm just not sure. I like the designs, and the inks work well so I expect the same from the pens.
 
 ### Hemisphere
 
@@ -71,7 +77,7 @@ _1/5_
 
 ### Allure
 
-New pen, not yet tried. It seems well made, has good balance and a decent nib, and I love the grey camouflage pattern. I had to get a new converter for bottled ink, and it's rubbery so I don't know how well it will do overall. I doubt the longevity of the fittings. 
+New pen, not yet tried. It seems well-made, has good balance and a decent nib, and I love the grey camouflage pattern. I had to get a new converter for bottled ink, and it's rubbery so I don't know how well it will do overall. I doubt the longevity of the fittings. 
 
 _?/5_
 
@@ -109,12 +115,12 @@ _3/5_
 These are good quality budget pens with a certain style that I find appealing.
 
 ### Tasche
-Tiny pocket pen that doubles it's size when the cap is posted. It's very narrow and takes no space at all. It writes really well with a smooth line. OHTO don't mark the nib with size, but it'd say it's a fine nib. It's probably my favourite pocket pen.
+Tiny pocket pen that doubles its size when the cap is posted. It's very narrow and takes no space at all. It writes really well with a smooth line. OHTO don't mark the nib with size, but it'd say it's a fine nib. It's probably my favourite pocket pen.
 
 _4/5_
 
 ### Dude
-This excessively shiny silver chrome pen with it's unspecified but defiantly medium iridium nib is a really good pen. It's nice in the hand, and performs well. It's just a bit too medium, and would be even better with a fine nib.
+This excessively shiny silver chrome pen with its unspecified but defiantly medium-to-bold iridium nib is a good pen. It's nice in the hand, and performs well. It's just a bit too medium, and would be even better with a fine nib. In the end I liked this pen but stopped using it before the end of the first ink fill. I found it sometimes randomly was too wet - so much so that it bleeds into the page. I also found myself distracted with a tendency to unscrew itself which I can only attribute to my grip, although this does not happen with any of my other pens.
 
 _3/5_
 
