@@ -255,7 +255,6 @@ article.post {
 
 .post-meta {
   font-size: $small-font-size;
-  display: none;
 }
 
 .post-link {
@@ -271,7 +270,7 @@ article.post {
     color: lighten($brand-color, 50%);
     padding: 12px;
     margin: 12px;
-    margin-left: 0px;
+    margin-left: 0;
   }
 
   > .post-snippet {

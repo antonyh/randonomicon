@@ -1,9 +1,9 @@
 ---
 layout: post
-date: 2083-08-24 08:59:59 +000
-title: GCP and gcloud cli
-description: The many fun features of the Google Cloud CLI tools
-categories: gcp, cloud
+date: 2023-08-24 08:59:59 +000
+title: GCP (Google Cloud) and gcloud cli primer
+description: Some of the basic and essential features of the Google Cloud CLI tools.
+categories: gcp,devops,cloud
 comments: true
 sharing: true
 icon: cloud
@@ -23,7 +23,7 @@ Options are described in 'help'
 
 This will give you the latest and up-to-date information for your version of gcloud cli. You can also search in the help via a command
 
-    gcloud help -- <search term>
+    gcloud help -- «earch term»
 
 this will give a limited set of results and helps find answers quickly.
 
@@ -33,16 +33,16 @@ I needed to have multiple logins, and the best way to achieve that objective was
 
     gcloud config configurations 
     gcloud config configurations list
-    gcloud config configurations create <name>
-    gcloud config configurations activate <name>
-    gcloud config configurations describe <name>
+    gcloud config configurations create «name»
+    gcloud config configurations activate «name»
+    gcloud config configurations describe «name»
 
 
 ### Switch projects
 
 Usually GCP will have multiple projects, and you will need to specify which one to use.
 
-    gcloud config set project <my-project-id>
+    gcloud config set project «my-project-id»
 
 ### Get the load balancers for the project with external IP addresses
 

@@ -7,6 +7,7 @@ categories: social media
 comments: false
 sharing: true
 icon: info-circle
+navigable: false
 ---
 I've moved my social discussion over to Lemmy.
 

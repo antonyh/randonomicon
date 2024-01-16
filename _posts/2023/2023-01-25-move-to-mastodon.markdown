@@ -7,6 +7,7 @@ categories: social media
 comments: false
 sharing: true
 icon: info-circle
+navigable: false
 ---
 "25th January 2023"
 

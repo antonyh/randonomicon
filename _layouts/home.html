@@ -16,21 +16,32 @@ layout: default
 
     <ul class="post-list">
       {%- for post in site.posts -%}
-      {%- if post.date < site.time -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <span class="post-link">
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            <span class="post-icons fa fa-{{ post.icon | default: 'random' }}"></span>
-            {{ post.title | escape }} <div class="post-snippet">{{ post.description | default: post.content | strip_html | escape | truncatewords: 40}}</div>
-          </a>
-        </span>
-      </li>
-      {%- endif -%}
+        {%- if post.date < site.time -%}
+          {%- if post.navigable -%}
+          <li>
+            <span class="post-link">
+              <a class="post-link" href="{{ post.url | relative_url }}">
+                <span class="post-icons fa fa-{{ post.icon | default: 'random' }}"></span>
+                {{ post.title | escape }} <div class="post-snippet">{{ post.description | default: post.content | strip_html | escape | truncatewords: 40}}</div>
+                <span class="post-meta">
+                  {{ post.date | date: "%Y, " }}
+                  {% assign d = post.date | date: "%-d" %}
+                  {% case d %}
+                    {% when "1" or "21" or "31" %}{{ d }}st
+                    {% when "2" or "22" %}{{ d }}nd
+                    {% when "3" or "23" %}{{ d }}rd
+                    {% else %}{{ d }}th
+                  {% endcase %}
+                {{ post.date | date: " %B. %A." }}
+                </span>
+              </a>
+            </span>
+          </li>
+          {%- endif -%}
+        {%- endif -%}
       {%- endfor -%}
     </ul>
 
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+    <p class="rss-subscribe">subscribe <a href='{{ "/feed.xml" | relative_url }}'>via RSS</a></p>
   {%- endif -%}
 </div>
