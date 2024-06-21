@@ -5,8 +5,8 @@
   min-height: $spacing-unit * 2;
   // Positioning context for the mobile navigation icon
   position: relative;
-  background-color: lighten($brand-color, 20%);
-  border-bottom: 2pt solid darken($brand-color, 40%);
+  background-color: lighten($brand-color, 12%);
+  border-bottom: 12pt solid lighten($brand-color, 27%);
 }
 
 .site-title {
